@@ -57,8 +57,22 @@
 
 ## 1.1. Startup Profile
 ### 1.1.1. Descripción de la Startup
-[Contenido]
+**ParkSense** es una startup conformada por estudiantes de la carrera de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC), enfocada en desarrollar soluciones tecnológicas basadas en **Internet de las Cosas (IoT)** para optimizar la gestión de estacionamientos en centros comerciales.
 
+A través de su producto **SpotFinder**, ParkSense busca resolver la problemática del tiempo desperdiciado y la congestión vehicular que se genera dentro de los estacionamientos cerrados. El sistema proporciona una solución integral que combina:
+* Sensores ultrasónicos.
+* Reconocimiento automático de placas vehiculares (ANPR) para la automatización de entrada y salida de vehículos.
+* Guiado visual por luces.
+* Aplicación móvil para conductores.
+* Panel de control para administradores de estacionamientos.
+
+La propuesta consiste en el desarrollo de un sistema inteligente que permita monitorear en tiempo real los espacios disponibles y ocupados, brindando información útil tanto a usuarios como a administradores mediante plataformas digitales.
+
+**Misión**
+Transformar la experiencia de estacionamiento en centros comerciales del Perú mediante soluciones IoT innovadoras que reduzcan el tiempo de búsqueda de espacios, mejoren la seguridad vehicular y optimicen la operación administrativa de los estacionamientos.
+
+**Visión**
+Posicionarnos como una solución innovadora dentro del ámbito de ciudades inteligentes, integrando IoT y plataformas digitales para transformar la gestión de estacionamientos.
 ### 1.1.2. Perfiles de integrantes del equipo
 [Contenido]
 
