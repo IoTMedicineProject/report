@@ -242,8 +242,118 @@ Este análisis refleja una clara necesidad de modernización en la gestión de e
 ### 2.3.4. Empathy Mapping.
 [Contenido]
 
-## 2.4. Big Picture Event Storming.
-[Contenido]
+## 2.4. Big Picture Event Storming  
+
+El Big Picture Event Storming es una técnica que permite identificar los eventos más relevantes dentro del sistema, los actores involucrados y la relación entre los distintos componentes. Su propósito es comprender de manera integral el flujo del negocio y detectar oportunidades de mejora en la gestión del estacionamiento.
+
+En el contexto del sistema propuesto, se analizaron los eventos que ocurren desde que el usuario consulta la disponibilidad de espacios hasta que finaliza su experiencia dentro del estacionamiento. Asimismo, se incluyeron procesos adicionales como el monitoreo en tiempo real, la reserva de espacios, el pago digital y la solicitud de servicios.
+
+---
+
+## 2.4.1. EventStorming  
+
+La actividad de Event Storming se realizó de forma colaborativa con la participación de los integrantes del equipo, utilizando un mural digital como soporte visual en la plataforma de Whiteboard. Durante la sesión se emplearon notas adhesivas para representar eventos de dominio, acciones del usuario, actores del sistema y otros elementos clave.
+
+El objetivo principal fue construir una visión global del sistema, comprendiendo cómo interactúan sus componentes a lo largo del tiempo. Además, se buscó identificar puntos críticos del proceso y establecer una base para la definición de bounded contexts en etapas posteriores.
+
+---
+
+### Antes de la sesión  
+
+Se habilitó un espacio de trabajo digital en el cual se organizaron los elementos necesarios para la dinámica. Se definieron lineamientos básicos para fomentar la participación activa y se estableció que todas las ideas propuestas serían consideradas. El enfoque estuvo orientado a promover la exploración libre del dominio.
+
+![DDD0](./assets/diagrams/ddd/es-0.png)
+
+---
+
+### Durante la sesión  
+
+#### Unstructured Exploration  
+
+Se inició con una fase de exploración libre, en la que los participantes identificaron eventos relevantes sin seguir un orden específico. Entre los eventos destacados se encuentran la detección de vehículos, la ocupación de espacios, el inicio de sesiones de estacionamiento, la generación de pagos y el envío de notificaciones. Esta etapa permitió obtener una visión amplia del sistema.
+
+![DDD1](./assets/diagrams/ddd/es-1.png)
+
+---
+
+#### Timelines  
+
+Una vez recopilados los eventos, se procedió a organizarlos en una secuencia temporal. Se estructuraron en diferentes etapas del sistema, tales como ingreso, monitoreo de espacios, reserva, pago y salida. Esto permitió visualizar claramente el flujo del proceso y las interacciones entre eventos.
+
+![DDD2.1](./assets/diagrams/ddd/es-2-1.png)
+![DDD2.2](./assets/diagrams/ddd/es-2-2.png)
+
+---
+
+#### Pain Points  
+
+Durante el análisis del flujo, se identificaron puntos problemáticos y áreas de incertidumbre. Entre ellos destacan la dificultad para encontrar espacios disponibles, la falta de información en tiempo real, posibles errores en sensores y limitaciones en el proceso de pago. Estos aspectos fueron señalados para su posterior mejora.
+
+![DDD3.1](./assets/diagrams/ddd/es-3-1.png)
+![DDD3.2](./assets/diagrams/ddd/es-3-2.png)
+
+---
+
+#### Pivotal Points  
+
+Se identificaron eventos clave que representan cambios significativos en el sistema, como el inicio de la sesión de estacionamiento, la confirmación del pago y la liberación de un espacio. Estos eventos son fundamentales para comprender la dinámica del sistema y definir sus límites funcionales.
+
+![DDD4.1](./assets/diagrams/ddd/es-4-1.png)
+![DDD4.2](./assets/diagrams/ddd/es-4-2.png)
+
+---
+
+#### Commands  
+
+Se determinaron las acciones que generan los eventos dentro del sistema. Entre ellas se incluyen consultar disponibilidad, estacionar un vehículo, realizar un pago y solicitar servicios adicionales. Esto permitió entender cómo interactúan los usuarios con la solución.
+
+![DDD5.1](./assets/diagrams/ddd/es-5-1.png)
+![DDD5.2](./assets/diagrams/ddd/es-5-2.png)
+
+---
+
+#### Policies  
+
+Se establecieron reglas que controlan el comportamiento del sistema frente a ciertos eventos. Por ejemplo, el envío automático de notificaciones cuando el tiempo de estacionamiento está por finalizar, la validación de pagos antes de permitir la salida y la actualización del estado de los espacios en función de los sensores.
+
+![DDD6.1](./assets/diagrams/ddd/es-6-1.png)
+![DDD6.2](./assets/diagrams/ddd/es-6-2.png)
+
+
+---
+
+#### Read Models  
+
+Se identificaron las vistas necesarias para mostrar información relevante a los usuarios. Estas incluyen el mapa de estacionamiento en tiempo real, el panel del administrador, el resumen de pagos y la visualización de servicios solicitados.
+
+![DDD7.1](./assets/diagrams/ddd/es-7-1.png)
+![DDD7.2](./assets/diagrams/ddd/es-7-2.png)
+
+---
+
+#### External Systems  
+
+Se reconocieron los sistemas externos que interactúan con la solución, como las plataformas de pago, los sensores IoT y los servicios adicionales. Esto permitió identificar puntos de integración y dependencia.
+
+![DDD8.1](./assets/diagrams/ddd/es-8-1.png)
+![DDD8.2](./assets/diagrams/ddd/es-8-2.png)
+![DDD8.3](./assets/diagrams/ddd/es-8-3.png)
+
+---
+
+#### Aggregates  
+
+Se agruparon los elementos del dominio en entidades principales, tales como usuario, vehículo, espacio de estacionamiento, sesión de estacionamiento, pago y servicio. Estas agrupaciones permiten definir unidades de consistencia dentro del sistema.
+
+![DDD9](./assets/diagrams/ddd/es-9.png)
+
+---
+
+#### Bounded Contexts  
+
+Finalmente, se delimitaron los bounded contexts a partir de los eventos, agregados y relaciones identificadas. Estos contextos representan diferentes áreas del sistema, como ingreso, monitoreo, reserva, pago y gestión administrativa, y servirán como base para el diseño de la arquitectura del software.
+
+![DDD10](./assets/diagrams/ddd/es-10.png)
 
 ## 2.5. Ubiquitous Language.
 
