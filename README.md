@@ -202,8 +202,32 @@ Usuario frecuente de estacionamientos en centros comerciales que prioriza la seg
 **Resumen**
 Estudiante  joven que utiliza el vehículo para movilizarse a reuniones y recados, visitando malls hasta tres veces por semana. Su mayor problema es la desorientación dentro del estacionamiento (olvida la ubicación del vehículo) y la falta de métodos de pago prácticos cuando no cuenta con efectivo. [Se muestra muy interesado en las funciones de reserva de espacios con anticipación y en recibir notificaciones de seguridad en su smartphone para mayor tranquilidad durante su estancia.
 
-### 2.2.3. Análisis de entrevistas.
-[Contenido]
+### 2.2.3. Análisis de entrevistas
+
+Las entrevistas se realizaron a un total de tres participantes del segmento de conductores en Lima Metropolitana. El objetivo fue entender sus contextos operativos, frustraciones actuales y validar hipótesis sobre la implementación de SpotFinder.
+
+**Segmento:** Conductores
+**Total entrevistados:** 3
+**Edades:** 21, 22 y 24 años
+**Distritos:** Surco, San Borja y Miraflores
+**Fechas:** Abril de 2026
+
+**Características objetivas**
+* Invierten entre 15 y 20 minutos en encontrar un espacio libre en horas punta: 3/3 (90%)
+* Han experimentado bajar a un nivel de estacionamiento solo para descubrir que está lleno: 3/3 (100%)
+* Utilizan frecuentemente aplicaciones de billetera digital (Yape/Plin) y navegación (Waze/Maps): 3/3 (100%)
+* Realizan el pago del estacionamiento de forma manual en cajas físicas: 3/3 (90%)
+
+**Características subjetivas**
+* Encuentran frustrante el tiempo perdido y la ineficiencia de los métodos de pago actuales: 3/3 (100%)
+* Valoran positivamente el guiado visual por luces LED para ubicar espacios rápidamente: 3/3 (100%)
+* Consideran que una aplicación con disponibilidad en tiempo real reduciría su estrés: 3/3 (100%)
+* Manifiestan haber olvidado la ubicación exacta de su vehículo en el estacionamiento: 2/3 (66%)
+* Interesados en la reserva anticipada de espacios para eventos o cine: 2/3 (66%)
+* Disposición total a adoptar la herramienta si garantiza ahorro de tiempo: 3/3 (100%)
+
+**Conclusión general**
+Este análisis refleja una clara necesidad de modernización en la gestión de estacionamientos. La coincidencia del 100% en la frustración por el tiempo de búsqueda y la disposición al uso de soluciones digitales confirma que SpotFinder ataca un punto de dolor crítico. La integración de hardware (LEDs) y software (App de pagos) es la combinación más valorada por los conductores.
 
 ## 2.3. Needfinding.
 ### 2.3.1. User Personas.
