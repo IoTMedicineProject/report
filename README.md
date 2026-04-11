@@ -149,8 +149,58 @@ La raíz radica en la falta de infraestructura tecnológica IoT. La mayoría de 
 ### 2.2.1. Diseño de entrevistas.
 [Contenido]
 
-### 2.2.2. Registro de entrevistas.
-[Contenido]
+### 2.2.2. Registro de entrevistas
+
+## Segmento Objetivo 1
+
+#### **Entrevista 1**
+| ![Perfil](./assets/images/interviews/user-icon.png) | **Datos Personales** |
+| :--- | :--- |
+| **Nombres** | Maria Fernanda |
+| **Apellidos** | Esteban Román |
+| **Distrito** | Surco |
+| **Edad** | 21 años |
+| **Enlace** | [🔗 Ver grabación de la entrevista](#) |
+
+**Evidencia**
+![Captura de la entrevista 1](./assets/images/interviews/evidencia-1.png)
+
+**Resumen**
+Estudiante universitaria que visita centros comerciales como el Jockey Plaza dos veces por semana. Su principal frustración es la pérdida de tiempo (15-20 minutos) buscando estacionamiento y la falta de información real sobre la disponibilidad en los sótanos. Usuario activo de herramientas tecnológicas como Waze y Yape, considera que un sistema de guiado por luces LED y una app con disponibilidad en tiempo real serían determinantes para mejorar su experiencia y reducir el estrés.
+
+---
+
+#### **Entrevista 2**
+| ![Perfil](./assets/images/interviews/user-icon.png) | **Datos Personales** |
+| :--- | :--- |
+| **Nombres** | Freddy Carlos |
+| **Apellidos** | Alvarez |
+| **Distrito** | Miraflores |
+| **Edad** | 22 años |
+| **Enlace** | [🔗 Ver grabación de la entrevista](#) |
+
+**Evidencia**
+![Captura de la entrevista 2](./assets/images/interviews/evidencia-2.png)
+
+**Resumen**
+Usuario frecuente de estacionamientos en centros comerciales que prioriza la seguridad y la eficiencia en el pago. Reporta una alta frustración debido a las largas colas en los cajeros físicos y la dificultad de encontrar espacios en temporadas altas. Valora positivamente la automatización mediante el reconocimiento de placas vehiculares (ALPR) y la posibilidad de realizar pagos digitales a través de la app, lo cual considera una solución necesaria para modernizar el servicio actual.
+
+---
+
+#### **Entrevista 3**
+| ![Perfil](./assets/images/interviews/user-icon.png) | **Datos Personales** |
+| :--- | :--- |
+| **Nombres** | Diego Ignacio |
+| **Apellidos** | Ricra Falla |
+| **Distrito** | San Borja |
+| **Edad** | 24 años |
+| **Enlace** | [🔗 Ver grabación de la entrevista](#) |
+
+**Evidencia**
+![Captura de la entrevista 3](./assets/images/interviews/evidencia-3.png)
+
+**Resumen**
+Estudiante  joven que utiliza el vehículo para movilizarse a reuniones y recados, visitando malls hasta tres veces por semana. Su mayor problema es la desorientación dentro del estacionamiento (olvida la ubicación del vehículo) y la falta de métodos de pago prácticos cuando no cuenta con efectivo. [Se muestra muy interesado en las funciones de reserva de espacios con anticipación y en recibir notificaciones de seguridad en su smartphone para mayor tranquilidad durante su estancia.
 
 ### 2.2.3. Análisis de entrevistas.
 [Contenido]
