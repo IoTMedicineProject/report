@@ -269,81 +269,65 @@ Hemos identificado que esta deficiencia operativa tiene un impacto directo en tr
 
 ## Segmento Objetivo 1
 
-#### **Entrevista 1**
-| ![Perfil](./assets/images/interviews/user-icon.png) | **Datos Personales** |
-| :--- | :--- |
-| **Nombres** | Maria Fernanda |
-| **Apellidos** | Esteban Román |
-| **Distrito** | Surco |
-| **Edad** | 21 años |
-| **Enlace** | [🔗 Ver grabación de la entrevista](#) |
+---
 
-**Evidencia**
-![Captura de la entrevista 1](./assets/images/interviews/evidencia-1.png)
+## Segmento Objetivo 2
 
-**Resumen**
-Estudiante universitaria que visita centros comerciales como el Jockey Plaza dos veces por semana. Su principal frustración es la pérdida de tiempo (15-20 minutos) buscando estacionamiento y la falta de información real sobre la disponibilidad en los sótanos. Usuario activo de herramientas tecnológicas como Waze y Yape, considera que un sistema de guiado por luces LED y una app con disponibilidad en tiempo real serían determinantes para mejorar su experiencia y reducir el estrés.
+**Segmento Administradores de estacionamientos: Entrevistado 1**
+
+| Atributo                | Detalle |
+|-------------------------|--------|
+| **Nombre**              | Fabian Oliva |
+| **Edad**                | 26 |
+| **Sexo**                | Masculino |
+| **Distrito**            | Surquillo |
+| **Ocupación**           | Administrador de estacionamiento (Mall Plaza Angamos) |
+| **Fecha de entrevista** | 11/04/2026 |
+| **Timing**              | 00:00 - 04:59 |
+| **Video**               | [Ver entrevista](#) |
+| **Captura**             | ![Captura entrevista 1](./assets/images/screenshots/seg2entrevista1.png) |
+| **Resumen**             | Fabian gestiona un estacionamiento de aproximadamente 850 espacios distribuidos en 5 niveles. Actualmente, la operación depende en gran medida de procesos manuales y herramientas básicas como Excel y sistemas de tickets, lo que limita la precisión y visibilidad en tiempo real. Enfrenta problemas de congestión en horas pico, dificultad de los usuarios para encontrar espacios y dependencia del personal para orientar el tráfico. No cuenta con analítica avanzada ni reportes automatizados. El sistema de cobro es parcialmente eficiente, pero presenta demoras. Considera valioso implementar soluciones como dashboards en tiempo real, guiado con LEDs, reconocimiento de placas (ALPR) y sistemas de seguridad automatizados. Está dispuesto a invertir si se demuestra un retorno claro. |
 
 ---
 
-#### **Entrevista 2**
-| ![Perfil](./assets/images/interviews/user-icon.png) | **Datos Personales** |
-| :--- | :--- |
-| **Nombres** | Freddy Carlos |
-| **Apellidos** | Alvarez |
-| **Distrito** | Miraflores |
-| **Edad** | 22 años |
-| **Enlace** | [🔗 Ver grabación de la entrevista](#) |
+**Segmento Administradores de estacionamientos: Entrevistado 2**
 
-**Evidencia**
-![Captura de la entrevista 2](./assets/images/interviews/evidencia-2.png)
-
-**Resumen**
-Usuario frecuente de estacionamientos en centros comerciales que prioriza la seguridad y la eficiencia en el pago. Reporta una alta frustración debido a las largas colas en los cajeros físicos y la dificultad de encontrar espacios en temporadas altas. Valora positivamente la automatización mediante el reconocimiento de placas vehiculares (ALPR) y la posibilidad de realizar pagos digitales a través de la app, lo cual considera una solución necesaria para modernizar el servicio actual.
+| Atributo                | Detalle |
+|-------------------------|--------|
+| **Nombre**              | Nicole Requena Saiwa |
+| **Edad**                | 28 |
+| **Sexo**                | Femenino |
+| **Distrito**            | Yanahuara, Arequipa |
+| **Ocupación**           | Administradora de Operaciones de Estacionamiento |
+| **Fecha de entrevista** | 9/04/2026 |
+| **Timing**              | 00:00 - 05:00 |
+| **Video**               | [Ver entrevista](#) |
+| **Captura**             | ![Captura entrevista 2](./assets/images/screenshots/seg2entrevista2.png) |
+| **Resumen**             | Administradora con aproximadamente 7 a 8 años de experiencia en la gestión de estacionamientos. Supervisa operaciones en espacios que superan los mil estacionamientos distribuidos en varios niveles. Actualmente, la gestión es mixta: cuenta con sistemas de conteo en entradas y salidas, pero el control interno sigue siendo mayormente manual, lo que limita la visibilidad en tiempo real por zonas específicas.\n\nEnfrenta problemas frecuentes como congestión en horas pico, dificultad de los conductores para encontrar espacios, desorden en momentos de alta demanda y reclamos constantes de los usuarios. No cuenta con estadísticas detalladas ni herramientas avanzadas de análisis, lo que dificulta la toma de decisiones.\n\nEl proceso de cobro se realiza mediante tickets físicos, generando colas y demoras en horas de alta afluencia. En situaciones de emergencia, la evacuación depende principalmente del personal, ya que no existe un sistema automatizado de guía.\n\nConsidera muy valiosas soluciones tecnológicas como dashboards en tiempo real, reportes automáticos, guiado visual con LEDs y reconocimiento de placas (ALPR), destacando especialmente su impacto en la eficiencia operativa y experiencia del cliente. Está dispuesta a implementar una solución IoT siempre que se demuestre un retorno claro, con un presupuesto estimado entre 20,000 y 50,000 dólares. |
 
 ---
 
-#### **Entrevista 3**
-| ![Perfil](./assets/images/interviews/user-icon.png) | **Datos Personales** |
-| :--- | :--- |
-| **Nombres** | Diego Ignacio |
-| **Apellidos** | Ricra Falla |
-| **Distrito** | San Borja |
-| **Edad** | 24 años |
-| **Enlace** | [🔗 Ver grabación de la entrevista](#) |
+**Segmento Administradores de estacionamientos: Entrevistado 3**
 
-**Evidencia**
-![Captura de la entrevista 3](./assets/images/interviews/evidencia-3.png)
+| Atributo                | Detalle |
+|-------------------------|--------|
+| **Nombre**              | [Nombre del entrevistado] |
+| **Edad**                |  |
+| **Sexo**                |  |
+| **Distrito**            |  |
+| **Ocupación**           |  |
+| **Fecha de entrevista** |  |
+| **Timing**              |  |
+| **Video**               | [Ver entrevista](#) |
+| **Captura**             | ![Captura entrevista 3](./assets/images/screenshots/interview-admin3.png) |
+| **Resumen**             | [Completar resumen de la entrevista] |
 
-**Resumen**
-Estudiante  joven que utiliza el vehículo para movilizarse a reuniones y recados, visitando malls hasta tres veces por semana. Su mayor problema es la desorientación dentro del estacionamiento (olvida la ubicación del vehículo) y la falta de métodos de pago prácticos cuando no cuenta con efectivo. [Se muestra muy interesado en las funciones de reserva de espacios con anticipación y en recibir notificaciones de seguridad en su smartphone para mayor tranquilidad durante su estancia.
+
+El video completo de las entrevistas puede ser visualizado en el siguiente link:
 
 ### 2.2.3. Análisis de entrevistas
 
-Las entrevistas se realizaron a un total de tres participantes del segmento de conductores en Lima Metropolitana. El objetivo fue entender sus contextos operativos, frustraciones actuales y validar hipótesis sobre la implementación de SpotFinder.
 
-**Segmento:** Conductores
-**Total entrevistados:** 3
-**Edades:** 21, 22 y 24 años
-**Distritos:** Surco, San Borja y Miraflores
-**Fechas:** Abril de 2026
-
-**Características objetivas**
-* Invierten entre 15 y 20 minutos en encontrar un espacio libre en horas punta: 3/3 (90%)
-* Han experimentado bajar a un nivel de estacionamiento solo para descubrir que está lleno: 3/3 (100%)
-* Utilizan frecuentemente aplicaciones de billetera digital (Yape/Plin) y navegación (Waze/Maps): 3/3 (100%)
-* Realizan el pago del estacionamiento de forma manual en cajas físicas: 3/3 (90%)
-
-**Características subjetivas**
-* Encuentran frustrante el tiempo perdido y la ineficiencia de los métodos de pago actuales: 3/3 (100%)
-* Valoran positivamente el guiado visual por luces LED para ubicar espacios rápidamente: 3/3 (100%)
-* Consideran que una aplicación con disponibilidad en tiempo real reduciría su estrés: 3/3 (100%)
-* Manifiestan haber olvidado la ubicación exacta de su vehículo en el estacionamiento: 2/3 (66%)
-* Interesados en la reserva anticipada de espacios para eventos o cine: 2/3 (66%)
-* Disposición total a adoptar la herramienta si garantiza ahorro de tiempo: 3/3 (100%)
-
-**Conclusión general**
-Este análisis refleja una clara necesidad de modernización en la gestión de estacionamientos. La coincidencia del 100% en la frustración por el tiempo de búsqueda y la disposición al uso de soluciones digitales confirma que SpotFinder ataca un punto de dolor crítico. La integración de hardware (LEDs) y software (App de pagos) es la combinación más valorada por los conductores.
 
 ## 2.3. Needfinding
 
