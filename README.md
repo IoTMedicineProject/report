@@ -248,7 +248,42 @@ Hemos identificado que esta deficiencia operativa tiene un impacto directo en tr
 ![Lean UX Canvas](./assets/lean-ux/LeanUX_canvas_v4.png)
 
 ## 1.3. Segmentos objetivo.
-[Contenido]
+
+En el desarrollo y despliegue de **SpotFinder**, hemos identificado dos grupos clave que se beneficiarán directamente de nuestra solución: los usuarios finales (conductores) y nuestros clientes corporativos (administradores).
+
+
+#### Primer segmento Objetivo: Conductores que visitan centros comerciales
+
+Los conductores constituyen el segmento principal de usuarios finales de SpotFinder. A nivel de infraestructura y adopción tecnológica, el mercado presenta un escenario ideal para la integración de la app:
+
+> **Datos clave del mercado:**
+> * Lima concentra aprox. **2.4 millones de vehículos** (68.6% del parque automotor nacional).
+> * El parque automotor creció un **40%** en la última década, frente a un crecimiento vial de solo el **7%** (IPE y AAP).
+> * El **93.2%** de los usuarios de internet en Lima Metropolitana accede a través de un smartphone (INEI, 2024).
+
+Esta alta penetración móvil y la popularidad de billeteras digitales (como Yape y Plin) refuerzan la viabilidad de nuestra solución y sus pagos integrados.
+
+##### Perfil del Usuario (Conductor)
+* **Edad:** 25 a 55 años (mayor proporción de propietarios de vehículos y visitantes frecuentes).
+* **Nivel Socioeconómico:** Segmentos A, B y C. *(Dato: El 70.1% del segmento A considera urgente incrementar la disponibilidad de estacionamientos).*
+* **Necesidad Principal:** Encontrar espacio rápidamente, pagos sin fricciones, localización exacta del vehículo al regresar y seguridad/confianza durante su visita.
+* **Adopción Tecnológica:** Alta familiaridad con apps de servicio (Yape, Rappi, Uber, Google Maps) y apertura hacia herramientas que simplifiquen su rutina diaria.
+
+#### Segundo segmento objetivo: Administradores de Estacionamientos 
+
+Este segmento engloba al personal operativo de los centros comerciales y a las empresas tercerizadas que gestionan la infraestructura. 
+
+Actualmente, gran parte de los operadores en Perú (como Apparka, que lidera el mercado con ~300 estacionamientos) aún dependen de modelos semi-manuales: personal de orientación, tickets físicos y reportería artesanal. SpotFinder busca digitalizar y optimizar estas operaciones.
+
+##### Perfil del Cliente (Administrador)
+* **Edad:** 30 a 55 años (Personal operativo y gerencial).
+* **Perfil Profesional:** Gerentes de operaciones, jefes de seguridad, coordinadores de mantenimiento y personal de TI. Formación técnica o universitaria en administración, ingeniería industrial o afines.
+* **Necesidad Principal:** * Visibilidad en tiempo real de la ocupación.
+  * Automatización del control de accesos.
+  * Reducción de costos operativos (personal de orientación).
+  * Generación de reportes analíticos para toma de decisiones.
+  * Cumplimiento de protocolos de seguridad y emergencia.
+* **Adopción Tecnológica:** Conocimiento intermedio/avanzado. Usuarios habituales de *dashboards*, ERPs y sistemas de gestión. Requieren interfaces visuales, intuitivas y accionables en web y tablets.
 
 ---
 
