@@ -309,18 +309,18 @@ Actualmente, gran parte de los operadores en Perú (como Apparka, que lidera el 
 ## Segmento Objetivo 1
 
 #### **Entrevista 1**
-| ![Perfil](./assets/images/interviews/user-icon.png) | **Datos Personales** |
+| Atributo | **Datos Personales** |
 | :--- | :--- |
 | **Nombres** | Maria Fernanda |
 | **Apellidos** | Esteban Román |
 | **Distrito** | Surco |
 | **Edad** | 21 años |
 | **Fecha de entrevista** | 11/04/2026 |
-| **Timing**              | 00:00 - 04:59 |
-| **Enlace** | [🔗 Ver grabación de la entrevista](#) |
+| **Timing**              | 00:00-03:05 |
+| **Enlace** | [🔗 Ver grabación de la entrevista](https://1drv.ms/v/c/e7943890401aebc7/IQCsVfJnUhn9RJWEkmDyCX2pAQnBlD9IkX-cMPJdZnQzPF0?e=uymIhe) |
 
 **Evidencia**
-![Captura de la entrevista 1](./assets/images/interviews/evidencia-1.png)
+![Captura de la entrevista 1](./assets/images/screenshots/seg1entrevista1.jpeg)
 
 **Resumen**
 Estudiante universitaria que visita centros comerciales como el Jockey Plaza dos veces por semana. Su principal frustración es la pérdida de tiempo (15-20 minutos) buscando estacionamiento y la falta de información real sobre la disponibilidad en los sótanos. Usuario activo de herramientas tecnológicas como Waze y Yape, considera que un sistema de guiado por luces LED y una app con disponibilidad en tiempo real serían determinantes para mejorar su experiencia y reducir el estrés.
@@ -328,18 +328,18 @@ Estudiante universitaria que visita centros comerciales como el Jockey Plaza dos
 ---
 
 #### **Entrevista 2**
-| ![Perfil](./assets/images/interviews/user-icon.png) | **Datos Personales** |
+|Atributo | **Datos Personales** |
 | :--- | :--- |
 | **Nombres** | Freddy Carlos |
 | **Apellidos** | Alvarez |
 | **Distrito** | Miraflores |
 | **Edad** | 22 años |
 | **Fecha de entrevista** | 11/04/2026 |
-| **Timing**              | 00:00 - 04:59 |
-| **Enlace** | [🔗 Ver grabación de la entrevista](#) |
+| **Timing**              | 03:05-05:38 |
+| **Enlace** | [🔗 Ver grabación de la entrevista](https://1drv.ms/v/c/e7943890401aebc7/IQCsVfJnUhn9RJWEkmDyCX2pAQnBlD9IkX-cMPJdZnQzPF0?e=uymIhe) |
 
 **Evidencia**
-![Captura de la entrevista 2](./assets/images/interviews/evidencia-2.png)
+![Captura de la entrevista 2](./assets/images/screenshots/seg1entrevista2.png)
   
 **Resumen**
 Usuario frecuente de estacionamientos en centros comerciales que prioriza la seguridad y la eficiencia en el pago. Reporta una alta frustración debido a las largas colas en los cajeros físicos y la dificultad de encontrar espacios en temporadas altas. Valora positivamente la automatización mediante el reconocimiento de placas vehiculares (ALPR) y la posibilidad de realizar pagos digitales a través de la app, lo cual considera una solución necesaria para modernizar el servicio actual.
@@ -347,18 +347,18 @@ Usuario frecuente de estacionamientos en centros comerciales que prioriza la seg
 ---
 
 #### **Entrevista 3**
-| ![Perfil](./assets/images/interviews/user-icon.png) | **Datos Personales** |
+| Atributo | **Datos Personales** |
 | :--- | :--- |
 | **Nombres** | Diego Ignacio |
 | **Apellidos** | Ricra Falla |
 | **Distrito** | San Borja |
 | **Edad** | 24 años |
 | **Fecha de entrevista** | 11/04/2026 |
-| **Timing**              | 00:00 - 04:59 |
-| **Enlace** | [🔗 Ver grabación de la entrevista](#) |
+| **Timing**              | 05:38-09:32|
+| **Enlace** | [🔗 Ver grabación de la entrevista](https://1drv.ms/v/c/e7943890401aebc7/IQCsVfJnUhn9RJWEkmDyCX2pAQnBlD9IkX-cMPJdZnQzPF0?e=uymIhe) |
 
 **Evidencia**
-![Captura de la entrevista 3](./assets/images/interviews/evidencia-3.png)
+![Captura de la entrevista 3](./assets/images/screenshots/seg1entrevista3.png)
 
 
 **Resumen**
@@ -376,8 +376,8 @@ Estudiante  joven que utiliza el vehículo para movilizarse a reuniones y recado
 | **Distrito**            | Surquillo |
 | **Ocupación**           | Administrador de estacionamiento (Mall Plaza Angamos) |
 | **Fecha de entrevista** | 11/04/2026 |
-| **Timing**              | 00:00 - 04:59 |
-| **Video**               | [Ver entrevista](#) |
+| **Timing**              | 09:32-12:51|
+| **Video**               | [Ver entrevista](https://1drv.ms/v/c/e7943890401aebc7/IQCsVfJnUhn9RJWEkmDyCX2pAQnBlD9IkX-cMPJdZnQzPF0?e=uymIhe) |
 | **Captura**             | ![Captura entrevista 1](./assets/images/screenshots/seg2entrevista1.png) |
 | **Resumen**             | Fabian gestiona un estacionamiento de aproximadamente 850 espacios distribuidos en 5 niveles. Actualmente, la operación depende en gran medida de procesos manuales y herramientas básicas como Excel y sistemas de tickets, lo que limita la precisión y visibilidad en tiempo real. Enfrenta problemas de congestión en horas pico, dificultad de los usuarios para encontrar espacios y dependencia del personal para orientar el tráfico. No cuenta con analítica avanzada ni reportes automatizados. El sistema de cobro es parcialmente eficiente, pero presenta demoras. Considera valioso implementar soluciones como dashboards en tiempo real, guiado con LEDs, reconocimiento de placas (ALPR) y sistemas de seguridad automatizados. Está dispuesto a invertir si se demuestra un retorno claro. |
 
@@ -393,8 +393,8 @@ Estudiante  joven que utiliza el vehículo para movilizarse a reuniones y recado
 | **Distrito**            | Yanahuara, Arequipa |
 | **Ocupación**           | Administradora de Operaciones de Estacionamiento |
 | **Fecha de entrevista** | 9/04/2026 |
-| **Timing**              | 00:00 - 05:00 |
-| **Video**               | [Ver entrevista](#) |
+| **Timing**              | 12:51	19:36|
+| **Video**               | [Ver entrevista](https://1drv.ms/v/c/e7943890401aebc7/IQCsVfJnUhn9RJWEkmDyCX2pAQnBlD9IkX-cMPJdZnQzPF0?e=uymIhe) |
 | **Captura**             | ![Captura entrevista 2](./assets/images/screenshots/seg2entrevista2.png) |
 | **Resumen**             | Administradora con aproximadamente 7 a 8 años de experiencia en la gestión de estacionamientos. Supervisa operaciones en espacios que superan los mil estacionamientos distribuidos en varios niveles. Actualmente, la gestión es mixta: cuenta con sistemas de conteo en entradas y salidas, pero el control interno sigue siendo mayormente manual, lo que limita la visibilidad en tiempo real por zonas específicas.\n\nEnfrenta problemas frecuentes como congestión en horas pico, dificultad de los conductores para encontrar espacios, desorden en momentos de alta demanda y reclamos constantes de los usuarios. No cuenta con estadísticas detalladas ni herramientas avanzadas de análisis, lo que dificulta la toma de decisiones.\n\nEl proceso de cobro se realiza mediante tickets físicos, generando colas y demoras en horas de alta afluencia. En situaciones de emergencia, la evacuación depende principalmente del personal, ya que no existe un sistema automatizado de guía.\n\nConsidera muy valiosas soluciones tecnológicas como dashboards en tiempo real, reportes automáticos, guiado visual con LEDs y reconocimiento de placas (ALPR), destacando especialmente su impacto en la eficiencia operativa y experiencia del cliente. Está dispuesta a implementar una solución IoT siempre que se demuestre un retorno claro, con un presupuesto estimado entre 20,000 y 50,000 dólares. |
 
@@ -410,8 +410,8 @@ Estudiante  joven que utiliza el vehículo para movilizarse a reuniones y recado
 | **Distrito**            |  |
 | **Ocupación**           |  |
 | **Fecha de entrevista** |  |
-| **Timing**              |  |
-| **Video**               | [Ver entrevista](#) |
+| **Timing**              | 19:36-22:56 |
+| **Video**               | [Ver entrevista](https://1drv.ms/v/c/e7943890401aebc7/IQCsVfJnUhn9RJWEkmDyCX2pAQnBlD9IkX-cMPJdZnQzPF0?e=uymIhe) |
 | **Captura**             | ![Captura entrevista 3](./assets/images/screenshots/interview-admin3.png) |
 | **Resumen**             | [Completar resumen de la entrevista] |
 
