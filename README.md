@@ -302,54 +302,49 @@ Hemos identificado que esta deficiencia operativa tiene un impacto directo en tr
 
 ---
 
-# Capítulo IV: Product Design
+# Capítulo IV: Solution Software Design
 
-## 4.1. Style Guidelines.
-### 4.1.1. General Style Guidelines.
+## 4.1. Strategic-Level Domain-Driven Design.
 
-### 4.1.2. Web Style Guidelines.
+### 4.1.1. Design-Level EventStorming.
 
-## 4.2. Information Architecture.
-### 4.2.1. Organization Systems.
+#### 4.1.1.1 Candidate Context Discovery.
 
-### 4.2.2. Labeling Systems.
+#### 4.1.1.2 Domain Message Flows Modeling.
 
-### 4.2.3. SEO Tags and Meta Tags
+#### 4.1.1.3 Bounded Context Canvases.
 
-### 4.2.4. Searching Systems.
+### 4.1.2. Context Mapping.
 
-### 4.2.5. Navigation Systems.
+### 4.1.3. Software Architecture.
+#### 4.1.3.1. Software Architecture System Landscape Diagram.
 
-## 4.3. Landing Page UI Design.
-### 4.3.1. Landing Page Wireframe.
+#### 4.1.3.2. Software Architecture Context Level Diagrams.
 
-### 4.3.2. Landing Page Mock-up.
+#### 4.1.3.3. Software Architecture Container Level Diagrams.
 
-## 4.4. Web Applications UX/UI Design.
-### 4.4.1. Web Applications Wireframes.
+#### 4.1.3.4. Software Architecture Deployment Diagrams.
 
-### 4.4.2. Web Applications Wireflow Diagrams.
+## 4.2. Tactical-Level Domain-Driven Design
 
-### 4.4.2. Web Applications Mock-ups.
+### 4.2.X. Bounded Context: <Bounded Context Name>
 
-### 4.4.3. Web Applications User Flow Diagrams.
+#### 4.2.X.1. Domain Layer.
 
-## 4.5. Web Applications Prototyping.
+#### 4.2.X.2. Interface Layer.
 
-## 4.6. Domain-Driven Software Architecture.
-### 4.6.1. Design-Level Event Storming.
+#### 4.2.X.3. Application Layer.
 
-### 4.6.2. Software Architecture Context Diagram.
+#### 4.2.X.4. Infrastructure Layer.
 
-### 4.6.3. Software Architecture Container Diagrams.
+#### 4.2.X.5. Bounded Context Software Architecture Component Level Diagrams.
 
-### 4.6.4. Software Architecture Components Diagrams.
+#### 4.2.X.6. Bounded Context Software Architecture Code Level Diagrams.
 
-## 4.7. Software Object-Oriented Design.
-### 4.7.1. Class Diagrams.
+##### 4.2.X.6.1. Bounded Context Domain Layer Class Diagrams.
 
-## 4.8. Database Design.
-### 4.8.1. Database Diagrams.
+##### 4.2.X.6.2. Bounded Context Database Design Diagram.
+
 
 ---
 
