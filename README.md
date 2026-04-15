@@ -662,7 +662,10 @@ Finalmente, se delimitaron los bounded contexts a partir de los eventos, agregad
 | Notification Handling | Gestión de notificaciones   | Proceso de envío y recepción de alertas dentro del sistema.               |
 | Payment Processing | Procesamiento de pagos         | Gestión de transacciones digitales realizadas por los usuarios.           |
 | Service Management | Gestión de servicios           | Proceso de solicitud y ejecución de servicios adicionales.                |
-
+|Push Notification | Notificación push           | Mensaje enviado al dispositivo móvil del conductor a través de Firebase Cloud Messaging para informar sobre eventos del sistema                |
+|Notification Channel | Canal de notificación          | Medio por el cual se envía una notificación: push (FCM), email, o in-app.                |
+| Notification Template | Plantilla de notificación           | PFormato predefinido de mensaje para cada tipo de evento.                |
+| Notification Preference| Preferencia de notificación          | Proceso de solicitud y ejecución de servicios adicionales.                |
 ---
 
 # Capítulo III: Requirements Specification
