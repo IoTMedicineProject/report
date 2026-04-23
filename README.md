@@ -297,13 +297,71 @@ Actualmente, gran parte de los operadores en Perú (como Apparka, que lidera el 
 [Contenido]
 
 ## 2.2. Entrevistas.
+En esta sección se aborda la investigación cualitativa realizada mediante entrevistas a representantes de los dos segmentos objetivo del proyecto: conductores que visitan centros comerciales y administradores de estacionamientos. El objetivo es comprender las herramientas, procesos y problemáticas actuales en la gestión de estacionamientos, así como validar las funcionalidades propuestas para SpotFinder.
 ### 2.2.1. Diseño de entrevistas.
-[Contenido]
+Para diseñar las entrevistas, se elaboraron dos bloques de preguntas diferenciados según el segmento objetivo. Las preguntas buscan obtener tanto información objetiva (frecuencia de uso, herramientas actuales, tiempos) como información subjetiva (percepciones, frustraciones y expectativas). Se incluyen también preguntas para recolectar datos demográficos necesarios para construir los **User Personas**.
 
-### 2.2.2. Registro de entrevistas
+---
 
-## Segmento Objetivo 1
+### Segmento 1: Conductores que visitan centros comerciales
 
+#### **Datos demográficos (para construcción de arquetipos)**
+* ¿Cuál es su nombre, edad y distrito de residencia?
+* ¿A qué se dedica profesionalmente?
+* ¿Qué tipo de vehículo conduce (auto, camioneta, moto)?
+* ¿Qué marca de smartphone utiliza? ¿Con qué sistema operativo (Android/iOS)?
+* ¿Qué aplicaciones de servicio usa frecuentemente en su día a día (Yape, Rappi, Uber, Waze, Google Maps, etc.)?
+
+#### **Preguntas sobre la problemática**
+* ¿Con qué frecuencia visita centros comerciales en Lima? ¿Cuáles visita más a menudo?
+* Cuando va a un centro comercial, ¿cuánto tiempo aproximado le toma encontrar un espacio de estacionamiento?
+* ¿Ha experimentado situaciones donde baje a un nivel del estacionamiento solo para descubrir que está lleno? ¿Con qué frecuencia le ocurre?
+* ¿Cómo decide en qué zona o nivel del estacionamiento buscar? ¿Sigue alguna estrategia o es aleatorio?
+* ¿Alguna vez ha olvidado dónde estacionó su auto dentro de un centro comercial? ¿Cómo lo resolvió?
+* ¿Cómo paga actualmente el estacionamiento? ¿Usa ticket físico, app, efectivo? ¿Qué tan satisfecho está con ese proceso?
+* ¿Ha tenido algún incidente de seguridad con su vehículo en un estacionamiento (robo de accesorios, rayones, etc.)?
+* ¿Qué es lo que más le frustra de la experiencia de estacionamiento en centros comerciales?
+* En una escala del 1 al 10, ¿qué tan satisfecho está con la experiencia actual de estacionamiento en los centros comerciales que visita?
+
+#### **Preguntas sobre la solución**
+* Si existiera una app que le mostrara en tiempo real los espacios disponibles por zona y nivel antes de entrar al estacionamiento, ¿la usaría? ¿Qué tan útil le parece?
+* ¿Qué tan valioso sería para usted que luces LED (verde/rojo) sobre cada espacio le indicaran visualmente dónde hay lugares libres?
+* ¿Le interesaría poder reservar un espacio de estacionamiento con anticipación desde su celular?
+* Si pudiera pagar el estacionamiento directamente desde su celular con Yape o tarjeta, sin hacer cola en una cabina, ¿lo haría?
+* ¿Qué tan importante sería recibir una notificación si se detecta algún movimiento inusual cerca de su vehículo?
+* ¿Qué funcionalidad le parecería más valiosa: ver disponibilidad en tiempo real, reservar espacio, pagar desde el celular o localizar su auto al regresar?
+* ¿Estaría dispuesto a descargar y usar una nueva app si mejora significativamente su experiencia de estacionamiento?
+
+---
+
+### Segmento 2: Administradores de estacionamientos de centros comerciales
+
+#### **Datos demográficos (para construcción de arquetipos)**
+* ¿Cuál es su nombre, edad y cargo actual?
+* ¿Cuántos años de experiencia tiene en la gestión de estacionamientos o en operaciones de centros comerciales?
+* ¿Cuántos espacios de estacionamiento gestiona actualmente? ¿Cuántos niveles tiene el estacionamiento?
+* ¿Qué herramientas digitales utiliza en su trabajo diario (Excel, software de gestión, email, etc.)?
+
+#### **Preguntas sobre la problemática**
+* ¿Cómo gestionan actualmente la ocupación del estacionamiento? ¿Utilizan algún sistema automatizado o es manual?
+* ¿Tienen visibilidad en tiempo real de cuántos espacios están ocupados y cuántos libres? ¿A nivel general o por zona/nivel?
+* ¿Cuántas personas de su equipo se dedican a orientar el tráfico vehicular dentro del estacionamiento?
+* ¿Qué problemas enfrentan con más frecuencia en la gestión diaria del estacionamiento?
+* ¿Tienen acceso a estadísticas de uso como tasa de ocupación, rotación de espacios, horas punta o ingresos por espacio?
+* ¿Cómo manejan el proceso de cobro actualmente? ¿Qué tan eficiente es?
+* ¿Han tenido situaciones de emergencia (sismo, incendio, fuga de gas) en el estacionamiento? ¿Cómo fue la evacuación? ¿Qué protocolos tienen?
+* ¿Cuáles son los principales costos operativos asociados al estacionamiento?
+* ¿Han recibido quejas de clientes respecto a la experiencia de estacionamiento? ¿Cuáles son las más frecuentes?
+
+#### **Preguntas sobre la solución**
+* ¿Qué tan valioso sería para ustedes contar con un dashboard que muestre la ocupación en tiempo real de cada espacio del estacionamiento?
+* ¿Les interesaría un sistema que genere reportes automáticos de ocupación, rotación e ingresos?
+* ¿Considerarían implementar un sistema de guiado visual con LEDs que dirija a los conductores hacia espacios disponibles?
+* ¿Qué tan importante es para ustedes que el sistema de control de acceso reconozca automáticamente las placas vehiculares?
+* Si un sistema pudiera detectar gases o humo y activar automáticamente protocolos de emergencia (abrir barreras, cambiar LEDs a modo evacuación), ¿lo considerarían un valor agregado significativo?
+* ¿Qué funcionalidad priorizarían: detección de disponibilidad por espacio, ALPR en barreras, pago digital, analytics o seguridad?
+* ¿Estarían dispuestos a implementar una solución IoT si se demuestra un retorno de inversión medible en reducción de costos y mejora de satisfacción del cliente?
+* ¿Qué presupuesto aproximado manejan o manejarían para modernizar el sistema de estacionamiento?
 ### 2.2.2. Registro de entrevistas
 
 ## Segmento Objetivo 1
@@ -407,9 +465,9 @@ Estudiante  joven que utiliza el vehículo para movilizarse a reuniones y recado
 | **Nombre**              | Carlos Ramírez |
 | **Edad**                | 42 |
 | **Sexo**                | Masculino |
-| **Distrito**            | [ Surco ] |
+| **Distrito**            |  Surco  |
 | **Ocupación**           | Jefe de Operaciones de Estacionamiento |
-| **Fecha de entrevista** | [ 12/04/2026 ] |
+| **Fecha de entrevista** |  12/04/2026  |
 | **Timing**              | 19:36-22:56 |
 | **Video**               | [Ver entrevista]() |
 | **Captura**             | ![Captura entrevista 3](./assets/images/screenshots/seg2entrevista3.png) |
@@ -417,11 +475,113 @@ Estudiante  joven que utiliza el vehículo para movilizarse a reuniones y recado
 
 ---
 
-El video completo de las entrevistas puede ser visualizado en el siguiente link:
 
 ### 2.2.3. Análisis de entrevistas
 
+Se realizaron un total de **6 entrevistas** distribuidas entre los dos segmentos objetivo del proyecto: 3 entrevistas a conductores que visitan centros comerciales (Segmento 1) y 3 entrevistas a administradores de estacionamientos (Segmento 2). Las entrevistas se llevaron a cabo entre el 9 y 12 de abril de 2026, utilizando el diseño de preguntas definido en la sección 2.2.1.
 
+## Segmento 1: Conductores que visitan centros comerciales
+
+### Perfil demográfico
+
+Los tres entrevistados son jóvenes entre 21 y 24 años, residentes de distritos de Lima con alta densidad de centros comerciales (Surco, Miraflores, San Borja). Son estudiantes universitarios con uso intensivo de tecnología móvil. Utilizan aplicaciones de servicio como Yape, Waze y Google Maps de forma cotidiana, lo que indica una alta predisposición a adoptar nuevas herramientas digitales para resolver problemas de movilidad.
+ 
+### Hallazgos sobre la problemática
+ 
+**Tiempo de búsqueda de estacionamiento:** Los tres entrevistados coinciden en que la búsqueda de estacionamiento representa una fuente significativa de frustración. María Fernanda reporta entre 15 y 20 minutos de búsqueda en el Jockey Plaza, mientras que Diego Ignacio indica que visita centros comerciales hasta tres veces por semana y frecuentemente baja a niveles de estacionamiento solo para encontrarlos llenos. Esto confirma el dato estadístico citado en el Capítulo I sobre los conductores limeños perdiendo en promedio 5 horas semanales buscando estacionamiento.
+ 
+**Desorientación dentro del estacionamiento:** Diego Ignacio destacó como problema principal que olvida dónde estacionó su vehículo y no tiene herramientas para localizarlo. Este hallazgo valida directamente la funcionalidad "Find My Car" (US07) como un diferenciador de alto valor percibido para los conductores.
+ 
+**Métodos de pago insatisfactorios:** Freddy Alvarez expresó una alta frustración con las largas colas en los cajeros físicos de pago y la dificultad cuando no cuenta con efectivo. Este dolor confirma la necesidad del pago digital integrado (US05) como funcionalidad core. La familiaridad de los tres entrevistados con Yape refuerza la decisión de integrar Culqi como pasarela de pagos con soporte para Yape.
+ 
+**Seguridad vehicular:** Freddy Alvarez prioriza la seguridad del vehículo y valora la trazabilidad que ofrece el reconocimiento de placas (ALPR). Aunque ninguno reportó incidentes graves, la preocupación por la seguridad es un tema recurrente que justifica las notificaciones de eventos del vehículo (US10).
+ 
+### Hallazgos sobre la solución propuesta
+ 
+**Funcionalidades más valoradas (por orden de mención):**
+ 
+1. **Disponibilidad en tiempo real** — Los tres entrevistados la consideran la funcionalidad más valiosa. María Fernanda indicó que un mapa en tiempo real con LEDs sería "determinante" para mejorar su experiencia.
+2. **Pago digital** — Freddy Alvarez lo considera una "solución necesaria para modernizar el servicio actual". Los tres están dispuestos a pagar desde el celular si esto elimina las colas.
+3. **Reserva de espacios** — Diego Ignacio mostró alto interés en poder reservar con anticipación, especialmente en temporadas de alta demanda. Esta funcionalidad está vinculada al plan Pro (S/ 9.90/mes).
+4. **Localización del vehículo (Find My Car)** — Diego Ignacio la señaló como una necesidad directa basada en su experiencia de desorientación.
+5. **Notificaciones de seguridad** — Valorada por los tres pero no como primera prioridad. Diego Ignacio mencionó que le daría "mayor tranquilidad durante su estancia".
+**Disposición a adoptar la app:** Los tres entrevistados indicaron que descargarían y usarían una nueva app si mejora significativamente su experiencia de estacionamiento, confirmando la viabilidad de la adopción del producto.
+ 
+### Hallazgos clave para el diseño
+ 
+Los conductores priorizan la inmediatez y la simplicidad. La interfaz debe mostrar la disponibilidad de forma clara y rápida, con mínima interacción necesaria (pantallas grandes, acciones en máximo 2 taps). La integración con Yape es crítica para la adopción en el mercado peruano. La funcionalidad de LEDs (verde/rojo) fue mencionada positivamente por María Fernanda como un complemento visual que reduce la incertidumbre sin depender del celular.
+ 
+---
+ 
+## Segmento 2: Administradores de estacionamientos
+ 
+### Perfil demográfico
+ 
+Los tres entrevistados tienen perfiles profesionales complementarios: Fabián Oliva (26 años, administrador en Mall Plaza Angamos), Nicole Requena (28 años, administradora de operaciones con 7-8 años de experiencia en Arequipa) y Carlos Ramírez (42 años, jefe de operaciones con 12 años de experiencia en Surco). Entre los tres gestionan estacionamientos de entre 850 y más de 1,000 espacios distribuidos en 3 a 5 niveles, lo que representa el perfil exacto de centros comerciales medianos y grandes que SpotFinder busca atender.
+ 
+### Hallazgos sobre la problemática
+ 
+**Gestión predominantemente manual:** Los tres entrevistados reportan una dependencia significativa de procesos manuales. Fabián utiliza Excel y sistemas de tickets, Nicole cuenta con sensores en accesos pero sin visibilidad interna por zonas, y Carlos usa tickets físicos y cajeros automáticos. Ninguno tiene detección de disponibilidad a nivel de espacio individual, confirmando el gap de mercado identificado en el análisis competitivo.
+ 
+**Falta de visibilidad en tiempo real:** Los tres coinciden en que no tienen acceso a información en tiempo real sobre la ocupación por zona o nivel dentro del estacionamiento. Nicole mencionó que el control interno es "mayormente manual", lo que limita la toma de decisiones operativas. Carlos indicó que depende de 4 a 6 personas en horas punta solo para orientar el tráfico vehicular, representando un costo operativo significativo.
+ 
+**Congestión en horas pico:** Es el problema más citado por los tres administradores. La falta de guiado inteligente genera cuellos de botella en rampas y accesos. Carlos reportó "mala distribución del flujo vehicular" como una queja frecuente de los usuarios.
+ 
+**Ausencia de analítica:** Ninguno de los tres tiene acceso a estadísticas detalladas de ocupación, rotación o ingresos por espacio. Fabián indicó que no cuenta con "analítica avanzada ni reportes automatizados". Esta carencia valida el bounded context de Analytics & Reporting y las user stories US12 y US13.
+ 
+**Cobro ineficiente:** Los tres reportan que el sistema de cobro basado en tickets físicos genera colas y demoras, especialmente en horas de alta afluencia. Nicole mencionó que las "colas y demoras en horas de alta afluencia" son un reclamo constante de los usuarios.
+ 
+**Protocolos de emergencia manuales:** Los tres indican que la evacuación en emergencias depende exclusivamente del personal humano, sin sistemas automatizados de apoyo. Este hallazgo valida directamente el bounded context de Emergency & Safety (US14) como diferenciador competitivo, ya que ningún competidor ofrece esta funcionalidad.
+ 
+### Hallazgos sobre la solución propuesta
+ 
+**Funcionalidades priorizadas (por orden de valoración):**
+ 
+1. **Dashboard en tiempo real** — Valorado como "muy valioso" por los tres administradores. La capacidad de ver la ocupación de cada espacio en tiempo real transformaría su capacidad operativa.
+2. **Reconocimiento de placas (ALPR)** — Carlos lo priorizó especialmente para automatizar ingreso y salida, eliminando tickets físicos y reduciendo colas. Nicole también lo destacó por su impacto en la eficiencia operativa.
+3. **Guiado visual con LEDs** — Los tres lo consideran un complemento valioso que reduciría la necesidad de personal de orientación (actualmente 4-6 personas en horas punta).
+4. **Reportes automáticos** — Valorados por su impacto en la toma de decisiones. Fabián mencionó que actualmente no tiene forma de generar reportes de ocupación o ingresos de forma automatizada.
+5. **Detección de gases/humo** — Carlos lo consideró "relevante" y Nicole lo destacó por su potencial de salvar vidas. Los tres lo ven como un valor agregado significativo diferenciador.
+**Presupuesto y disposición a invertir:** Nicole y Carlos coinciden en un presupuesto estimado de USD 20,000 a 50,000 para modernizar sus estacionamientos, condicionado a demostrar un retorno de inversión claro. Fabián indicó que "está dispuesto a invertir si se demuestra un retorno claro". Esto valida la viabilidad económica del modelo B2B de SpotFinder y sugiere que el modelo de implementación progresiva (zona piloto) es la estrategia correcta para reducir la barrera de entrada.
+ 
+### Hallazgos clave para el diseño
+ 
+Los administradores necesitan un dashboard visualmente claro, con métricas accionables y alertas automáticas. La interfaz debe priorizar la visión general del estacionamiento con drill-down por zona/nivel. Los reportes deben ser exportables en PDF para presentar a gerencia. La implementación debe poder hacerse de forma progresiva (empezar con una zona piloto de 50-100 espacios) para demostrar ROI antes de escalar.
+ 
+---
+ 
+## Análisis cruzado: Patrones y convergencias entre segmentos
+ 
+### Convergencias identificadas
+ 
+1. **La frustración con la búsqueda de estacionamiento es universal.** Tanto conductores como administradores reconocen el problema: los conductores lo sufren directamente (15-20 min de búsqueda) y los administradores lo enfrentan como reclamos constantes y congestión operativa.
+2. **El pago digital es una necesidad compartida.** Los conductores quieren eliminar colas y los administradores quieren agilizar el proceso de salida. La integración con Yape es el puente natural para el mercado peruano.
+3. **La seguridad es un diferenciador clave.** Tanto conductores (tranquilidad sobre su vehículo) como administradores (protocolos de emergencia automatizados) valoran las funcionalidades de seguridad. El sistema de detección de gas/humo con evacuación automática no tiene equivalente en el mercado peruano.
+4. **La información en tiempo real es el core del valor.** Los conductores quieren ver espacios disponibles antes de bajar a un nivel. Los administradores quieren ver la ocupación completa desde su oficina. Ambos necesitan que los datos se actualicen en menos de 3 segundos.
+### Validación de hipótesis del Lean UX
+ 
+| Hipótesis | Validación por entrevistas |
+|---|---|
+| H1: 60% de conductores usarán la app activamente | **Validada.** Los 3 conductores indicaron disposición a descargar y usar la app. La familiaridad con apps como Yape y Waze facilita la adopción. |
+| H2: ALPR reducirá tiempo de procesamiento en barrera de 30-45s a < 5s | **Validada indirectamente.** Los administradores confirman que los tickets físicos generan demoras significativas y priorizan el ALPR como solución. |
+| H3: LEDs reducirán congestión interna en 40% | **Validada cualitativamente.** Los 3 administradores confirman que la falta de guiado genera congestión. María Fernanda (conductora) calificó los LEDs como "determinantes". |
+| H4: 80% de administradores consultarán el dashboard diariamente | **Validada.** Los 3 administradores lo consideran "muy valioso" y actualmente carecen de herramientas equivalentes. |
+| H5: 50% de pagos serán digitales en 3 meses | **Validada parcialmente.** Los conductores muestran alta disposición pero la adopción dependerá de la facilidad de uso y la integración con Yape. |
+ 
+### Funcionalidades no consideradas inicialmente (descubiertas en entrevistas)
+ 
+1. **Indicadores de zonas llenas antes de bajar al nivel** — María Fernanda mencionó la frustración de bajar a un nivel solo para encontrarlo lleno. Esto refuerza la necesidad de mostrar la disponibilidad por nivel/zona en la app antes de que el conductor tome la decisión de bajar.
+2. **Reducción medible de personal de orientación** — Carlos mencionó que emplea 4-6 personas solo para orientar tráfico. El guiado con LEDs podría reducir este personal a 1-2 personas, generando un ROI directo y cuantificable para la presentación comercial.
+3. **Integración con protocolos de emergencia existentes** — Nicole mencionó que la evacuación depende del personal actual. El sistema de emergencia debería complementar (no reemplazar) los protocolos existentes del centro comercial.
+
+## Conclusiones del análisis
+ 
+Las entrevistas confirman que SpotFinder aborda un problema real y reconocido por ambos segmentos objetivo. Los conductores valoran principalmente la reducción del tiempo de búsqueda y el pago digital, mientras que los administradores priorizan la visibilidad en tiempo real y la automatización de procesos manuales.
+ 
+El modelo de negocio B2B con presupuestos de USD 20,000-50,000 es viable según las entrevistas con administradores. La estrategia de implementación progresiva (zona piloto) se confirma como el enfoque correcto para superar la resistencia al cambio.
+ 
+El diferenciador competitivo más fuerte de SpotFinder, validado por ambos segmentos, es la combinación de detección por espacio individual con guiado visual LED, ALPR para entrada/salida sin tickets, y detección de emergencias con protocolo automatizado. Ningún competidor en el mercado peruano ofrece esta integración completa.
+ 
 
 ## 2.3. Needfinding
 
