@@ -316,13 +316,41 @@ Actualmente, gran parte de los operadores en Perú (como Apparka, que lidera el 
 | **Oportunidades** | Mercado peruano sin solución IoT integral accesible. Creciente interés de centros comerciales en modernización. Alianzas con operadores como Apparka. Datos de BCR/IPE justifican inversión en smart parking. | Expansión tecnológica hacia detección por espacio. Integración con sistemas IoT de terceros. Expansión internacional (ya inició en Ecuador). | Entrada al mercado peruano vía partners locales. Modelo SaaS para mercados emergentes. Integración con apps locales de pago. | Expansión a estacionamientos comerciales. Alianza con centros comerciales para ofrecer cocheras cercanas como alternativa. |
 | **Amenazas** | Entrada de ParkHelp u otros players globales al mercado peruano. Que Apparka desarrolle su propia solución IoT integral. Resistencia al cambio de operadores tradicionales. | Competencia de startups tecnológicas con soluciones IoT más avanzadas. Disrución por modelos peer-to-peer como Quadra. | Competidores locales con soluciones más baratas y adaptadas. Barreras arancelarias para hardware importado. | Regulación de estacionamientos informales. Desconfianza de usuarios en dejar su auto en cocheras privadas. |
 
-### 2.1.2. Estrategias y tácticas frente a competidores.
-[Contenido]
+### 2.1.2. Estrategias y tácticas frente a competidores
+
+Para competir eficazmente en el mercado de soluciones de gestión inteligente de estacionamientos, ParkSense aplicará las siguientes estrategias y tácticas preliminares:
+
+#### **1. Diferenciación por integración IoT completa a bajo costo**
+* **Estrategia:** Posicionar a SpotFinder como la única solución en el mercado peruano que ofrece detección por espacio individual con guiado visual LED, ALPR y analytics en un solo paquete accesible, frente a Apparka (que no tiene detección por espacio) y ParkHelp (cuyo costo es prohibitivo para el mercado local).
+* **Tácticas:**  Desarrollar un prototipo funcional con componentes de bajo costo que demuestre ROI medible. 
+    * Ofrecer implementación progresiva comenzando con una zona piloto de 50-100 espacios para reducir la barrera de entrada.
+
+#### **2. Alianzas estratégicas con operadores existentes**
+* **Estrategia:** En lugar de competir directamente con Apparka por la operación de estacionamientos, posicionar a SpotFinder como un complemento tecnológico que potencia la oferta del operador existente.
+* **Tácticas:**  Proponer integraciones API con el ecosistema de Apparka. 
+    * Demostrar cómo la detección por espacio individual puede mejorar la experiencia "En Una" de Apparka añadiendo guiado visual hacia el espacio específico. 
+    * Ofrecer un modelo *white-label* para que operadores comercialicen la solución bajo su propia marca.
+
+#### **3. Experiencia del conductor como ventaja competitiva**
+* **Estrategia:** Aprovechar que ParkHelp no ofrece una app *consumer-facing* y que la app de Apparka tiene reportes de crashes, para posicionar SpotFinder como la app de estacionamiento con la mejor experiencia de usuario para conductores en Lima.
+* **Tácticas:**  Diseñar la app con UX enfocada en contexto de conducción (pantallas grandes, acciones mínimas, modo mapa). 
+    * Integrar con Yape y Culqi (que Apparka no ofrece como método de pago nativo). 
+    * Implementar función "Encuentra tu auto" con ubicación exacta del espacio.
+
+#### **4. Modelo de datos como diferenciador frente a Quadra**
+* **Estrategia:** Mientras Quadra resuelve el problema de estacionamiento público en calles con un modelo *peer-to-peer*, **SpotFinder** se diferencia atacando el segmento de centros comerciales con inteligencia basada en datos IoT de sensores propios.
+* **Tácticas:** * Ofrecer dashboard con métricas que Quadra no puede proveer (tasa de rotación por espacio, heatmaps de ocupación, predicción de demanda). 
+    * Generar reportes de impacto ambiental (CO₂ ahorrado por reducción de tiempo de búsqueda) como argumento de responsabilidad social para centros comerciales.
+
+#### **5. Seguridad y respuesta a emergencias como valor agregado**
+* **Estrategia:** Ninguno de los tres competidores ofrece detección de gases/humo integrada al sistema de estacionamiento. Esta funcionalidad diferenciadora responde a una preocupación real de los centros comerciales.
+* **Tácticas:** * Implementar sensores MQ-2 conectados al mismo ecosistema IoT. 
+    * Configurar protocolos automatizados: alerta a administradores, activación de señalización de evacuación vía LEDs, apertura automática de barreras.
 
 ## 2.2. Entrevistas.
 En esta sección se aborda la investigación cualitativa realizada mediante entrevistas a representantes de los dos segmentos objetivo del proyecto: conductores que visitan centros comerciales y administradores de estacionamientos. El objetivo es comprender las herramientas, procesos y problemáticas actuales en la gestión de estacionamientos, así como validar las funcionalidades propuestas para SpotFinder.
 ### 2.2.1. Diseño de entrevistas.
-Para diseñar las entrevistas, se elaboraron dos bloques de preguntas diferenciados según el segmento objetivo. Las preguntas buscan obtener tanto información objetiva (frecuencia de uso, herramientas actuales, tiempos) como información subjetiva (percepciones, frustraciones y expectativas). Se incluyen también preguntas para recolectar datos demográficos necesarios para construir los **User Personas**.
+Para diseñar las entrevistas, se elaboraron dos bloques de preguntas diferenciados según el segmento objetivo. Las preguntas buscan obtener tanto información objetiva (frecuencia de uso, herramientas actuales, tiempos) como información subjetiva (percepciones, frustraciones y expectativas). Se incluyen también preguntas para recolectar datos demográficos necesarios para construir los User Personas.
 
 ---
 
