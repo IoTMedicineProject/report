@@ -2819,6 +2819,374 @@ En esta sección se presentan los diagramas de nivel componente que ilustran la 
 
 > **Diagrama a crear en Vertabelo:**
 
+## 4.2.7. Bounded Context: Identity & Access Management
+
+Este bounded context gestiona la identidad y los accesos de todos los usuarios del sistema. Provee registro y autenticación de usuarios mediante JWT, gestión de contraseñas, asignación de roles (ADMIN, CAR_OWNER) y gestión de perfiles. Es un bounded context Generic ya que la autenticación no es específica del dominio de estacionamiento y podría resolverse con soluciones estándar, pero se implementa de forma personalizada para adaptarse a los requisitos específicos de SpotFinder (registro con placa vehicular, roles de conductor y administrador). Este bounded context ya se encuentra implementado en el código del proyecto.
+
+### 4.2.7.1. Domain Layer
+
+En esta sección se describen los elementos del Domain Layer del contexto de IAM, que encapsulan las reglas y lógica del dominio relacionadas con la gestión de identidades y accesos.
+
+#### 1. User (Aggregate Root)
+
+Representa al usuario del sistema con sus credenciales, estado y roles asignados. Es la entidad central del bounded context.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Long | private | Identificador único del usuario (autogenerado). |
+| email | String | private | Correo electrónico del usuario (único en el sistema). |
+| passwordHash | String | private | Contraseña hasheada con BCrypt. |
+| firstName | String | private | Nombre del usuario. |
+| lastName | String | private | Apellido del usuario. |
+| isVerified | boolean | private | Indica si el usuario ha verificado su cuenta por email. |
+| active | Boolean | private | Indica si la cuenta está activa (true por defecto). |
+| roles | List\<Role> | private | Lista de roles asignados al usuario (relación ManyToMany). |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| User() | Constructor | protected | Constructor protegido para JPA. Inicializa roles como lista vacía. |
+| User(String email, String passwordHash, String firstName, String lastName, boolean isVerified) | Constructor | public | Crea un usuario con sus datos de autenticación. Inicializa roles vacíos y active=true. |
+| addRole(Role role) | void | public | Agrega un rol al usuario si no lo tiene ya asignado. Valida que role no sea null. |
+| getFullName() | String | public | Retorna el nombre completo formateado como "firstName lastName". |
+
+#### 2. Role (Entity)
+
+Define un rol específico que puede ser asignado a un usuario dentro del sistema.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Long | private | Identificador único del rol (autogenerado). |
+| name | Roles | private | Nombre del rol como enum (ADMIN, CAR_OWNER). Almacenado como String en BD. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| Role() | Constructor | protected | Constructor vacío para JPA. |
+| Role(Roles name) | Constructor | public | Inicializa rol con el enum correspondiente. |
+| from(String name) | Role (static) | public | Crea un Role a partir del nombre en String, convirtiendo a mayúsculas. |
+
+#### 3. SignUpCommand (Command)
+
+Comando para registrar un nuevo usuario en el sistema.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| email | String | public | Correo electrónico del usuario. No puede ser vacío. |
+| password | String | public | Contraseña en texto plano (se hashea en el servicio). No puede ser vacía. |
+| firstName | String | public | Nombre del usuario. No puede ser vacío. |
+| lastName | String | public | Apellido del usuario. No puede ser vacío. |
+| requestedRole | Roles | public | Rol solicitado (ADMIN o CAR_OWNER). No puede ser null. |
+
+> Validaciones en el constructor del record: lanza BadRequestException si algún campo es vacío o null.
+
+#### 4. SignInCommand (Command)
+
+Comando para autenticar un usuario con sus credenciales.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| email | String | public | Correo de acceso. No puede ser vacío. |
+| password | String | public | Contraseña provista por el usuario. No puede ser vacía. |
+
+#### 5. Queries
+
+| Query | Atributos principales | Descripción |
+|---|---|---|
+| GetUserByEmailQuery | email : String | Obtiene un usuario por su correo electrónico. |
+| GetAllUsersQuery | (sin atributos) | Obtiene todos los usuarios registrados en el sistema. |
+
+#### 6. UserCommandService (Domain Service)
+
+Maneja comandos relacionados con la gestión de usuarios.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(SignUpCommand command) | void | public | Registra un nuevo usuario: valida que el email no exista, hashea la contraseña, asigna rol y persiste. |
+| handle(SignInCommand command) | void | public | Autentica: verifica credenciales, valida que la cuenta esté activa. |
+
+#### 7. UserQueryService (Domain Service)
+
+Maneja consultas relacionadas con usuarios.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(GetUserByEmailQuery query) | Optional\<User> | public | Obtiene un usuario por su email. |
+| handle(GetAllUsersQuery query) | List\<User> | public | Obtiene la lista completa de usuarios. |
+
+#### 8. RoleValidationService (Domain Service)
+
+Servicio de dominio que valida operaciones relacionadas con roles.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| canRequestRole(Roles role) | boolean | public | Valida si un rol puede ser solicitado durante el registro. Retorna true si el rol no es null. |
+| getAvailableRolesForRegistration() | Roles[] | public | Retorna todos los roles disponibles para el registro. |
+
+#### 9. Roles (Value Object)
+
+Enumera los distintos roles disponibles en el sistema.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| ADMIN | Enum | public | Rol de administrador de estacionamiento. Acceso al dashboard web con métricas, gestión de espacios y emergencias. |
+| CAR_OWNER | Enum | public | Rol de conductor/propietario de vehículo. Acceso a la app móvil con mapa, pagos, Find My Car y notificaciones. |
+
+> **Nota:** El código actual solo tiene ADMIN. Se debe agregar CAR_OWNER para representar al conductor.
+
+#### 10. Domain Exceptions
+
+| Exception | Extiende | Descripción |
+|---|---|---|
+| InvalidCredentialsException | UnauthorizedException | Credenciales de email o contraseña incorrectas. Retorna 401. |
+| UserAlreadyExistsException | ConflictException | El email ya está registrado en el sistema. Retorna 409. |
+| UserNotFoundException | NotFoundException | No se encontró un usuario con el email o ID indicado. Retorna 404. |
+| UserAccountDeactivatedException | BusinessRuleException | La cuenta del usuario está desactivada. Retorna 422. |
+| RoleNotFoundException | NotFoundException | El rol solicitado no existe en la base de datos. Retorna 404. |
+
+---
+
+### 4.2.7.2. Interface Layer
+
+#### 1. UsersController (REST Controller)
+
+Controlador REST que expone endpoints para registro, autenticación y gestión de usuarios.
+
+| Nombre del método | Ruta base típica | Método HTTP | Descripción |
+|---|---|---|---|
+| signUp | /api/v1/users/signup | POST | Registra un nuevo usuario. Recibe email, password, firstName, lastName y requestedRole. Retorna 201 Created si exitoso, 409 Conflict si el email ya existe. |
+| signIn | /api/v1/users/signin | POST | Autentica un usuario. Retorna JWT token, tipo "Bearer", expiración y datos del usuario. Retorna 401 si credenciales inválidas, 403 si cuenta desactivada. |
+| getUserByEmail | /api/v1/users/by-email | GET | Obtiene un usuario por su email (requiere autenticación). |
+| getAllUsers | /api/v1/users | GET | Obtiene la lista de todos los usuarios (requiere autenticación). |
+| getAvailableRoles | /api/v1/users/available-roles | GET | Obtiene los roles disponibles para registro (endpoint público). |
+
+#### 2. Resources (DTOs)
+
+| Resource | Atributos principales | Descripción |
+|---|---|---|
+| SignUpResource | email: String (@NotBlank, @Email), password: String (@NotBlank, @Size min=8), firstName: String (@NotBlank, @Size 2-50), lastName: String (@NotBlank, @Size 2-50), requestedRole: Roles (@NotNull) | Datos de registro con validaciones de Bean Validation. |
+| SignInResource | email: String, password: String | Credenciales para inicio de sesión. |
+| AuthenticationResponseResource | token: String, tokenType: String ("Bearer"), expiresIn: Long (604800 segundos = 7 días), user: UserResource | Respuesta de autenticación exitosa con JWT. |
+| UserResource | id: Long, email: String, firstName: String, lastName: String, isVerified: boolean, active: boolean, roles: List\<String>, createdAt: LocalDateTime, updatedAt: LocalDateTime | Representación del usuario sin datos sensibles (sin passwordHash). |
+
+#### 3. Transform (Assemblers)
+
+| Assembler | Entrada | Salida | Descripción |
+|---|---|---|---|
+| SignUpCommandFromResourceAssembler | SignUpResource | SignUpCommand | Convierte DTO de registro en comando de dominio. |
+| SignInCommandFromResourceAssembler | SignInResource | SignInCommand | Convierte DTO de login en comando de dominio. |
+| UserResourceFromEntityAssembler | User | UserResource | Convierte entidad User a DTO de respuesta. Mapea roles a lista de strings con nombre del enum. No expone passwordHash. |
+| AuthenticationResponseResource.of() | String token, Long expiresIn, UserResource user | AuthenticationResponseResource | Factory method estático que crea la respuesta de autenticación con tokenType="Bearer". |
+
+---
+
+### 4.2.7.3. Application Layer
+
+#### 1. UserCommandServiceImpl (Command Service Implementation)
+
+Implementación del servicio de comandos para registro y autenticación de usuarios.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| userRepository | UserRepository | private | Repositorio para persistencia de usuarios. |
+| roleRepository | RoleRepository | private | Repositorio para acceso a roles. |
+| hashingService | HashingService | private | Servicio de hashing de contraseñas (BCrypt). |
+| tokenService | TokenService | private | Servicio de generación y validación de JWT. |
+| roleValidationService | RoleValidationService | private | Servicio de validación de roles. |
+
+**Métodos principales:**
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(SignUpCommand command) | void | public | Proceso de registro: (1) verifica que el email no exista (UserAlreadyExistsException si existe), (2) valida que el rol pueda ser solicitado, (3) hashea la contraseña con BCrypt, (4) crea entidad User, (5) busca el rol en BD y lo asigna, (6) persiste el usuario. |
+| handle(SignInCommand command) | void | public | Proceso de autenticación: (1) busca usuario por email (InvalidCredentialsException si no existe), (2) verifica que la cuenta esté activa (UserAccountDeactivatedException si no), (3) compara contraseña con hash (InvalidCredentialsException si no coincide). |
+| generateTokenForUser(User user) | String | public | Genera JWT token para un usuario autenticado. Extrae el rol principal del usuario y lo incluye como claim en el token. |
+
+#### 2. UserQueryServiceImpl (Query Service Implementation)
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| userRepository | UserRepository | private | Repositorio para acceso de lectura. |
+
+**Métodos principales:**
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(GetUserByEmailQuery query) | Optional\<User> | public | Busca un usuario por su email en el repositorio. |
+| handle(GetAllUsersQuery query) | List\<User> | public | Obtiene la lista completa de usuarios registrados. |
+
+#### 3. RoleValidationServiceImpl (Application Service)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| canRequestRole(Roles role) | boolean | public | Valida que el rol no sea null. En el futuro puede extenderse con reglas más complejas. |
+| getAvailableRolesForRegistration() | Roles[] | public | Retorna Roles.values() (todos los roles disponibles). |
+
+#### 4. ApplicationReadyEventHandler (Framework Event Handler)
+
+Maneja el evento de inicio de la aplicación para sembrar roles por defecto.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handleApplicationReady(ApplicationReadyEvent event) | void | public | Al arrancar la aplicación, verifica si cada rol del enum Roles existe en la BD. Si no existe, lo crea y persiste. Esto asegura que ADMIN y CAR_OWNER siempre existan. |
+
+#### 5. HashingService (Outbound Service Port)
+
+Interfaz para hashing de contraseñas.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| encode(CharSequence rawPassword) | String | public | Genera hash BCrypt de la contraseña. |
+| matches(CharSequence rawPassword, String encodedPassword) | boolean | public | Verifica si la contraseña cruda coincide con el hash almacenado. |
+
+#### 6. TokenService (Outbound Service Port)
+
+Interfaz para generación y validación de tokens JWT.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| generateToken(Long userId, String userRole) | String | public | Genera un JWT con userId como subject y userRole como claim. Expira en 7 días (configurable). |
+| getUserIdFromToken(String token) | Long | public | Extrae el userId del subject del token. |
+| validateToken(String token) | boolean | public | Valida la firma, estructura y fecha de expiración del token. |
+
+---
+
+### 4.2.7.4. Infrastructure Layer
+
+#### 1. UserRepository (Repository Interface)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| findById(Long id) | Optional\<User> | public | Busca un usuario por su ID. |
+| findByEmail(String email) | Optional\<User> | public | Busca un usuario por su correo electrónico. |
+| existsByEmail(String email) | boolean | public | Verifica si existe un usuario con el email indicado. |
+| save(User user) | User | public | Persiste o actualiza un usuario. |
+| findAll() | List\<User> | public | Obtiene todos los usuarios. |
+
+#### 2. RoleRepository (Repository Interface)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| findByName(Roles name) | Optional\<Role> | public | Busca un rol por su nombre (enum). |
+| existsByName(Roles name) | boolean | public | Verifica si un rol existe por su nombre. |
+| save(Role role) | Role | public | Persiste o actualiza un rol. |
+
+#### 3. WebSecurityConfiguration (Security Config)
+
+Configuración de Spring Security para la API.
+
+| Configuración | Descripción |
+|---|---|
+| CORS | Permite orígenes de http://localhost:4200 (Angular dashboard). Métodos: GET, POST, PUT, DELETE, PATCH, OPTIONS. |
+| CSRF | Deshabilitado (API stateless con JWT). |
+| Session Management | STATELESS (sin sesiones HTTP, todo via JWT). |
+| Public Endpoints | /api/v1/users/signup, /api/v1/users/signin, /api/v1/users/available-roles, /swagger-ui/**, /v3/api-docs/** |
+| Protected Endpoints | Todos los demás requieren JWT válido en header Authorization: Bearer {token}. |
+| Authentication Filter | BearerAuthorizationRequestFilter se ejecuta antes de UsernamePasswordAuthenticationFilter. |
+| Password Encoder | BCryptPasswordEncoder via BCryptHashingService. |
+
+#### 4. BearerAuthorizationRequestFilter (Security Filter)
+
+Filtro que intercepta todas las peticiones HTTP para validar el JWT.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| doFilterInternal(request, response, chain) | void | protected | Para cada request: (1) si es OPTIONS o endpoint público, permite sin validar. (2) Extrae token del header Authorization. (3) Si tiene token y es válido, extrae userId, carga UserDetails, establece autenticación en SecurityContext. (4) Continúa la cadena de filtros. |
+
+#### 5. TokenServiceImpl (JWT Service)
+
+Implementación de TokenService usando la biblioteca JJWT.
+
+| Configuración | Valor |
+|---|---|
+| Algoritmo | HMAC-SHA (HS256) |
+| Secret | Configurado en application.properties (authorization.jwt.secret) |
+| Expiración | 7 días (authorization.jwt.expiration.days) |
+| Claims | subject: userId (String), role: userRole (String) |
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| generateToken(Long userId, String userRole) | String | public | Genera JWT con subject=userId.toString(), claim "role"=userRole, issuedAt=now, expiration=now+7days. Firma con HMAC-SHA key. |
+| getUserIdFromToken(String token) | Long | public | Parsea el token, extrae subject y lo convierte a Long. |
+| validateToken(String token) | boolean | public | Verifica firma y expiración. Lanza JwtException si inválido. |
+| getBearerTokenFrom(HttpServletRequest request) | String | public | Extrae el token del header Authorization quitando el prefijo "Bearer ". |
+
+#### 6. HashingServiceImpl (BCrypt Service)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| encode(CharSequence rawPassword) | String | public | Genera hash BCrypt. |
+| matches(CharSequence rawPassword, String encodedPassword) | boolean | public | Compara contraseña con hash BCrypt. |
+
+#### 7. UserDetailsServiceImpl (Spring Security UserDetailsService)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| loadUserByUsername(String email) | UserDetails | public | Busca usuario por email y construye UserDetailsImpl con authorities basadas en roles (ROLE_ADMIN, ROLE_CAR_OWNER). |
+| loadUserById(Long userId) | UserDetails | public | Busca usuario por ID (usado por el filtro JWT después de extraer userId del token). |
+
+#### 8. UserDetailsImpl (Security Model)
+
+Adaptador que convierte la entidad User a UserDetails de Spring Security.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| build(User user) | UserDetailsImpl (static) | public | Construye desde entidad User: mapea roles a authorities con prefijo "ROLE_", establece enabled según active. |
+| getAuthorities() | Collection\<GrantedAuthority> | public | Retorna las authorities del usuario. |
+| getUsername() | String | public | Retorna el email como username. |
+| isEnabled() | boolean | public | Retorna el estado active del usuario. |
+
+#### 9. UnauthorizedRequestHandlerEntryPoint (Auth EntryPoint)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| commence(request, response, authException) | void | public | Responde con 401 Unauthorized y un cuerpo JSON con status, error, message, path y timestamp. |
+
+#### 10. OpenApiConfiguration (Swagger Config)
+
+Configuración de la documentación OpenAPI/Swagger de la API.
+
+| Configuración | Descripción |
+|---|---|
+| Security Scheme | Bearer JWT (tipo HTTP, scheme "bearer", formato "JWT"). |
+| Info | Nombre, descripción y versión de la aplicación desde application.properties. |
+| Endpoints Swagger UI | /swagger-ui.html, /swagger-ui/**, /v3/api-docs/** |
+
+---
+
+### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
+
+En esta sección se presentan los diagramas de nivel componente que ilustran la arquitectura de software del contexto de IAM. Se muestra la interacción entre los diferentes componentes, servicios y capas que conforman este bounded context.
+
+> **Diagrama a crear en Structurizr DSL:**
+
+
+
+### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer del contexto de IAM ilustra las entidades, value objects y servicios que componen este bounded context, reflejando el código ya implementado.
+
+> **Diagrama a crear en LucidChart o PlantUML:**
+
+
+#### 4.2.7.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos del contexto de IAM muestra la estructura de las tablas y sus relaciones, generadas automáticamente por JPA/Hibernate a partir de las entidades del dominio.
+
+> **Diagrama a crear en Vertabelo:**
+
 ---
 
 # Capítulo V: Product Implementation, Validation & Deployment
