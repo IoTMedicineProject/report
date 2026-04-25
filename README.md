@@ -866,7 +866,9 @@ El diagrama de clases del Domain Layer del contexto de Parking Monitoring ilustr
  
 El diagrama de diseño de base de datos del contexto de Parking Monitoring muestra la estructura de las tablas y sus relaciones en la base de datos relacional.
  
-> **Diagrama a crear en Vertabelo:**
+<img src="assets\diagrams\db\parking-monitoring-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
+">
+<br>
 
 ## 4.2.2. Bounded Context: Access Control
  
@@ -1322,7 +1324,10 @@ El diagrama de clases del Domain Layer del contexto de Access Control ilustra la
  
 El diagrama de diseño de base de datos del contexto de Access Control muestra la estructura de las tablas y sus relaciones.
  
-> **Diagrama a crear en Vertabelo:**
+<img src="assets\diagrams\db\access-control-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
+">
+<br>
+
 
 ## 4.2.3. Bounded Context: Payment Processing
 
@@ -1691,7 +1696,10 @@ El diagrama de clases del Domain Layer del contexto de Payment Processing ilustr
 
 El diagrama de diseño de base de datos del contexto de Payment Processing muestra la estructura de las tablas y sus relaciones.
 
-> **Diagrama a crear en Vertabelo:**
+<img src="assets\diagrams\db\payment-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
+">
+<br>
+
 
 ## 4.2.4. Bounded Context: Emergency & Safety
 
@@ -2015,7 +2023,10 @@ El diagrama de clases del Domain Layer del contexto de Emergency & Safety ilustr
 
 El diagrama de diseño de base de datos del contexto de Emergency & Safety muestra la estructura de las tablas y sus relaciones.
 
-> **Diagrama a crear en Vertabelo:**
+<img src="assets\diagrams\db\analytics-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
+">
+<br>
+
 
 ## 4.2.5. Bounded Context: Analytics & Reporting
 
@@ -2408,7 +2419,9 @@ En esta sección se presentan los diagramas de nivel componente que ilustran la 
 > **Diagrama a crear en LucidChart o PlantUML:**
 #### 4.2.5.6.2. Bounded Context Database Design Diagram
 
-> **Diagrama a crear en Vertabelo:**
+<img src="assets\diagrams\db\analytics-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
+">
+<br>
 
 ## 4.2.6. Bounded Context: Notification Management
 
@@ -2817,7 +2830,9 @@ En esta sección se presentan los diagramas de nivel componente que ilustran la 
 
 #### 4.2.6.6.2. Bounded Context Database Design Diagram
 
-> **Diagrama a crear en Vertabelo:**
+<img src="assets\diagrams\db\notification-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
+">
+<br>
 
 ## 4.2.7. Bounded Context: Identity & Access Management
 
@@ -3185,7 +3200,9 @@ El diagrama de clases del Domain Layer del contexto de IAM ilustra las entidades
 
 El diagrama de diseño de base de datos del contexto de IAM muestra la estructura de las tablas y sus relaciones, generadas automáticamente por JPA/Hibernate a partir de las entidades del dominio.
 
-> **Diagrama a crear en Vertabelo:**
+<img src="assets\diagrams\db\iam-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
+">
+<br>
 
 ---
 
