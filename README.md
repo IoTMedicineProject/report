@@ -2410,7 +2410,416 @@ En esta sección se presentan los diagramas de nivel componente que ilustran la 
 
 > **Diagrama a crear en Vertabelo:**
 
+## 4.2.6. Bounded Context: Notification Management
 
+Este bounded context gestiona el envío de notificaciones push, alertas in-app y la administración de preferencias de notificación por usuario. Recibe solicitudes de envío desde otros bounded contexts (Access Control, Payment Processing, Emergency & Safety) y las procesa a través de Firebase Cloud Messaging (FCM). Administra templates de mensajes, el registro histórico de notificaciones enviadas con su estado (enviada/leída) y respeta las preferencias de cada usuario, con la excepción de las alertas de emergencia que siempre se envían.
+
+### 4.2.6.1. Domain Layer
+
+En esta sección se describen los elementos del Domain Layer del contexto de Notification Management, que encapsulan la lógica central relacionada con el envío, almacenamiento y gestión de notificaciones.
+
+#### 1. Notification (Aggregate Root)
+
+Representa una notificación enviada a un usuario del sistema. Tiene su propio ciclo de vida: PENDING → SENT → DELIVERED → READ (o FAILED).
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Long | private | Identificador único de la notificación. |
+| userId | NotificationUserId | private | Identificador del usuario destinatario. |
+| type | NotificationType | private | Tipo de notificación (ENTRY_CONFIRMED, PAYMENT_REMINDER, PAYMENT_SUCCESS, EMERGENCY_ALERT, SESSION_END). |
+| title | String | private | Título de la notificación mostrado al usuario. |
+| body | String | private | Contenido del mensaje de la notificación. |
+| data | String | private | Datos adicionales en formato JSON (e.g., sessionId, amount, slotCode). |
+| status | NotificationStatus | private | Estado actual de la notificación (PENDING, SENT, DELIVERED, READ, FAILED). |
+| channel | NotificationChannel | private | Canal de envío utilizado (PUSH, IN_APP). |
+| createdAt | LocalDateTime | private | Fecha y hora de creación de la notificación. |
+| sentAt | LocalDateTime | private | Fecha y hora de envío (null si aún no se envió). |
+| readAt | LocalDateTime | private | Fecha y hora en que el usuario la leyó (null si no leída). |
+| errorDetail | String | private | Detalle del error si el envío falló (null si exitoso). |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| Notification() | Constructor | protected | Constructor protegido para JPA. |
+| Notification(SendNotificationCommand command) | Constructor | public | Crea una notificación a partir de un comando. Inicializa con status=PENDING, sentAt=null, readAt=null. |
+| markAsSent() | void | public | Cambia status a SENT y registra sentAt. |
+| markAsDelivered() | void | public | Cambia status a DELIVERED. |
+| markAsRead() | void | public | Cambia status a READ y registra readAt. Lanza excepción si ya fue leída. |
+| markAsFailed(String errorDetail) | void | public | Cambia status a FAILED y registra el detalle del error. |
+| isRead() | boolean | public | Devuelve true si status es READ. |
+| isPending() | boolean | public | Devuelve true si status es PENDING. |
+
+#### 2. NotificationPreference (Entity)
+
+Representa la preferencia de un usuario sobre un tipo específico de notificación (si desea recibirla o no).
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Long | private | Identificador único de la preferencia. |
+| userId | NotificationUserId | private | Identificador del usuario. |
+| notificationType | NotificationType | private | Tipo de notificación al que aplica la preferencia. |
+| enabled | boolean | private | Indica si el usuario desea recibir este tipo de notificación. |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| NotificationPreference() | Constructor | protected | Constructor protegido para JPA. |
+| NotificationPreference(Long userId, NotificationType type, boolean enabled) | Constructor | public | Crea una preferencia con valores iniciales. |
+| enable() | void | public | Habilita la recepción de este tipo de notificación. |
+| disable() | void | public | Deshabilita la recepción de este tipo de notificación. |
+| isEnabled() | boolean | public | Devuelve el estado actual de la preferencia. |
+
+#### 3. NotificationTemplate (Entity)
+
+Representa una plantilla predefinida de mensaje para cada tipo de notificación, con placeholders que se resuelven con datos del evento.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Long | private | Identificador único de la plantilla. |
+| type | NotificationType | private | Tipo de notificación al que corresponde la plantilla. |
+| titleTemplate | String | private | Plantilla del título (e.g., "Ingreso confirmado"). |
+| bodyTemplate | String | private | Plantilla del cuerpo con placeholders (e.g., "Tu vehículo {{licensePlate}} ingresó a las {{entryTime}}"). |
+| language | String | private | Idioma de la plantilla (es_PE por defecto). |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| NotificationTemplate() | Constructor | protected | Constructor protegido para JPA. |
+| resolveTitle(Map\<String, String> data) | String | public | Resuelve los placeholders del título con los datos proporcionados. |
+| resolveBody(Map\<String, String> data) | String | public | Resuelve los placeholders del cuerpo con los datos proporcionados. |
+
+#### 4. SendNotificationCommand (Command)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| userId | Long | public | ID del usuario destinatario. |
+| type | String | public | Tipo de notificación ("ENTRY_CONFIRMED", "PAYMENT_REMINDER", etc.). |
+| title | String | public | Título de la notificación (puede ser null si se usa template). |
+| body | String | public | Cuerpo del mensaje (puede ser null si se usa template). |
+| data | Map\<String, String> | public | Datos adicionales para resolver template y enviar como payload. |
+
+#### 5. BroadcastNotificationCommand (Command)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| type | String | public | Tipo de notificación (típicamente "EMERGENCY_ALERT"). |
+| title | String | public | Título del mensaje. |
+| body | String | public | Cuerpo del mensaje. |
+| data | Map\<String, String> | public | Datos adicionales (sensorLocation, gasLevel). |
+| recipientUserIds | List\<Long> | public | Lista de IDs de usuarios destinatarios. |
+
+#### 6. MarkNotificationAsReadCommand (Command)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| notificationId | Long | public | ID de la notificación a marcar como leída. |
+
+#### 7. UpdatePreferencesCommand (Command)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| userId | Long | public | ID del usuario. |
+| preferences | Map\<String, Boolean> | public | Mapa de tipo → habilitado (e.g., {"ENTRY_CONFIRMED": true, "PAYMENT_REMINDER": false}). |
+
+#### 8. Queries
+
+| Query | Atributos principales | Descripción |
+|---|---|---|
+| GetNotificationsByUserQuery | userId : Long | Obtiene todas las notificaciones de un usuario. |
+| GetUnreadNotificationsQuery | userId : Long | Obtiene solo las notificaciones no leídas de un usuario. |
+| GetNotificationByIdQuery | notificationId : Long | Obtiene una notificación específica. |
+| GetPreferencesByUserQuery | userId : Long | Obtiene las preferencias de notificación del usuario. |
+
+#### 9. NotificationSentEvent (Domain Event)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| source | Object | private | Objeto origen del evento. |
+| notificationId | Long | private | ID de la notificación enviada. |
+| userId | Long | private | ID del usuario destinatario. |
+| type | NotificationType | private | Tipo de notificación. |
+| channel | NotificationChannel | private | Canal utilizado (PUSH, IN_APP). |
+| sentAt | LocalDateTime | private | Momento del envío. |
+
+#### 10. NotificationCommandService (Domain Service)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(SendNotificationCommand command) | Optional\<Notification> | public | Envía una notificación individual a un usuario. Verifica preferencias antes de enviar (excepto EMERGENCY_ALERT que siempre se envía). |
+| handle(BroadcastNotificationCommand command) | List\<Notification> | public | Envía notificaciones masivas a múltiples usuarios (usado para emergencias). |
+| handle(MarkNotificationAsReadCommand command) | void | public | Marca una notificación como leída. |
+| handle(UpdatePreferencesCommand command) | void | public | Actualiza las preferencias de notificación del usuario. |
+
+#### 11. NotificationQueryService (Domain Service)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(GetNotificationsByUserQuery query) | List\<Notification> | public | Obtiene todas las notificaciones del usuario, ordenadas por createdAt descendente. |
+| handle(GetUnreadNotificationsQuery query) | List\<Notification> | public | Obtiene solo notificaciones no leídas (status != READ). |
+| handle(GetNotificationByIdQuery query) | Optional\<Notification> | public | Obtiene una notificación por ID. |
+| handle(GetPreferencesByUserQuery query) | List\<NotificationPreference> | public | Obtiene las preferencias del usuario. |
+
+#### 12. PreferenceValidationService (Domain Service)
+
+Servicio de dominio que encapsula la lógica de validación de preferencias antes del envío.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| shouldSendNotification(Long userId, NotificationType type, List\<NotificationPreference> preferences) | boolean | public | Evalúa si una notificación debe enviarse. Retorna true siempre para EMERGENCY_ALERT (ignora preferencias). Para otros tipos, verifica si el usuario tiene la preferencia habilitada. Si no tiene preferencia configurada, retorna true por defecto. |
+| isEmergencyType(NotificationType type) | boolean | public | Devuelve true si el tipo es EMERGENCY_ALERT. |
+
+#### 13. TemplateResolverService (Domain Service)
+
+Servicio de dominio que resuelve los templates de notificación con datos concretos.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| resolveTemplate(NotificationType type, Map\<String, String> data) | ResolvedNotification | public | Busca el template para el tipo dado, resuelve los placeholders con los datos proporcionados y retorna título y cuerpo resueltos. |
+
+#### 14. NotificationType (Value Object)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| ENTRY_CONFIRMED | Enum | public | Confirmación de ingreso del vehículo al estacionamiento. |
+| PAYMENT_REMINDER | Enum | public | Recordatorio de pago pendiente (enviado cuando el conductor llega a la salida sin pagar). |
+| PAYMENT_SUCCESS | Enum | public | Confirmación de pago exitoso. |
+| EMERGENCY_ALERT | Enum | public | Alerta de emergencia (gas/humo). Ignora preferencias del usuario. |
+| SESSION_END | Enum | public | Notificación de fin de sesión (vehículo salió del estacionamiento). |
+| PAYMENT_FAILED | Enum | public | Notificación de pago fallido. |
+
+#### 15. NotificationStatus (Value Object)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| PENDING | Enum | public | La notificación está pendiente de envío. |
+| SENT | Enum | public | La notificación fue enviada a FCM. |
+| DELIVERED | Enum | public | La notificación fue entregada al dispositivo. |
+| READ | Enum | public | El usuario leyó la notificación. |
+| FAILED | Enum | public | El envío de la notificación falló. |
+
+#### 16. NotificationChannel (Value Object)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| PUSH | Enum | public | Notificación push via Firebase Cloud Messaging. |
+| IN_APP | Enum | public | Notificación almacenada solo en la app (cuando no hay token FCM). |
+
+#### 17. NotificationUserId (Value Object)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| userId | Long | private | ID del usuario destinatario; debe ser > 0. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| NotificationUserId() | Constructor | public | Constructor requerido por JPA. |
+| NotificationUserId(Long userId) | Constructor | public | Inicializa y valida que userId > 0. |
+
+#### 18. ResolvedNotification (Value Object)
+
+Resultado de resolver un template con datos concretos.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| title | String | private | Título resuelto de la notificación. |
+| body | String | private | Cuerpo resuelto del mensaje. |
+
+#### 19. PushMessagingService (Domain Service Interface)
+
+Interfaz del servicio de mensajería push. La implementación concreta vive en Infrastructure Layer.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| sendPushNotification(String fcmToken, String title, String body, Map\<String, String> data) | boolean | public | Envía una notificación push individual via FCM. Retorna true si fue exitoso. |
+| sendBulkPushNotifications(List\<String> fcmTokens, String title, String body, Map\<String, String> data) | int | public | Envía notificaciones push masivas. Retorna la cantidad de envíos exitosos. |
+
+#### 20. FcmTokenService (Domain Service Interface)
+
+Interfaz para obtener los tokens FCM de los usuarios. La implementación consulta al BC IAM.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| getFcmToken(Long userId) | Optional\<String> | public | Obtiene el token FCM registrado para un usuario. |
+| getFcmTokens(List\<Long> userIds) | Map\<Long, String> | public | Obtiene los tokens FCM de múltiples usuarios. |
+
+---
+
+### 4.2.6.2. Interface Layer
+
+#### 1. NotificationsController (REST Controller)
+
+Controlador REST que expone endpoints para gestionar notificaciones y preferencias.
+
+| Nombre del método | Ruta base típica | Método HTTP | Descripción |
+|---|---|---|---|
+| sendNotification | /api/v1/notifications | POST | Envía una notificación a un usuario específico. |
+| getNotificationsByUser | /api/v1/notifications/user/{userId} | GET | Obtiene todas las notificaciones de un usuario. |
+| getUnreadNotifications | /api/v1/notifications/user/{userId}/unread | GET | Obtiene solo las notificaciones no leídas. |
+| markAsRead | /api/v1/notifications/{id}/read | PATCH | Marca una notificación como leída. |
+| getPreferences | /api/v1/users/{userId}/notification-preferences | GET | Obtiene las preferencias de notificación del usuario. |
+| updatePreferences | /api/v1/users/{userId}/notification-preferences | PUT | Actualiza las preferencias de notificación del usuario. |
+
+#### 2. Resources (DTOs)
+
+| Resource | Atributos principales | Descripción |
+|---|---|---|
+| SendNotificationResource | userId: Long, type: String, title: String, body: String, data: Map\<String, String> | Datos para enviar una notificación. |
+| NotificationResource | id: Long, userId: Long, type: String, title: String, body: String, status: String, channel: String, createdAt: LocalDateTime, readAt: LocalDateTime | Representación de una notificación. |
+| NotificationPreferenceResource | notificationType: String, enabled: boolean | Preferencia individual de un tipo de notificación. |
+| UpdatePreferencesResource | preferences: List\<NotificationPreferenceResource> | Lista de preferencias a actualizar. |
+| UnreadCountResource | userId: Long, unreadCount: int | Cantidad de notificaciones no leídas. |
+
+#### 3. Transform (Assemblers)
+
+| Assembler | Entrada | Salida | Descripción |
+|---|---|---|---|
+| NotificationResourceFromEntityAssembler | Notification | NotificationResource | Convierte entidad a DTO. |
+| SendNotificationCommandFromResourceAssembler | SendNotificationResource | SendNotificationCommand | Convierte DTO en comando. |
+| NotificationPreferenceResourceFromEntityAssembler | NotificationPreference | NotificationPreferenceResource | Convierte entidad de preferencia a DTO. |
+| UpdatePreferencesCommandFromResourceAssembler | UpdatePreferencesResource, Long userId | UpdatePreferencesCommand | Convierte DTO de preferencias en comando. |
+
+---
+
+### 4.2.6.3. Application Layer
+
+#### 1. NotificationCommandServiceImpl (Command Service Implementation)
+
+Implementación del servicio de comandos para gestionar notificaciones.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| notificationRepository | NotificationRepository | private | Repositorio para persistencia de notificaciones. |
+| preferenceRepository | NotificationPreferenceRepository | private | Repositorio para persistencia de preferencias. |
+| templateRepository | NotificationTemplateRepository | private | Repositorio para acceso a templates. |
+| pushMessagingService | PushMessagingService | private | Servicio de envío push (FCM). |
+| fcmTokenService | FcmTokenService | private | Servicio para obtener tokens FCM. |
+| preferenceValidationService | PreferenceValidationService | private | Servicio de validación de preferencias. |
+| templateResolverService | TemplateResolverService | private | Servicio de resolución de templates. |
+
+**Métodos principales:**
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(SendNotificationCommand command) | Optional\<Notification> | public | Proceso completo de envío: (1) verifica preferencias del usuario con PreferenceValidationService (EMERGENCY_ALERT ignora preferencias), (2) si título/body son null, resuelve template con TemplateResolverService, (3) obtiene token FCM del usuario, (4) si tiene token envía via PushMessagingService y marca como SENT, si no tiene token almacena como IN_APP, (5) persiste y publica NotificationSentEvent. Si envío falla, marca como FAILED con errorDetail. |
+| handle(BroadcastNotificationCommand command) | List\<Notification> | public | Envío masivo: (1) obtiene tokens FCM de todos los recipientUserIds, (2) envía bulk push via PushMessagingService, (3) crea una entidad Notification por cada usuario, (4) persiste todas. No verifica preferencias para EMERGENCY_ALERT. |
+| handle(MarkNotificationAsReadCommand command) | void | public | Busca notificación, marca como READ con readAt. Lanza 404 si no existe. |
+| handle(UpdatePreferencesCommand command) | void | public | Para cada entrada en el mapa de preferencias: si existe la preferencia la actualiza, si no existe la crea. No permite deshabilitar EMERGENCY_ALERT (siempre se ignora). |
+
+#### 2. NotificationQueryServiceImpl (Query Service Implementation)
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| notificationRepository | NotificationRepository | private | Repositorio para acceso de lectura de notificaciones. |
+| preferenceRepository | NotificationPreferenceRepository | private | Repositorio para acceso de lectura de preferencias. |
+
+**Métodos principales:**
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(GetNotificationsByUserQuery query) | List\<Notification> | public | Obtiene todas las notificaciones del usuario, ordenadas por createdAt descendente. |
+| handle(GetUnreadNotificationsQuery query) | List\<Notification> | public | Obtiene notificaciones con status distinto de READ, ordenadas por createdAt descendente. |
+| handle(GetNotificationByIdQuery query) | Optional\<Notification> | public | Obtiene una notificación por su ID. |
+| handle(GetPreferencesByUserQuery query) | List\<NotificationPreference> | public | Obtiene todas las preferencias del usuario. Si el usuario no tiene preferencias configuradas, retorna defaults (todas habilitadas). |
+
+#### 3. DefaultPreferencesInitializer (Application Service)
+
+Servicio que inicializa las preferencias por defecto cuando un usuario nuevo se registra.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| initializeDefaultPreferences(Long userId) | void | public | Crea una entrada de NotificationPreference por cada NotificationType con enabled=true para el nuevo usuario. |
+
+---
+
+### 4.2.6.4. Infrastructure Layer
+
+#### 1. NotificationRepository (Repository Interface)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| findById(Long id) | Optional\<Notification> | public | Busca una notificación por su ID. |
+| save(Notification notification) | Notification | public | Persiste o actualiza una notificación. |
+| saveAll(List\<Notification> notifications) | List\<Notification> | public | Persiste múltiples notificaciones (broadcast). |
+| findByUserId_UserIdOrderByCreatedAtDesc(Long userId) | List\<Notification> | public | Obtiene notificaciones del usuario ordenadas por fecha. |
+| findByUserId_UserIdAndStatusNot(Long userId, NotificationStatus status) | List\<Notification> | public | Obtiene notificaciones no leídas del usuario. |
+| countByUserId_UserIdAndStatusNot(Long userId, NotificationStatus status) | int | public | Cuenta notificaciones no leídas. |
+
+#### 2. NotificationPreferenceRepository (Repository Interface)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| findByUserId_UserId(Long userId) | List\<NotificationPreference> | public | Obtiene todas las preferencias del usuario. |
+| findByUserId_UserIdAndNotificationType(Long userId, NotificationType type) | Optional\<NotificationPreference> | public | Obtiene una preferencia específica. |
+| save(NotificationPreference preference) | NotificationPreference | public | Persiste o actualiza una preferencia. |
+| existsByUserId_UserId(Long userId) | boolean | public | Verifica si el usuario tiene preferencias configuradas. |
+
+#### 3. NotificationTemplateRepository (Repository Interface)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| findByType(NotificationType type) | Optional\<NotificationTemplate> | public | Obtiene el template para un tipo de notificación. |
+| findByTypeAndLanguage(NotificationType type, String language) | Optional\<NotificationTemplate> | public | Obtiene template por tipo e idioma. |
+
+#### 4. FirebaseMessagingClient (Infrastructure Service)
+
+Implementación concreta del servicio de mensajería push usando Firebase Cloud Messaging.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| firebaseMessaging | FirebaseMessaging | private | Instancia del cliente de Firebase Admin SDK para envío de mensajes. |
+
+**Métodos principales:**
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| sendPushNotification(String fcmToken, String title, String body, Map\<String, String> data) | boolean | public | Construye un Message de Firebase con notification (title, body) y data payload, lo envía al token FCM indicado. Retorna true si Firebase responde con éxito, false si falla. |
+| sendBulkPushNotifications(List\<String> fcmTokens, String title, String body, Map\<String, String> data) | int | public | Construye un MulticastMessage de Firebase con los tokens y lo envía en batch. Retorna la cantidad de envíos exitosos. |
+
+#### 5. IamFcmTokenClient (Infrastructure Service)
+
+Implementación de FcmTokenService que consulta al BC IAM para obtener tokens FCM.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| getFcmToken(Long userId) | Optional\<String> | public | Consulta al BC IAM via REST el token FCM registrado para el usuario. |
+| getFcmTokens(List\<Long> userIds) | Map\<Long, String> | public | Consulta en batch los tokens FCM de múltiples usuarios. |
+
+---
+
+### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
+
+En esta sección se presentan los diagramas de nivel componente que ilustran la arquitectura de software del contexto de Notification Management.
+
+> **Diagrama a crear en Structurizr DSL:**
+
+
+### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
+
+> **Diagrama a crear en LucidChart o PlantUML:**
+
+
+#### 4.2.6.6.2. Bounded Context Database Design Diagram
+
+> **Diagrama a crear en Vertabelo:**
+
+---
 
 # Capítulo V: Product Implementation, Validation & Deployment
 
