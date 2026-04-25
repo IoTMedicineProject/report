@@ -4780,11 +4780,9 @@ El diagrama de diseño de base de datos del contexto de IAM muestra la estructur
 ---
 
 # Conclusiones
-# Conclusiones y Recomendaciones
 
 En esta sección se presentan las conclusiones y recomendaciones derivadas del desarrollo del proyecto **SpotFinder**.
 
-## Conclusiones y recomendaciones
 
 ### Conclusiones
 
