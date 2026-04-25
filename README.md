@@ -1,43 +1,41 @@
-# COURSE PROJECT
 
 <p align="center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"></img><br>
+    <img src="./assets/logos/upc-logo.png" alt="UPC Logo" width="200"><br>
     <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
     <br>
     <strong>Facultad de Ingeniería</strong><br>
     <strong>Carrera de Ingeniería de Software</strong><br>
     <strong>Ciclo 2026-10</strong>
 </p>
-
+ 
 <p align="center">
   <strong>Código del curso: </strong>1ASI0572<br>
   <strong>Curso: </strong>Desarrollo de Soluciones IOT
 </p>
-
+ 
 <p align="center">
   <strong>NRC: 6772</strong>
 </p>
-
+ 
 <p align="center">
-    <strong>Profesor: </strong>Marco Antonio Leon Baca
+    <strong>Profesor: </strong>Marco Antonio León Baca
 </p>
-
+ 
 <p align="center">
     <strong>Informe de Trabajo Final</strong>
 </p>
-
+ 
 <p align="center">
-    <strong>Nombre del startup: </strong> [Startup]
+    <strong>Nombre del startup: </strong> ParkSense IoT
 </p>
-
+ 
 <p align="center">
-    <strong>Nombre del producto:</strong> [Producto]
+    <strong>Nombre del producto: </strong> SpotFinder
 </p>
-
+ 
 <p align="center">
-    <strong>Marzo, 2026</strong>
+    <strong>Abril, 2026</strong>
 </p>
-
 ---
 
 # Project Report Collaboration Insights
