@@ -4779,72 +4779,25 @@ El diagrama de diseño de base de datos del contexto de IAM muestra la estructur
 
 ---
 
-# Capítulo V: Product Implementation, Validation & Deployment
-
-## 5.1. Software Configuration Management.
-### 5.1.1. Software Development Environment Configuration.
-### 5.1.2. Source Code Management.
-### 5.1.3. Source Code Style Guide & Conventions.
-### 5.1.4. Software Deployment Configuration.
-
-## 5.2. Landing Page, Services & Applications Implementation.
-### 5.2.X. Sprint n
-#### 5.2.X.1. Sprint Planning n.
-#### 5.2.X.2. Aspect Leaders and Collaborators.
-#### 5.2.X.3. Sprint Backlog n.
-#### 5.2.X.4. Development Evidence for Sprint Review.
-#### 5.2.X.5. Execution Evidence for Sprint Review.
-#### 5.2.X.6. Services Documentation Evidence for Sprint Review.
-#### 5.2.X.7. Software Deployment Evidence for Sprint Review.
-#### 5.2.X.8. Team Collaboration Insights during Sprint.
-
-## 5.3. Validation Interviews.
-### 5.3.1. Diseño de Entrevistas.
-### 5.3.2. Registro de Entrevistas.
-### 5.3.3. Evaluaciones según heurísticas.
-
-## 5.4. Video About-the-Product.
-#### 4.1.1.2 Domain Message Flows Modeling.
-
-#### 4.1.1.3 Bounded Context Canvases.
-
-### 4.1.2. Context Mapping.
-
-### 4.1.3. Software Architecture.
-#### 4.1.3.1. Software Architecture System Landscape Diagram.
-
-#### 4.1.3.2. Software Architecture Context Level Diagrams.
-
-#### 4.1.3.3. Software Architecture Container Level Diagrams.
-
-#### 4.1.3.4. Software Architecture Deployment Diagrams.
-
-## 4.2. Tactical-Level Domain-Driven Design
-
-### 4.2.X. Bounded Context: <Bounded Context Name>
-
-#### 4.2.X.1. Domain Layer.
-
-#### 4.2.X.2. Interface Layer.
-
-#### 4.2.X.3. Application Layer.
-
-#### 4.2.X.4. Infrastructure Layer.
-
-#### 4.2.X.5. Bounded Context Software Architecture Component Level Diagrams.
-
-#### 4.2.X.6. Bounded Context Software Architecture Code Level Diagrams.
-
-##### 4.2.X.6.1. Bounded Context Domain Layer Class Diagrams.
-
-##### 4.2.X.6.2. Bounded Context Database Design Diagram.
-
----
-
 # Conclusiones
-## Conclusiones y recomendaciones.
-## Video About-the-Team.
+# Conclusiones y Recomendaciones
 
+En esta sección se presentan las conclusiones y recomendaciones derivadas del desarrollo del proyecto **SpotFinder**.
+
+## Conclusiones y recomendaciones
+
+### Conclusiones
+
+* La revisión del informe evidencia que **SpotFinder** responde a una necesidad real y documentada en el contexto peruano: la ineficiencia en la gestión de estacionamientos de centros comerciales en Lima, donde los conductores pierden en promedio cinco horas semanales buscando espacio y la congestión vehicular genera pérdidas de S/ 23,300 millones anuales según el BCR. El problema está sustentado tanto por fuentes estadísticas oficiales (IPE, AAP, INEI, Lima Cómo Vamos) como por la investigación cualitativa con seis entrevistas a conductores y administradores, quienes confirmaron la frustración con los sistemas manuales actuales y la necesidad de automatización.
+* La propuesta de solución está correctamente orientada al integrar hardware IoT accesible (ESP32, sensores HC-SR04, LEDs WS2812B, ESP32-CAM, sensor MQ-2) con una arquitectura de software basada en Domain-Driven Design. El uso de Lean UX permitió conectar cinco hipótesis de valor con métricas concretas (reducción del 50% del tiempo de búsqueda, 90% de precisión ALPR, 50% de pagos digitales en tres meses), y la validación mediante entrevistas confirmó que las funcionalidades priorizadas coinciden con las necesidades de ambos segmentos.
+* El diseño técnico presenta una base sólida para escalar el producto, gracias a la identificación de ocho bounded contexts
+(tres Core, cuatro Supporting, uno Generic) y la definición de patrones de integración (OHS, Customer/Supplier, ACL, Published Language, Conformist). El Tactical DDD documenta siete bounded contexts completos con sus cuatro capas, class diagrams y database design, dejando una arquitectura consistente y lista para implementación.
+
+### Recomendaciones
+
+* Se recomienda priorizar un piloto controlado en un centro comercial de Lima (50-100 espacios) para validar las hipótesis del Lean UX. 
+* Desarrollar las Spike Stories (Culqi, Plate Recognizer, FCM, Google Wallet, MQTT, PDF) en las primeras semanas del Sprint 2 para mitigar riesgos técnicos tempranamente.
+* Implementar el modelo de suscripción diferenciado (Free, Pro, Premium) desde el piloto para medir la disposición de pago real. Los administradores entrevistados indicaron presupuestos de USD 20,000-50,000, validando la viabilidad financiera del modelo B2B.
 ---
 
 # Bibliografía
