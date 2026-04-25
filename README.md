@@ -108,6 +108,10 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
 
 <div style="page-break-after: always;">
 
+---
+
+<div style="page-break-after: always;">
+
 # Contenido
 
 - [Project Report Collaboration Insights](#project-report-collaboration-insights)
