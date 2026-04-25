@@ -36,12 +36,29 @@
 <p align="center">
     <strong>Abril, 2026</strong>
 </p>
----
 
 # Project Report Collaboration Insights
+| Versión | Fecha | Autor | Descripción de modificación |
+|---|---|---|---|
+| 1.0.0 | 2026-04-04 | Esteban Román, Henry Kalet | Creación de estructura base del repositorio, carátula, CONTRIBUTING.md y registro de versiones. |
+| 1.1.0 | 2026-04-06 | Esteban Román, Henry Kalet | Redacción de Capítulo I: Startup Profile, Solution Profile (5W+2H, Lean UX Process) y Segmentos Objetivo. |
+| 1.2.0 | 2026-04-08 | Vidal Castro, Miguel Angel | Desarrollo de Capítulo II: Competidores (análisis competitivo), estrategias frente a competidores. |
+| 1.2.1 | 2026-04-09 | Cruz Ibarra, Victor Andrés | Diseño de entrevistas, registro y análisis de entrevistas del Segmento 2 (Administradores). |
+| 1.2.2 | 2026-04-11 | Allcca Guerrero, Irving Washington | Needfinding: User Personas, User Task Matrix, Empathy Mapping. |
+| 1.2.3 | 2026-04-11 | Dueñas Canales, Leonardo Manuel | Needfinding: User Journey Mapping. Registro de entrevistas Segmento 1 (Conductores). |
+| 1.3.0 | 2026-04-13 | Esteban Román, Henry Kalet | Capítulo II: Big Picture Event Storming (10 pasos), Ubiquitous Language. |
+| 1.4.0 | 2026-04-15 | Esteban Román, Henry Kalet | Capítulo III: User Stories (US, TS, SWS, SS), Impact Mapping y Product Backlog. |
+| 1.4.1 | 2026-04-16 | Vidal Castro, Miguel Angel | Capítulo III: Technical Stories adicionales (TS22-TS61) integradas al backlog. |
+| 1.5.0 | 2026-04-18 | Cruz Ibarra, Victor Andrés | Capítulo IV: Candidate Context Discovery y Domain Message Flows Modeling. |
+| 1.5.1 | 2026-04-19 | Allcca Guerrero, Irving Washington | Capítulo IV: Bounded Context Canvases (Parking Monitoring, Access Control, Payment Processing). |
+| 1.5.2 | 2026-04-20 | Vidal Castro, Miguel Angel | Capítulo IV: Context Mapping con patrones DDD y análisis de alternativas. |
+| 1.5.3 | 2026-04-21 | Dueñas Canales, Leonardo Manuel | Capítulo IV: Software Architecture (System Landscape, Context, Container, Deployment diagrams). |
+| 1.6.0 | 2026-04-22 | Esteban Román, Henry Kalet | Capítulo IV: Tactical DDD - Domain Layer, Interface Layer, Application Layer, Infrastructure Layer para los 7 Bounded Contexts. |
+| 1.6.1 | 2026-04-22 | Dueñas Canales, Leonardo Manuel | Capítulo IV: Component Level Diagrams para Bounded Contexts. |
+| 1.6.2 | 2026-04-23 | Cruz Ibarra, Victor Andrés | Capítulo IV: Database Design Diagrams para Bounded Contexts. |
+| 1.7.0 | 2026-04-24 | Esteban Román, Henry Kalet | Integración de Student Outcome, Conclusiones, Bibliografía y Anexos para AV1. |
 **URL del repositorio para el Project Report:** [https://github.com/IoTMedicineProject/report.git](https://github.com/IoTMedicineProject/report.git)
 
----
 
 # Contenido
 
