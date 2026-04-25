@@ -1,57 +1,123 @@
-# COURSE PROJECT
 
 <p align="center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"></img><br>
+    <img src="./assets/logos/upc-logo.png" alt="UPC Logo" width="200"><br>
     <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
     <br>
     <strong>Facultad de Ingeniería</strong><br>
     <strong>Carrera de Ingeniería de Software</strong><br>
     <strong>Ciclo 2026-10</strong>
 </p>
-
+ 
 <p align="center">
   <strong>Código del curso: </strong>1ASI0572<br>
   <strong>Curso: </strong>Desarrollo de Soluciones IOT
 </p>
-
+ 
 <p align="center">
   <strong>NRC: 6772</strong>
 </p>
-
+ 
 <p align="center">
-    <strong>Profesor: </strong>Marco Antonio Leon Baca
+    <strong>Profesor: </strong>Marco Antonio León Baca
 </p>
-
+ 
 <p align="center">
     <strong>Informe de Trabajo Final</strong>
 </p>
-
+ 
 <p align="center">
-    <strong>Nombre del startup: </strong> [Startup]
+    <strong>Nombre del startup: </strong> ParkSense IoT
 </p>
-
+ 
 <p align="center">
-    <strong>Nombre del producto:</strong> [Producto]
+    <strong>Nombre del producto: </strong> SpotFinder
 </p>
-
+ 
 <p align="center">
-    <strong>Marzo, 2026</strong>
+    <strong>Abril, 2026</strong>
 </p>
-
----
 
 # Project Report Collaboration Insights
-**URL del repositorio para el Project Report:** [https://github.com/IoTMedicineProject/report.git](https://github.com/IoTMedicineProject/report.git)
-
----
+| Versión | Fecha | Autor | Descripción de modificación |
+|---|---|---|---|
+| 1.0.0 | 2026-04-04 | Esteban Román, Henry Kalet | Creación de estructura base del repositorio, carátula, CONTRIBUTING.md y registro de versiones. |
+| 1.1.0 | 2026-04-06 | Esteban Román, Henry Kalet | Redacción de Capítulo I: Startup Profile, Solution Profile (5W+2H, Lean UX Process) y Segmentos Objetivo. |
+| 1.2.0 | 2026-04-08 | Vidal Castro, Miguel Angel | Desarrollo de Capítulo II: Competidores (análisis competitivo), estrategias frente a competidores. |
+| 1.2.1 | 2026-04-09 | Cruz Ibarra, Victor Andrés | Diseño de entrevistas, registro y análisis de entrevistas del Segmento 2 (Administradores). |
+| 1.2.2 | 2026-04-11 | Allcca Guerrero, Irving Washington | Needfinding: User Personas, User Task Matrix, Empathy Mapping. |
+| 1.2.3 | 2026-04-11 | Dueñas Canales, Leonardo Manuel | Needfinding: User Journey Mapping. Registro de entrevistas Segmento 1 (Conductores). |
+| 1.3.0 | 2026-04-13 | Esteban Román, Henry Kalet | Capítulo II: Big Picture Event Storming (10 pasos), Ubiquitous Language. |
+| 1.4.0 | 2026-04-15 | Esteban Román, Henry Kalet | Capítulo III: User Stories (US, TS, SWS, SS), Impact Mapping y Product Backlog. |
+| 1.4.1 | 2026-04-16 | Vidal Castro, Miguel Angel | Capítulo III: Technical Stories adicionales (TS22-TS61) integradas al backlog. |
+| 1.5.0 | 2026-04-18 | Cruz Ibarra, Victor Andrés | Capítulo IV: Candidate Context Discovery y Domain Message Flows Modeling. |
+| 1.5.1 | 2026-04-19 | Allcca Guerrero, Irving Washington | Capítulo IV: Bounded Context Canvases (Parking Monitoring, Access Control, Payment Processing). |
+| 1.5.2 | 2026-04-20 | Vidal Castro, Miguel Angel | Capítulo IV: Context Mapping con patrones DDD y análisis de alternativas. |
+| 1.5.3 | 2026-04-21 | Dueñas Canales, Leonardo Manuel | Capítulo IV: Software Architecture (System Landscape, Context, Container, Deployment diagrams). |
+| 1.6.0 | 2026-04-22 | Esteban Román, Henry Kalet | Capítulo IV: Tactical DDD - Domain Layer, Interface Layer, Application Layer, Infrastructure Layer para los 7 Bounded Contexts. |
+| 1.6.1 | 2026-04-22 | Dueñas Canales, Leonardo Manuel | Capítulo IV: Component Level Diagrams para Bounded Contexts. |
+| 1.6.2 | 2026-04-23 | Cruz Ibarra, Victor Andrés | Capítulo IV: Database Design Diagrams para Bounded Contexts. |
+| 1.7.0 | 2026-04-24 | Esteban Román, Henry Kalet | Integración de Student Outcome, Conclusiones, Bibliografía y Anexos para AV1. |
+ 
+## Project Report Collaboration Insights
+ 
+**URL del repositorio para el Project Report:** [https://github.com/ParkSenseIoT/SpotFinder-Report](https://github.com/ParkSenseIoT/SpotFinder-Report)
+ 
+Se utilizó GitHub como plataforma de control de versiones y colaboración en equipo. Se siguió el flujo de trabajo **GitFlow** con las ramas principales `main` y `develop`, y ramas de trabajo `feature/<sección>` para cada contribución individual.
+ 
+Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes:
+ 
+| Integrante | Código | Nombre en GitHub |
+|---|---|---|
+| Esteban Román, Henry Kalet | U202310210 | kalet123-commit |
+| Dueñas Canales, Leonardo Manuel | U202117475 | insonnio |
+| Vidal Castro, Miguel Angel | U202314186 | gossk |
+| Allcca Guerrero, Irving Washington | U202213241 | eviterno17 |
+| Cruz Ibarra, Victor Andrés | U202311053 | elandrehs |
+ 
+### AV1
+ 
+#### Tareas asignadas
+ 
+Para el desarrollo del AV1 (TB1), cada participante del equipo realizó las siguientes tareas:
+ 
+| Integrante | Tareas asignadas |
+|---|---|
+| **Esteban Román, Henry Kalet** | - Capítulo I completo (Startup Profile, Solution Profile, Lean UX, Segmentos Objetivo) - Capítulo II: Big Picture Event Storming (10 pasos), Ubiquitous Language - Capítulo III: User Stories (US, TS, SWS, SS), Impact Mapping, Product Backlog - Capítulo IV: Tactical DDD (Domain Layer, Interface Layer, Application Layer, Infrastructure Layer para 7 BCs), Class Diagrams - Component Level Diagrams (en colaboración con Leonardo) |
+| **Dueñas Canales, Leonardo Manuel** | - Capítulo II: User Journey Mapping, registro de entrevistas Segmento 1 - Capítulo IV: Software Architecture (System Landscape, Context, Container, Deployment diagrams) - Component Level Diagrams para Bounded Contexts (en colaboración con Henry) |
+| **Vidal Castro, Miguel Angel** | - Capítulo II: Análisis competitivo, estrategias frente a competidores - Capítulo III: Technical Stories adicionales (integración con equipo) - Capítulo IV: Context Mapping con patrones DDD y análisis de alternativas |
+| **Allcca Guerrero, Irving Washington** | - Capítulo II: User Personas, User Task Matrix, Empathy Mapping - Capítulo IV: Bounded Context Canvases (Parking Monitoring, Access Control, Payment Processing, Emergency, Analytics, Notification, IAM) |
+| **Cruz Ibarra, Victor Andrés** | - Capítulo II: Diseño de entrevistas, registro y análisis de entrevistas Segmento 2 - Capítulo IV: Candidate Context Discovery, Domain Message Flows Modeling - Capítulo IV: Database Design Diagrams para Bounded Contexts |
+ 
+#### GitHub Collaboration Insights
+ 
+En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados. Todas las ramas fueron gestionadas siguiendo el flujo de trabajo GitFlow.
+ 
+**Gráfico de commits por integrante:**
+ 
+![Commits Graph](./assets/images/screenshots/commitsgraph.png)
+ 
+**Gráfico de red (network graph) de ramas en el repositorio de GitHub:**
+ 
+![Network Graph](./assets/images/screenshots/networkgraph.png)
+ 
+**Contribuciones de los integrantes:**
+ 
+![Contributors Image](./assets/images/screenshots/contributorsimage.png)
 
 # Contenido
 
 ---
-
-# Student Outcome
-
----
+## Student Outcome
+ 
+**Criterio:** La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
+ 
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5.
+ 
+| Criterio específico | Acciones realizadas | Conclusiones |
+|---------------------|---------------------|--------------|
+| **Comunica oralmente con efectividad a diferentes rangos de audiencia** | **Esteban Román, Henry Kalet**<br>_**AV1:** Lideré las sesiones de Event Storming y Candidate Context Discovery con el equipo, explicando la metodología de los 10 pasos y guiando la identificación de bounded contexts. Presenté y justifiqué las decisiones de arquitectura DDD (clasificación Core/Supporting/Generic) utilizando un lenguaje accesible tanto para los integrantes técnicos como para la comprensión general del dominio de estacionamientos._ <br><br> **Dueñas Canales, Leonardo Manuel**<br>_**AV1:** Presenté los diagramas de arquitectura C4 (System Landscape, Context, Container, Deployment) al equipo, explicando las decisiones de diseño y las interacciones entre componentes del sistema IoT (ESP32, Edge Server, Cloud Backend). Adapté la explicación para que los compañeros sin experiencia en IoT comprendieran el flujo de datos desde los sensores hasta la app móvil._ <br><br> **Vidal Castro, Miguel Angel**<br>_**AV1:** Presenté y expliqué el Context Mapping al equipo, comunicando los patrones DDD elegidos (OHS, Customer/Supplier, ACL, Published Language) y las razones detrás de cada relación entre bounded contexts. Facilité la discusión de alternativas con el equipo, asegurando que todos comprendieran las implicaciones de cada patrón en la arquitectura._ <br><br> **Allcca Guerrero, Irving Washington**<br>_**AV1:** Comuniqué los hallazgos del Needfinding (User Personas, Empathy Maps) al equipo, explicando los perfiles de los conductores y administradores identificados en la investigación. Presenté los Bounded Context Canvases de los 3 contextos Core, detallando la comunicación inbound/outbound y las decisiones de negocio de cada contexto._ <br><br> **Cruz Ibarra, Victor Andrés**<br>_**AV1:** Conduje y presenté las entrevistas realizadas al segmento de administradores de estacionamientos, comunicando los hallazgos clave sobre la problemática actual (gestión manual, falta de analítica, costos operativos). Expliqué los Domain Message Flows al equipo, detallando los 4 escenarios de interacción entre bounded contexts con un lenguaje claro y orientado al negocio._ | **Conclusiones AV1:** El equipo logró comunicar efectivamente las decisiones técnicas y de diseño a diferentes audiencias. Las sesiones de Event Storming y las presentaciones de arquitectura DDD permitieron que todos los integrantes comprendieran el dominio del problema y las decisiones de diseño, independientemente de su nivel de experiencia previa con DDD o IoT. La comunicación oral efectiva fue clave para alinear criterios en la clasificación de bounded contexts y la definición de patrones de integración. |
+| **Comunica por escrito con efectividad a diferentes rangos de audiencia** | **Esteban Román, Henry Kalet**<br>_**AV1:** Redacté los capítulos I y III del informe, organizando de manera clara la problemática (5W+2H), el proceso Lean UX, las User Stories con formato Gherkin de 7 columnas, y el Product Backlog priorizado por valor de negocio. Documenté el Tactical DDD de los 7 bounded contexts con tablas detalladas de Domain Layer (aggregates, value objects, commands, queries, events, domain services), Interface Layer, Application Layer e Infrastructure Layer, asegurando consistencia y trazabilidad entre la documentación y la implementación._ <br><br> **Dueñas Canales, Leonardo Manuel**<br>_**AV1:** Documenté la arquitectura de software del sistema SpotFinder mediante diagramas C4 en Structurizr DSL, incluyendo código fuente replicable. Redacté las descripciones de los Component Level Diagrams para los bounded contexts, detallando las interacciones entre capas y sistemas externos con nomenclatura técnica precisa._ <br><br> **Vidal Castro, Miguel Angel**<br>_**AV1:** Redacté la sección de Context Mapping del informe, documentando las 7 relaciones entre bounded contexts con patrones DDD, análisis de alternativas (pros/contras) y decisiones sustentadas. También documenté las Technical Stories adicionales con formato estandarizado de 7 columnas, contribuyendo a la especificación completa de requisitos técnicos del backend._ <br><br> **Allcca Guerrero, Irving Washington**<br>_**AV1:** Redacté las secciones de Needfinding del Capítulo II, documentando los User Personas (Carlos Ramírez y Patricia Vega), User Task Matrix, y Empathy Maps con información extraída de las entrevistas. Documenté los Bounded Context Canvases siguiendo el template oficial de ddd-crew/bounded-context-canvas, detallando comunicación, ubiquitous language y business decisions para cada contexto._ <br><br> **Cruz Ibarra, Victor Andrés**<br>_**AV1:** Redacté el diseño y análisis de entrevistas del Capítulo II, sintetizando los hallazgos de 6 entrevistas (3 por segmento) en un análisis cruzado con validación de hipótesis Lean UX. Documenté el Candidate Context Discovery con la técnica Start-with-Value y los Domain Message Flows de 4 escenarios clave del sistema, además de los Database Design Diagrams con esquemas SQL para cada bounded context._ | **Conclusiones AV1:** La documentación escrita del proyecto refleja un alto nivel de detalle y consistencia técnica. El uso de formatos estandarizados (tablas de 7 columnas para User Stories, templates de Bounded Context Canvas, Structurizr DSL para diagramas C4, PlantUML para class diagrams, SQL para database design) aseguró que la información sea comprensible tanto para el equipo técnico como para evaluadores externos. La trazabilidad entre Event Storming, User Stories, Bounded Contexts y Tactical DDD demuestra coherencia en el diseño del sistema. |
+  
 
 # Capítulo I: Introducción
 
@@ -73,14 +139,15 @@ Transformar la experiencia de estacionamiento en centros comerciales del Perú m
 
 **Visión**
 Posicionarnos como una solución innovadora dentro del ámbito de ciudades inteligentes, integrando IoT y plataformas digitales para transformar la gestión de estacionamientos.
-### 1.1.2. Perfiles de integrantes del equipo
+## 1.1.2. Perfiles de integrantes del equipo
+ 
 | Foto | Nombres y Apellidos | Código | Carrera | Resumen de Conocimientos y Habilidades |
 | :---: | :--- | :---: | :---: | :--- |
-| ![Henry Kalet Esteban Román](./assets/images/photos/esteban-henry.png) | Henry Kalet Esteban Román | U202310210 | Ingeniería de Software | Estudiante de 7° ciclo. Posee experiencia en desarrollo fullstack (Angular, Vue.js, Spring Boot, .NET) y aplicaciones móviles. Domina arquitecturas DDD y Clean Architecture, además de metodologías ágiles como Scrum y Lean UX. Cuenta con sólidos conocimientos en Java, TypeScript y bases de datos relacionales
-| ![[Foto Compañero 2]](./assets/images/photos/perfil-vacio.png) | [Nombres y Apellidos] | [Código] | [Carrera] | [Resumen de Conocimientos y Habilidades] |
-| ![[Foto Compañero 3]](./assets/images/photos/perfil-vacio.png) | [Nombres y Apellidos] | [Código] | [Carrera] | [Resumen de Conocimientos y Habilidades] |
-| ![[Foto Compañero 4]](./assets/images/photos/perfil-vacio.png) | [Nombres y Apellidos] | [Código] | [Carrera] | [Resumen de Conocimientos y Habilidades] |
-| ![[Foto Compañero 5]](./assets/images/photos/perfil-vacio.png) | [Nombres y Apellidos] | [Código] | [Carrera] | [Resumen de Conocimientos y Habilidades] |
+| ![Henry Kalet Esteban Román](./assets/images/photos/esteban-henry.png) | Henry Kalet Esteban Román | U202310210 | Ingeniería de Software | Estudiante de 7° ciclo. Posee experiencia en desarrollo fullstack (Angular, Vue.js, Spring Boot, .NET) y aplicaciones móviles. Domina arquitecturas DDD y Clean Architecture, además de metodologías ágiles como Scrum y Lean UX. Cuenta con sólidos conocimientos en Java, TypeScript y bases de datos relacionales. |
+| ![Leonardo Manuel Dueñas Canales](./assets/images/photos/dueñas-leonardo.png) | Leonardo Manuel Dueñas Canales | U202117475 | Ingeniería de Software | Estudiante de 7° ciclo. Cuenta con experiencia en desarrollo backend con Java y Spring Boot, así como en diseño de arquitecturas de software utilizando C4 Model y Structurizr. Posee conocimientos en bases de datos relacionales (PostgreSQL, MySQL), Docker y despliegue en la nube. Familiarizado con metodologías ágiles y control de versiones con Git/GitHub. |
+| ![Miguel Angel Vidal Castro](assets\images\photos\vidal-miguel.jpeg) | Miguel Angel Vidal Castro | U202314186 | Ingeniería de Software | Estudiante de 7° ciclo. Experiencia en desarrollo web con Angular y Spring Boot. Conocimientos en diseño orientado al dominio (DDD), patrones de integración entre bounded contexts y documentación técnica. Manejo de herramientas de gestión de proyectos (Trello, Jira) y metodologías Scrum. Habilidades en análisis competitivo y elaboración de estrategias de producto. |
+| ![Irving Washington Allcca Guerrero](./assets/images/photos/allca-irving.png) | Irving Washington Allcca Guerrero | U202213241 | Ingeniería de Software | Estudiante de 7° ciclo. Posee experiencia en investigación de usuarios y diseño UX, incluyendo la elaboración de User Personas, Empathy Maps y Journey Maps. Conocimientos en desarrollo frontend con Angular y React, además de diseño de interfaces con Figma. Familiarizado con bases de datos relacionales y metodologías ágiles. |
+| ![Victor Andrés Cruz Ibarra](./assets/images/photos/cruz-andres.jpeg) | Victor Andrés Cruz Ibarra | U202311053 | Ingeniería de Software | Estudiante de 7° ciclo. Cuenta con experiencia en desarrollo backend con Spring Boot y diseño de bases de datos relacionales (PostgreSQL, MySQL). Conocimientos en modelado de datos, diagramas UML y documentación técnica. Habilidades en investigación cualitativa (entrevistas, análisis de usuarios) y redacción de informes técnicos. Familiarizado con Git/GitHub y Conventional Commits. |
 ## 1.2. Solution Profile
 
 El proyecto consiste en el desarrollo de un sistema **IoT** para la gestión inteligente de estacionamientos, basado en el monitoreo en tiempo real de los espacios disponibles. El sistema utiliza sensores instalados en cada espacio para detectar si un lugar está ocupado o libre, permitiendo generar un mapa actualizado del estacionamiento que puede ser consultado por los usuarios a través de una aplicación móvil.
@@ -290,20 +357,129 @@ Actualmente, gran parte de los operadores en Perú (como Apparka, que lidera el 
 # Capítulo II: Requirements Elicitation & Analysis
 
 ## 2.1. Competidores.
-### 2.1.1. Análisis competitivo.
-[Contenido]
+### 2.1.1. Análisis competitivo
+#### Competitive Analysis Landscape
 
-### 2.1.2. Estrategias y tácticas frente a competidores.
-[Contenido]
+| ¿Por qué llevar a cabo este análisis? | Evaluar el posicionamiento de SpotFinder frente a soluciones existentes de gestión de estacionamientos, identificar brechas en el mercado peruano y definir nuestro diferencial estratégico basado en tecnología IoT con detección por espacio individual, guiado visual y reconocimiento de placas. |
+| :--- | :--- |
+
+---
+
+| | **SpotFinder (ParkSense)** | **Apparka (Los Portales)** | **ParkHelp** | **Quadra** |
+| :--- | :--- | :--- | :--- | :--- |
+| | <img src="./assets/images/screenshots/SpotFinderlogo.png" width="150" style="aspect-ratio: 1/1; object-fit: cover; border-radius: 8px;"> | <img src="./assets/images/screenshots/Apparkalogo.png" width="150" style="aspect-ratio: 1/1; object-fit: cover; border-radius: 8px;"> | <img src="./assets/images/screenshots/Parkhelplogo.jpg" width="150" style="aspect-ratio: 1/1; object-fit: cover; border-radius: 8px;"> | <img src="./assets/images/screenshots/Quadralogo.png" width="150" style="aspect-ratio: 1/1; object-fit: cover; border-radius: 8px;"> |
+| **Perfil - Overview** | Sistema IoT integral para gestión inteligente de estacionamientos en centros comerciales, que combina sensores ultrasónicos por espacio, ALPR, guiado visual con LEDs, app móvil para conductores y dashboard analítico para administradores. | Operador líder de estacionamientos en Perú (~300 ubicaciones). Su app permite ubicar estacionamientos, ver disponibilidad general, pagar digitalmente y usar apertura automática de barreras por lectura de placas ("En Una"). | Líder global en sistemas de guiado de estacionamiento con más de 600,000 espacios monitoreados en 700+ ubicaciones en 50+ países. Ofrece sensores ultrasónicos, cámaras LPR, señalización digital y software ParkManager. | Marketplace peruano de estacionamientos peer-to-peer que permite a particulares alquilar sus cocheras privadas por horas. Usa IA para pricing dinámico y LPR para acceso. |
+| **Ventaja competitiva** | Solución IoT integral de bajo costo diseñada para el mercado peruano, con detección por espacio individual, guiado visual, ALPR con soporte de placas peruanas e integración con pasarelas de pago locales (Yape, Culqi). | Red de estacionamientos más grande del Perú. Marca establecida con 60+ años de experiencia. App con funcionalidad "En Una" para ingreso/salida sin tickets. Presencia en aeropuertos a nivel nacional. | Tecnología madura con 20+ años de experiencia. Portfolio más amplio de sensores del mercado (ultrasónicos, cámara, wireless, LoRa, LTE-M). Software ParkManager con analytics avanzados. | Modelo innovador peer-to-peer que desbloquea inventario de estacionamiento no utilizado (cocheras privadas). Precio accesible por minuto. |
+| **Perfil de Marketing** | | | | |
+| **Mercado objetivo** | Centros comerciales medianos y grandes en Lima que buscan modernizar sus estacionamientos con IoT. Conductores que visitan estos centros comerciales. | Centros comerciales, aeropuertos, hospitales y edificios corporativos en Perú. Conductores que buscan estacionamiento en la red de Apparka. | Aeropuertos, centros comerciales, hospitales y universidades a nivel global. Operadores de estacionamiento y municipalidades. | Conductores en Lima que buscan cocheras privadas cerca de su destino. Propietarios de cocheras que desean generar ingresos extra. |
+| **Estrategias de marketing** | Demostraciones piloto en centros comerciales, alianzas con operadores, marketing B2B a gerentes de operaciones, contenido técnico sobre IoT y smart parking. | Marketing masivo (TV, digital), alianzas con centros comerciales, presencia en aeropuertos, descarga gratuita de app. | Participación en ferias internacionales (ICSC, IPMI, EPICCA), partners regionales (AccessPark Colombia), cases studies y whitepapers técnicos. | Marketing digital en redes sociales, PR en medios de comunicación (El Comercio, Mercado Negro), alianzas con edificios y condominios. |
+| **Perfil de Producto** | | | | |
+| **Productos y servicios** | Sensores HC-SR04 por espacio, LEDs WS2812B de guiado, ESP32-CAM + Plate Recognizer para ALPR, sensor MQ-2 para emergencias, app móvil (Flutter), dashboard web (Angular), Edge Server (Flask + MQTT), backend (Spring Boot). | App móvil (iOS/Android) con buscador de estacionamientos, pago digital (tarjeta, Apparka Wallet), LPR para entrada/salida automática, gestión de abonados, integración con Google Maps/Waze. | Sensores U2 ultrasónicos indoor, sensores C2 con cámara LPR, sensores G4/G5 wireless outdoor, señalización digital, software ParkManager, iluminación LED inteligente. | App móvil para reservar cocheras por hora/semana/mes, mapa con cocheras disponibles, perfil de anfitrión con calificaciones, pago digital in-app, stickertag para acceso. |
+| **Precios y costos** | Modelo SaaS por espacio monitoreado. Starter: hasta 200 espacios. Business: hasta 1,000 espacios + ALPR + analytics. Enterprise: 1,000+ espacios, solución completa con integraciones. (Precios por definir en validación). | Gratuita para conductores. El centro comercial/operador paga por la integración. Cobro por estacionamiento: S/ 5-20/hora según ubicación. Abonados mensuales disponibles. | Precios enterprise bajo cotización directa. Alto costo de implementación (hardware propietario + instalación + licencia de software). No disponible en modelo self-service. | Gratuita para conductores. Cobro de S/ 0.12/minuto. Los anfitriones reciben un porcentaje del alquiler. Modelo marketplace con comisión por transacción. |
+| **Canales de distribución** | App móvil (iOS/Android), dashboard web, hardware IoT instalado en sitio. | App móvil (iOS/Android), presencia física en estacionamientos propios y operados. | Venta directa B2B, red de distribuidores certificados en 50+ países, partners regionales en LATAM. | App móvil (iOS/Android). |
+| **Análisis SWOT** | | | | |
+| **Fortalezas** | Solución IoT integral de bajo costo. Detección por espacio individual. ALPR con soporte de placas peruanas. Integración con Yape/Culqi. Guiado visual con LEDs. Dashboard analítico. | Red de 300+ estacionamientos. Marca consolidada. App funcional con 50,000+ usuarios. ALPR operativo en ubicaciones selectas. Presencia en aeropuertos nacionales. | Tecnología más madura del mercado (20+ años). Portfolio más amplio de sensores. 600,000+ espacios monitoreados. Presencia global en 50+ países. Software ParkManager robusto. | Modelo peer-to-peer innovador. Precio competitivo (S/ 0.12/min). Desbloquea inventario oculto de estacionamiento. Sin necesidad de infraestructura IoT propia. |
+| **Debilidades** | Startup emergente sin track record comercial. Prototipo en desarrollo. Sin base de clientes instalada. Dependencia de WiFi para sensores. | No ofrece detección por espacio individual. Sin guiado visual interno. Disponibilidad mostrada es general (no por zona/nivel específico). App con reportes de crashes frecuentes. | Costo prohibitivo para el mercado peruano. Sin presencia directa en Perú. Implementación compleja que requiere integrador certificado. No cuenta con app para conductores consumer-facing. | No aplica a estacionamientos de centros comerciales. No tiene sensores IoT. Oferta limitada a cocheras privadas. Dependiente del inventario de anitrones. |
+| **Oportunidades** | Mercado peruano sin solución IoT integral accesible. Creciente interés de centros comerciales en modernización. Alianzas con operadores como Apparka. Datos de BCR/IPE justifican inversión en smart parking. | Expansión tecnológica hacia detección por espacio. Integración con sistemas IoT de terceros. Expansión internacional (ya inició en Ecuador). | Entrada al mercado peruano vía partners locales. Modelo SaaS para mercados emergentes. Integración con apps locales de pago. | Expansión a estacionamientos comerciales. Alianza con centros comerciales para ofrecer cocheras cercanas como alternativa. |
+| **Amenazas** | Entrada de ParkHelp u otros players globales al mercado peruano. Que Apparka desarrolle su propia solución IoT integral. Resistencia al cambio de operadores tradicionales. | Competencia de startups tecnológicas con soluciones IoT más avanzadas. Disrución por modelos peer-to-peer como Quadra. | Competidores locales con soluciones más baratas y adaptadas. Barreras arancelarias para hardware importado. | Regulación de estacionamientos informales. Desconfianza de usuarios en dejar su auto en cocheras privadas. |
+
+### 2.1.2. Estrategias y tácticas frente a competidores
+
+Para competir eficazmente en el mercado de soluciones de gestión inteligente de estacionamientos, ParkSense aplicará las siguientes estrategias y tácticas preliminares:
+
+#### **1. Diferenciación por integración IoT completa a bajo costo**
+* **Estrategia:** Posicionar a SpotFinder como la única solución en el mercado peruano que ofrece detección por espacio individual con guiado visual LED, ALPR y analytics en un solo paquete accesible, frente a Apparka (que no tiene detección por espacio) y ParkHelp (cuyo costo es prohibitivo para el mercado local).
+* **Tácticas:**  Desarrollar un prototipo funcional con componentes de bajo costo que demuestre ROI medible. 
+    * Ofrecer implementación progresiva comenzando con una zona piloto de 50-100 espacios para reducir la barrera de entrada.
+
+#### **2. Alianzas estratégicas con operadores existentes**
+* **Estrategia:** En lugar de competir directamente con Apparka por la operación de estacionamientos, posicionar a SpotFinder como un complemento tecnológico que potencia la oferta del operador existente.
+* **Tácticas:**  Proponer integraciones API con el ecosistema de Apparka. 
+    * Demostrar cómo la detección por espacio individual puede mejorar la experiencia "En Una" de Apparka añadiendo guiado visual hacia el espacio específico. 
+    * Ofrecer un modelo *white-label* para que operadores comercialicen la solución bajo su propia marca.
+
+#### **3. Experiencia del conductor como ventaja competitiva**
+* **Estrategia:** Aprovechar que ParkHelp no ofrece una app *consumer-facing* y que la app de Apparka tiene reportes de crashes, para posicionar SpotFinder como la app de estacionamiento con la mejor experiencia de usuario para conductores en Lima.
+* **Tácticas:**  Diseñar la app con UX enfocada en contexto de conducción (pantallas grandes, acciones mínimas, modo mapa). 
+    * Integrar con Yape y Culqi (que Apparka no ofrece como método de pago nativo). 
+    * Implementar función "Encuentra tu auto" con ubicación exacta del espacio.
+
+#### **4. Modelo de datos como diferenciador frente a Quadra**
+* **Estrategia:** Mientras Quadra resuelve el problema de estacionamiento público en calles con un modelo *peer-to-peer*, **SpotFinder** se diferencia atacando el segmento de centros comerciales con inteligencia basada en datos IoT de sensores propios.
+* **Tácticas:** * Ofrecer dashboard con métricas que Quadra no puede proveer (tasa de rotación por espacio, heatmaps de ocupación, predicción de demanda). 
+    * Generar reportes de impacto ambiental (CO₂ ahorrado por reducción de tiempo de búsqueda) como argumento de responsabilidad social para centros comerciales.
+
+#### **5. Seguridad y respuesta a emergencias como valor agregado**
+* **Estrategia:** Ninguno de los tres competidores ofrece detección de gases/humo integrada al sistema de estacionamiento. Esta funcionalidad diferenciadora responde a una preocupación real de los centros comerciales.
+* **Tácticas:** * Implementar sensores MQ-2 conectados al mismo ecosistema IoT. 
+    * Configurar protocolos automatizados: alerta a administradores, activación de señalización de evacuación vía LEDs, apertura automática de barreras.
 
 ## 2.2. Entrevistas.
+En esta sección se aborda la investigación cualitativa realizada mediante entrevistas a representantes de los dos segmentos objetivo del proyecto: conductores que visitan centros comerciales y administradores de estacionamientos. El objetivo es comprender las herramientas, procesos y problemáticas actuales en la gestión de estacionamientos, así como validar las funcionalidades propuestas para SpotFinder.
 ### 2.2.1. Diseño de entrevistas.
-[Contenido]
+Para diseñar las entrevistas, se elaboraron dos bloques de preguntas diferenciados según el segmento objetivo. Las preguntas buscan obtener tanto información objetiva (frecuencia de uso, herramientas actuales, tiempos) como información subjetiva (percepciones, frustraciones y expectativas). Se incluyen también preguntas para recolectar datos demográficos necesarios para construir los User Personas.
 
-### 2.2.2. Registro de entrevistas
+---
 
-## Segmento Objetivo 1
+### Segmento 1: Conductores que visitan centros comerciales
 
+#### **Datos demográficos (para construcción de arquetipos)**
+* ¿Cuál es su nombre, edad y distrito de residencia?
+* ¿A qué se dedica profesionalmente?
+* ¿Qué tipo de vehículo conduce (auto, camioneta, moto)?
+* ¿Qué marca de smartphone utiliza? ¿Con qué sistema operativo (Android/iOS)?
+* ¿Qué aplicaciones de servicio usa frecuentemente en su día a día (Yape, Rappi, Uber, Waze, Google Maps, etc.)?
+
+#### **Preguntas sobre la problemática**
+* ¿Con qué frecuencia visita centros comerciales en Lima? ¿Cuáles visita más a menudo?
+* Cuando va a un centro comercial, ¿cuánto tiempo aproximado le toma encontrar un espacio de estacionamiento?
+* ¿Ha experimentado situaciones donde baje a un nivel del estacionamiento solo para descubrir que está lleno? ¿Con qué frecuencia le ocurre?
+* ¿Cómo decide en qué zona o nivel del estacionamiento buscar? ¿Sigue alguna estrategia o es aleatorio?
+* ¿Alguna vez ha olvidado dónde estacionó su auto dentro de un centro comercial? ¿Cómo lo resolvió?
+* ¿Cómo paga actualmente el estacionamiento? ¿Usa ticket físico, app, efectivo? ¿Qué tan satisfecho está con ese proceso?
+* ¿Ha tenido algún incidente de seguridad con su vehículo en un estacionamiento (robo de accesorios, rayones, etc.)?
+* ¿Qué es lo que más le frustra de la experiencia de estacionamiento en centros comerciales?
+* En una escala del 1 al 10, ¿qué tan satisfecho está con la experiencia actual de estacionamiento en los centros comerciales que visita?
+
+#### **Preguntas sobre la solución**
+* Si existiera una app que le mostrara en tiempo real los espacios disponibles por zona y nivel antes de entrar al estacionamiento, ¿la usaría? ¿Qué tan útil le parece?
+* ¿Qué tan valioso sería para usted que luces LED (verde/rojo) sobre cada espacio le indicaran visualmente dónde hay lugares libres?
+* ¿Le interesaría poder reservar un espacio de estacionamiento con anticipación desde su celular?
+* Si pudiera pagar el estacionamiento directamente desde su celular con Yape o tarjeta, sin hacer cola en una cabina, ¿lo haría?
+* ¿Qué tan importante sería recibir una notificación si se detecta algún movimiento inusual cerca de su vehículo?
+* ¿Qué funcionalidad le parecería más valiosa: ver disponibilidad en tiempo real, reservar espacio, pagar desde el celular o localizar su auto al regresar?
+* ¿Estaría dispuesto a descargar y usar una nueva app si mejora significativamente su experiencia de estacionamiento?
+
+---
+
+### Segmento 2: Administradores de estacionamientos de centros comerciales
+
+#### **Datos demográficos (para construcción de arquetipos)**
+* ¿Cuál es su nombre, edad y cargo actual?
+* ¿Cuántos años de experiencia tiene en la gestión de estacionamientos o en operaciones de centros comerciales?
+* ¿Cuántos espacios de estacionamiento gestiona actualmente? ¿Cuántos niveles tiene el estacionamiento?
+* ¿Qué herramientas digitales utiliza en su trabajo diario (Excel, software de gestión, email, etc.)?
+
+#### **Preguntas sobre la problemática**
+* ¿Cómo gestionan actualmente la ocupación del estacionamiento? ¿Utilizan algún sistema automatizado o es manual?
+* ¿Tienen visibilidad en tiempo real de cuántos espacios están ocupados y cuántos libres? ¿A nivel general o por zona/nivel?
+* ¿Cuántas personas de su equipo se dedican a orientar el tráfico vehicular dentro del estacionamiento?
+* ¿Qué problemas enfrentan con más frecuencia en la gestión diaria del estacionamiento?
+* ¿Tienen acceso a estadísticas de uso como tasa de ocupación, rotación de espacios, horas punta o ingresos por espacio?
+* ¿Cómo manejan el proceso de cobro actualmente? ¿Qué tan eficiente es?
+* ¿Han tenido situaciones de emergencia (sismo, incendio, fuga de gas) en el estacionamiento? ¿Cómo fue la evacuación? ¿Qué protocolos tienen?
+* ¿Cuáles son los principales costos operativos asociados al estacionamiento?
+* ¿Han recibido quejas de clientes respecto a la experiencia de estacionamiento? ¿Cuáles son las más frecuentes?
+
+#### **Preguntas sobre la solución**
+* ¿Qué tan valioso sería para ustedes contar con un dashboard que muestre la ocupación en tiempo real de cada espacio del estacionamiento?
+* ¿Les interesaría un sistema que genere reportes automáticos de ocupación, rotación e ingresos?
+* ¿Considerarían implementar un sistema de guiado visual con LEDs que dirija a los conductores hacia espacios disponibles?
+* ¿Qué tan importante es para ustedes que el sistema de control de acceso reconozca automáticamente las placas vehiculares?
+* Si un sistema pudiera detectar gases o humo y activar automáticamente protocolos de emergencia (abrir barreras, cambiar LEDs a modo evacuación), ¿lo considerarían un valor agregado significativo?
+* ¿Qué funcionalidad priorizarían: detección de disponibilidad por espacio, ALPR en barreras, pago digital, analytics o seguridad?
+* ¿Estarían dispuestos a implementar una solución IoT si se demuestra un retorno de inversión medible en reducción de costos y mejora de satisfacción del cliente?
+* ¿Qué presupuesto aproximado manejan o manejarían para modernizar el sistema de estacionamiento?
 ### 2.2.2. Registro de entrevistas
 
 ## Segmento Objetivo 1
@@ -404,23 +580,126 @@ Estudiante  joven que utiliza el vehículo para movilizarse a reuniones y recado
 
 | Atributo                | Detalle |
 |-------------------------|--------|
-| **Nombre**              | [Nombre del entrevistado] |
-| **Edad**                |  |
-| **Sexo**                |  |
-| **Distrito**            |  |
-| **Ocupación**           |  |
-| **Fecha de entrevista** |  |
+| **Nombre**              | Carlos Ramírez |
+| **Edad**                | 42 |
+| **Sexo**                | Masculino |
+| **Distrito**            |  Surco  |
+| **Ocupación**           | Jefe de Operaciones de Estacionamiento |
+| **Fecha de entrevista** |  12/04/2026  |
 | **Timing**              | 19:36-22:56 |
-| **Video**               | [Ver entrevista](https://1drv.ms/v/c/e7943890401aebc7/IQCsVfJnUhn9RJWEkmDyCX2pAQnBlD9IkX-cMPJdZnQzPF0?e=uymIhe) |
-| **Captura**             | ![Captura entrevista 3](./assets/images/screenshots/interview-admin3.png) |
-| **Resumen**             | [Completar resumen de la entrevista] |
+| **Video**               | [Ver entrevista]() |
+| **Captura**             | ![Captura entrevista 3](./assets/images/screenshots/seg2entrevista3.png) |
+| **Resumen**             | Jefe de operaciones con aproximadamente 12 años de experiencia en la gestión de estacionamientos y flujo vehicular en centros comerciales. Actualmente administra cerca de 850 espacios distribuidos en tres niveles, utilizando herramientas básicas como Excel, sistemas de tickets y correo electrónico para la gestión diaria.\n\nEl control de ocupación es parcialmente manual, apoyado por sensores en accesos, pero sin visibilidad en tiempo real de los espacios disponibles a nivel interno. Esto genera dependencia del personal (entre 4 y 6 personas en horas punta) para la orientación del tráfico.\n\nEntre los principales problemas destacan la congestión interna, dificultad de los usuarios para encontrar espacios, mala distribución del flujo vehicular y quejas frecuentes en horas pico. Además, la falta de estadísticas detalladas limita la toma de decisiones estratégicas.\n\nEl sistema de cobro se basa en tickets físicos y cajeros automáticos, lo que genera colas en momentos de alta demanda. En situaciones de emergencia, la evacuación depende principalmente del personal, sin sistemas automatizados de apoyo.\n\nValora altamente soluciones tecnológicas como dashboards en tiempo real, reportes automáticos, guiado visual con LEDs y reconocimiento de placas (ALPR), priorizando especialmente la disponibilidad por espacio y la automatización del ingreso y salida. También considera relevante la implementación de sistemas de detección de gases o humo.\n\nEstá dispuesto a implementar una solución IoT siempre que exista un retorno de inversión claro, estimando un presupuesto inicial entre 20,000 y 50,000 dólares. |
 
+---
 
-El video completo de las entrevistas puede ser visualizado en el siguiente link:
 
 ### 2.2.3. Análisis de entrevistas
 
+Se realizaron un total de **6 entrevistas** distribuidas entre los dos segmentos objetivo del proyecto: 3 entrevistas a conductores que visitan centros comerciales (Segmento 1) y 3 entrevistas a administradores de estacionamientos (Segmento 2). Las entrevistas se llevaron a cabo entre el 9 y 12 de abril de 2026, utilizando el diseño de preguntas definido en la sección 2.2.1.
 
+## Segmento 1: Conductores que visitan centros comerciales
+
+### Perfil demográfico
+
+Los tres entrevistados son jóvenes entre 21 y 24 años, residentes de distritos de Lima con alta densidad de centros comerciales (Surco, Miraflores, San Borja). Son estudiantes universitarios con uso intensivo de tecnología móvil. Utilizan aplicaciones de servicio como Yape, Waze y Google Maps de forma cotidiana, lo que indica una alta predisposición a adoptar nuevas herramientas digitales para resolver problemas de movilidad.
+ 
+### Hallazgos sobre la problemática
+ 
+**Tiempo de búsqueda de estacionamiento:** Los tres entrevistados coinciden en que la búsqueda de estacionamiento representa una fuente significativa de frustración. María Fernanda reporta entre 15 y 20 minutos de búsqueda en el Jockey Plaza, mientras que Diego Ignacio indica que visita centros comerciales hasta tres veces por semana y frecuentemente baja a niveles de estacionamiento solo para encontrarlos llenos. Esto confirma el dato estadístico citado en el Capítulo I sobre los conductores limeños perdiendo en promedio 5 horas semanales buscando estacionamiento.
+ 
+**Desorientación dentro del estacionamiento:** Diego Ignacio destacó como problema principal que olvida dónde estacionó su vehículo y no tiene herramientas para localizarlo. Este hallazgo valida directamente la funcionalidad "Find My Car" (US07) como un diferenciador de alto valor percibido para los conductores.
+ 
+**Métodos de pago insatisfactorios:** Freddy Alvarez expresó una alta frustración con las largas colas en los cajeros físicos de pago y la dificultad cuando no cuenta con efectivo. Este dolor confirma la necesidad del pago digital integrado (US05) como funcionalidad core. La familiaridad de los tres entrevistados con Yape refuerza la decisión de integrar Culqi como pasarela de pagos con soporte para Yape.
+ 
+**Seguridad vehicular:** Freddy Alvarez prioriza la seguridad del vehículo y valora la trazabilidad que ofrece el reconocimiento de placas (ALPR). Aunque ninguno reportó incidentes graves, la preocupación por la seguridad es un tema recurrente que justifica las notificaciones de eventos del vehículo (US10).
+ 
+### Hallazgos sobre la solución propuesta
+ 
+**Funcionalidades más valoradas (por orden de mención):**
+ 
+1. **Disponibilidad en tiempo real** — Los tres entrevistados la consideran la funcionalidad más valiosa. María Fernanda indicó que un mapa en tiempo real con LEDs sería "determinante" para mejorar su experiencia.
+2. **Pago digital** — Freddy Alvarez lo considera una "solución necesaria para modernizar el servicio actual". Los tres están dispuestos a pagar desde el celular si esto elimina las colas.
+3. **Reserva de espacios** — Diego Ignacio mostró alto interés en poder reservar con anticipación, especialmente en temporadas de alta demanda. Esta funcionalidad está vinculada al plan Pro (S/ 9.90/mes).
+4. **Localización del vehículo (Find My Car)** — Diego Ignacio la señaló como una necesidad directa basada en su experiencia de desorientación.
+5. **Notificaciones de seguridad** — Valorada por los tres pero no como primera prioridad. Diego Ignacio mencionó que le daría "mayor tranquilidad durante su estancia".
+**Disposición a adoptar la app:** Los tres entrevistados indicaron que descargarían y usarían una nueva app si mejora significativamente su experiencia de estacionamiento, confirmando la viabilidad de la adopción del producto.
+ 
+### Hallazgos clave para el diseño
+ 
+Los conductores priorizan la inmediatez y la simplicidad. La interfaz debe mostrar la disponibilidad de forma clara y rápida, con mínima interacción necesaria (pantallas grandes, acciones en máximo 2 taps). La integración con Yape es crítica para la adopción en el mercado peruano. La funcionalidad de LEDs (verde/rojo) fue mencionada positivamente por María Fernanda como un complemento visual que reduce la incertidumbre sin depender del celular.
+ 
+---
+ 
+## Segmento 2: Administradores de estacionamientos
+ 
+### Perfil demográfico
+ 
+Los tres entrevistados tienen perfiles profesionales complementarios: Fabián Oliva (26 años, administrador en Mall Plaza Angamos), Nicole Requena (28 años, administradora de operaciones con 7-8 años de experiencia en Arequipa) y Carlos Ramírez (42 años, jefe de operaciones con 12 años de experiencia en Surco). Entre los tres gestionan estacionamientos de entre 850 y más de 1,000 espacios distribuidos en 3 a 5 niveles, lo que representa el perfil exacto de centros comerciales medianos y grandes que SpotFinder busca atender.
+ 
+### Hallazgos sobre la problemática
+ 
+**Gestión predominantemente manual:** Los tres entrevistados reportan una dependencia significativa de procesos manuales. Fabián utiliza Excel y sistemas de tickets, Nicole cuenta con sensores en accesos pero sin visibilidad interna por zonas, y Carlos usa tickets físicos y cajeros automáticos. Ninguno tiene detección de disponibilidad a nivel de espacio individual, confirmando el gap de mercado identificado en el análisis competitivo.
+ 
+**Falta de visibilidad en tiempo real:** Los tres coinciden en que no tienen acceso a información en tiempo real sobre la ocupación por zona o nivel dentro del estacionamiento. Nicole mencionó que el control interno es "mayormente manual", lo que limita la toma de decisiones operativas. Carlos indicó que depende de 4 a 6 personas en horas punta solo para orientar el tráfico vehicular, representando un costo operativo significativo.
+ 
+**Congestión en horas pico:** Es el problema más citado por los tres administradores. La falta de guiado inteligente genera cuellos de botella en rampas y accesos. Carlos reportó "mala distribución del flujo vehicular" como una queja frecuente de los usuarios.
+ 
+**Ausencia de analítica:** Ninguno de los tres tiene acceso a estadísticas detalladas de ocupación, rotación o ingresos por espacio. Fabián indicó que no cuenta con "analítica avanzada ni reportes automatizados". Esta carencia valida el bounded context de Analytics & Reporting y las user stories US12 y US13.
+ 
+**Cobro ineficiente:** Los tres reportan que el sistema de cobro basado en tickets físicos genera colas y demoras, especialmente en horas de alta afluencia. Nicole mencionó que las "colas y demoras en horas de alta afluencia" son un reclamo constante de los usuarios.
+ 
+**Protocolos de emergencia manuales:** Los tres indican que la evacuación en emergencias depende exclusivamente del personal humano, sin sistemas automatizados de apoyo. Este hallazgo valida directamente el bounded context de Emergency & Safety (US14) como diferenciador competitivo, ya que ningún competidor ofrece esta funcionalidad.
+ 
+### Hallazgos sobre la solución propuesta
+ 
+**Funcionalidades priorizadas (por orden de valoración):**
+ 
+1. **Dashboard en tiempo real** — Valorado como "muy valioso" por los tres administradores. La capacidad de ver la ocupación de cada espacio en tiempo real transformaría su capacidad operativa.
+2. **Reconocimiento de placas (ALPR)** — Carlos lo priorizó especialmente para automatizar ingreso y salida, eliminando tickets físicos y reduciendo colas. Nicole también lo destacó por su impacto en la eficiencia operativa.
+3. **Guiado visual con LEDs** — Los tres lo consideran un complemento valioso que reduciría la necesidad de personal de orientación (actualmente 4-6 personas en horas punta).
+4. **Reportes automáticos** — Valorados por su impacto en la toma de decisiones. Fabián mencionó que actualmente no tiene forma de generar reportes de ocupación o ingresos de forma automatizada.
+5. **Detección de gases/humo** — Carlos lo consideró "relevante" y Nicole lo destacó por su potencial de salvar vidas. Los tres lo ven como un valor agregado significativo diferenciador.
+**Presupuesto y disposición a invertir:** Nicole y Carlos coinciden en un presupuesto estimado de USD 20,000 a 50,000 para modernizar sus estacionamientos, condicionado a demostrar un retorno de inversión claro. Fabián indicó que "está dispuesto a invertir si se demuestra un retorno claro". Esto valida la viabilidad económica del modelo B2B de SpotFinder y sugiere que el modelo de implementación progresiva (zona piloto) es la estrategia correcta para reducir la barrera de entrada.
+ 
+### Hallazgos clave para el diseño
+ 
+Los administradores necesitan un dashboard visualmente claro, con métricas accionables y alertas automáticas. La interfaz debe priorizar la visión general del estacionamiento con drill-down por zona/nivel. Los reportes deben ser exportables en PDF para presentar a gerencia. La implementación debe poder hacerse de forma progresiva (empezar con una zona piloto de 50-100 espacios) para demostrar ROI antes de escalar.
+ 
+---
+ 
+## Análisis cruzado: Patrones y convergencias entre segmentos
+ 
+### Convergencias identificadas
+ 
+1. **La frustración con la búsqueda de estacionamiento es universal.** Tanto conductores como administradores reconocen el problema: los conductores lo sufren directamente (15-20 min de búsqueda) y los administradores lo enfrentan como reclamos constantes y congestión operativa.
+2. **El pago digital es una necesidad compartida.** Los conductores quieren eliminar colas y los administradores quieren agilizar el proceso de salida. La integración con Yape es el puente natural para el mercado peruano.
+3. **La seguridad es un diferenciador clave.** Tanto conductores (tranquilidad sobre su vehículo) como administradores (protocolos de emergencia automatizados) valoran las funcionalidades de seguridad. El sistema de detección de gas/humo con evacuación automática no tiene equivalente en el mercado peruano.
+4. **La información en tiempo real es el core del valor.** Los conductores quieren ver espacios disponibles antes de bajar a un nivel. Los administradores quieren ver la ocupación completa desde su oficina. Ambos necesitan que los datos se actualicen en menos de 3 segundos.
+### Validación de hipótesis del Lean UX
+ 
+| Hipótesis | Validación por entrevistas |
+|---|---|
+| H1: 60% de conductores usarán la app activamente | **Validada.** Los 3 conductores indicaron disposición a descargar y usar la app. La familiaridad con apps como Yape y Waze facilita la adopción. |
+| H2: ALPR reducirá tiempo de procesamiento en barrera de 30-45s a < 5s | **Validada indirectamente.** Los administradores confirman que los tickets físicos generan demoras significativas y priorizan el ALPR como solución. |
+| H3: LEDs reducirán congestión interna en 40% | **Validada cualitativamente.** Los 3 administradores confirman que la falta de guiado genera congestión. María Fernanda (conductora) calificó los LEDs como "determinantes". |
+| H4: 80% de administradores consultarán el dashboard diariamente | **Validada.** Los 3 administradores lo consideran "muy valioso" y actualmente carecen de herramientas equivalentes. |
+| H5: 50% de pagos serán digitales en 3 meses | **Validada parcialmente.** Los conductores muestran alta disposición pero la adopción dependerá de la facilidad de uso y la integración con Yape. |
+ 
+### Funcionalidades no consideradas inicialmente (descubiertas en entrevistas)
+ 
+1. **Indicadores de zonas llenas antes de bajar al nivel** — María Fernanda mencionó la frustración de bajar a un nivel solo para encontrarlo lleno. Esto refuerza la necesidad de mostrar la disponibilidad por nivel/zona en la app antes de que el conductor tome la decisión de bajar.
+2. **Reducción medible de personal de orientación** — Carlos mencionó que emplea 4-6 personas solo para orientar tráfico. El guiado con LEDs podría reducir este personal a 1-2 personas, generando un ROI directo y cuantificable para la presentación comercial.
+3. **Integración con protocolos de emergencia existentes** — Nicole mencionó que la evacuación depende del personal actual. El sistema de emergencia debería complementar (no reemplazar) los protocolos existentes del centro comercial.
+
+## Conclusiones del análisis
+ 
+Las entrevistas confirman que SpotFinder aborda un problema real y reconocido por ambos segmentos objetivo. Los conductores valoran principalmente la reducción del tiempo de búsqueda y el pago digital, mientras que los administradores priorizan la visibilidad en tiempo real y la automatización de procesos manuales.
+ 
+El modelo de negocio B2B con presupuestos de USD 20,000-50,000 es viable según las entrevistas con administradores. La estrategia de implementación progresiva (zona piloto) se confirma como el enfoque correcto para superar la resistencia al cambio.
+ 
+El diferenciador competitivo más fuerte de SpotFinder, validado por ambos segmentos, es la combinación de detección por espacio individual con guiado visual LED, ALPR para entrada/salida sin tickets, y detección de emergencias con protocolo automatizado. Ningún competidor en el mercado peruano ofrece esta integración completa.
+ 
 
 ## 2.3. Needfinding
 
