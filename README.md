@@ -541,25 +541,332 @@ Este diagrama evidencia una arquitectura distribuida en múltiples capas, combin
 ">
 <br>
 
-## 4.2. Tactical-Level Domain-Driven Design
+# 4.2. Tactical-Level Domain-Driven Design
+ 
+---
+ 
+## 4.2.1. Bounded Context: Parking Monitoring
+ 
+Este bounded context gestiona la detección de ocupación de espacios mediante sensores ultrasónicos IoT, controla el estado de los LEDs indicadores y mantiene el mapa de disponibilidad en tiempo real. Es el contexto core que conecta el mundo físico (sensores ESP32) con el mundo digital (app móvil y dashboard).
+ 
+### 4.2.1.1. Domain Layer
+ 
+En esta sección se describen los elementos del Domain Layer del contexto de Parking Monitoring, que encapsulan la lógica central relacionada con la detección de ocupación y gestión de disponibilidad de espacios.
+ 
+#### 1. ParkingSlot (Aggregate Root)
+ 
+Representa un espacio individual de estacionamiento monitoreado por un sensor ultrasónico.
+ 
+**Atributos principales:**
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Long | private | Identificador único del espacio. |
+| slotCode | SlotCode | private | Código identificador del espacio (e.g., "A-15", "B-03"). |
+| status | SlotStatus | private | Estado actual del espacio (AVAILABLE, OCCUPIED, OUT_OF_SERVICE). |
+| sensorId | SensorId | private | Identificador del sensor ultrasónico asignado al espacio. |
+| facilityId | FacilityId | private | Identificador del estacionamiento al que pertenece. |
+| lastUpdated | LocalDateTime | private | Timestamp de la última actualización de estado. |
+ 
+**Métodos principales:**
+ 
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| ParkingSlot() | Constructor | protected | Constructor protegido para JPA. |
+| ParkingSlot(RegisterParkingSlotCommand command) | Constructor | public | Crea un espacio a partir de un comando de registro. |
+| occupy() | void | public | Cambia el estado a OCCUPIED y actualiza lastUpdated. Lanza excepción si ya está ocupado o fuera de servicio. |
+| release() | void | public | Cambia el estado a AVAILABLE y actualiza lastUpdated. Lanza excepción si ya está disponible. |
+| markOutOfService() | void | public | Marca el espacio como fuera de servicio para mantenimiento. |
+| markActive() | void | public | Reactiva un espacio que estaba fuera de servicio, cambiando a AVAILABLE. |
+| isAvailable() | boolean | public | Devuelve true si el estado es AVAILABLE. |
+| isOccupied() | boolean | public | Devuelve true si el estado es OCCUPIED. |
+ 
+#### 2. ParkingFacility (Aggregate Root)
+ 
+Representa el estacionamiento completo de un centro comercial.
+ 
+**Atributos principales:**
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Long | private | Identificador único del estacionamiento. |
+| name | FacilityName | private | Nombre del estacionamiento (e.g., "Jockey Plaza B2"). |
+| totalSlots | int | private | Cantidad total de espacios. |
+| address | Address | private | Dirección física del estacionamiento. |
+ 
+**Métodos principales:**
+ 
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| ParkingFacility() | Constructor | protected | Constructor protegido para JPA. |
+| ParkingFacility(RegisterFacilityCommand command) | Constructor | public | Crea un estacionamiento a partir de un comando. |
+| updateInfo(String name, String address) | ParkingFacility | public | Actualiza nombre y dirección del estacionamiento. |
+ 
+#### 3. RegisterParkingSlotCommand (Command)
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| slotCode | String | public | Código del espacio (e.g., "A-15"). |
+| sensorId | String | public | Identificador del sensor asignado. |
+| facilityId | Long | public | ID del estacionamiento. |
+ 
+#### 4. UpdateSlotStatusCommand (Command)
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| slotId | Long | public | ID del espacio a actualizar. |
+| newStatus | SlotStatus | public | Nuevo estado (AVAILABLE, OCCUPIED, OUT_OF_SERVICE). |
+ 
+#### 5. ProcessSensorReadingCommand (Command)
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| sensorId | String | public | ID del sensor que envía la lectura. |
+| slotId | Long | public | ID del espacio monitoreado. |
+| distance | double | public | Distancia detectada en centímetros. |
+| timestamp | LocalDateTime | public | Momento de la lectura. |
+ 
+#### 6. Queries
+ 
+| Query | Atributos principales | Descripción |
+|---|---|---|
+| GetAllSlotsQuery | facilityId : Long | Obtiene todos los espacios de un estacionamiento. |
+| GetAvailableSlotsQuery | facilityId : Long | Obtiene solo los espacios disponibles. |
+| GetSlotByIdQuery | slotId : Long | Obtiene un espacio por su identificador. |
+| GetSlotRecommendationsQuery | facilityId : Long | Obtiene espacios recomendados por proximidad. |
+ 
+#### 7. SlotStatusChangedEvent (Domain Event)
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| source | Object | private | Objeto origen del evento. |
+| slotId | Long | private | ID del espacio que cambió. |
+| slotCode | String | private | Código del espacio. |
+| previousStatus | SlotStatus | private | Estado anterior. |
+| newStatus | SlotStatus | private | Nuevo estado. |
+| timestamp | LocalDateTime | private | Momento del cambio. |
+ 
+#### 8. ParkingSlotCommandService (Domain Service)
+ 
+Proporciona métodos para manejar comandos relacionados con la gestión de espacios.
+ 
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(RegisterParkingSlotCommand command) | Optional\<ParkingSlot> | public | Registra un nuevo espacio en el sistema. |
+| handle(UpdateSlotStatusCommand command) | void | public | Actualiza el estado de un espacio (admin: habilitar/deshabilitar). |
+| handle(ProcessSensorReadingCommand command) | void | public | Procesa una lectura de sensor y actualiza el estado del espacio si corresponde. |
+ 
+#### 9. ParkingSlotQueryService (Domain Service)
+ 
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(GetAllSlotsQuery query) | List\<ParkingSlot> | public | Obtiene todos los espacios del estacionamiento. |
+| handle(GetAvailableSlotsQuery query) | List\<ParkingSlot> | public | Obtiene solo los espacios con estado AVAILABLE. |
+| handle(GetSlotByIdQuery query) | Optional\<ParkingSlot> | public | Obtiene un espacio específico por su ID. |
+| handle(GetSlotRecommendationsQuery query) | List\<ParkingSlot> | public | Obtiene espacios disponibles recomendados por proximidad. |
+ 
+#### 10. OccupancyCalculationService (Domain Service)
+ 
+Servicio de dominio que encapsula la lógica de cálculo de ocupación y debounce de sensores.
+ 
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| evaluateSensorReading(double distance, SlotStatus currentStatus) | Optional\<SlotStatus> | public | Evalúa una lectura de sensor y determina si debe cambiar el estado. Aplica regla de debounce: distancia < 15cm → OCCUPIED, > 50cm → AVAILABLE. |
+| calculateOccupancyRate(long totalSlots, long occupiedSlots) | double | public | Calcula la tasa de ocupación como porcentaje. |
+| shouldTriggerAlert(double occupancyRate) | boolean | public | Devuelve true si la ocupación supera el 90% (umbral configurable). |
+ 
+#### 11. SlotCode (Value Object)
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| code | String | private | Código del espacio (máx. 20 caracteres, formato "LETRA-NÚMERO"). |
+ 
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| SlotCode() | Constructor | public | Constructor requerido por JPA. |
+| SlotCode(String code) | Constructor | public | Inicializa y valida el formato del código. |
+ 
+#### 12. SlotStatus (Value Object)
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| AVAILABLE | Enum | public | El espacio está libre. |
+| OCCUPIED | Enum | public | El espacio está ocupado por un vehículo. |
+| OUT_OF_SERVICE | Enum | public | El espacio está fuera de servicio (mantenimiento). |
+ 
+#### 13. SensorId (Value Object)
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| sensorId | String | private | Identificador único del sensor (e.g., "ESP32-SLOT-A15"). |
+ 
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| SensorId() | Constructor | public | Constructor requerido por JPA. |
+| SensorId(String sensorId) | Constructor | public | Inicializa y valida que no sea vacío. |
+ 
+#### 14. FacilityId (Value Object)
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| facilityId | Long | private | ID del estacionamiento; debe ser > 0. |
+ 
+---
+ 
+### 4.2.1.2. Interface Layer
+ 
+#### 1. ParkingSlotsController (REST Controller)
+ 
+Controlador REST que expone endpoints para gestionar y consultar espacios de estacionamiento.
+ 
+| Nombre del método | Ruta base típica | Método HTTP | Descripción |
+|---|---|---|---|
+| getAllSlots | /api/v1/parking-slots | GET | Obtiene todos los espacios con su estado actual. |
+| getAvailableSlots | /api/v1/parking-slots/available | GET | Obtiene solo los espacios disponibles. |
+| getSlotById | /api/v1/parking-slots/{id} | GET | Obtiene un espacio específico por su ID. |
+| updateSlotStatus | /api/v1/parking-slots/{id}/status | PATCH | Actualiza el estado de un espacio (admin). |
+| getRecommendations | /api/v1/parking-slots/recommendations | GET | Obtiene espacios recomendados por proximidad. |
+ 
+#### 2. SensorReadingsController (REST Controller)
+ 
+Controlador REST que recibe las lecturas de sensores desde el edge server.
+ 
+| Nombre del método | Ruta base típica | Método HTTP | Descripción |
+|---|---|---|---|
+| registerReading | /api/v1/sensor-readings | POST | Recibe y procesa una lectura de sensor ultrasónico. |
+ 
+#### 3. Resources (DTOs)
+ 
+| Resource | Atributos principales | Descripción |
+|---|---|---|
+| ParkingSlotResource | id: Long, slotCode: String, status: String, sensorId: String, lastUpdated: LocalDateTime | Representación de un espacio para la API. |
+| SensorReadingResource | sensorId: String, slotId: Long, distance: double, timestamp: LocalDateTime | Lectura de sensor recibida del edge server. |
+| SlotStatusUpdateResource | status: String | Datos para actualizar estado de un espacio. |
+ 
+#### 4. Transform (Assemblers)
+ 
+| Assembler | Entrada | Salida | Descripción |
+|---|---|---|---|
+| ParkingSlotResourceFromEntityAssembler | ParkingSlot | ParkingSlotResource | Convierte entidad de dominio a DTO de respuesta. |
+| ProcessSensorReadingCommandFromResourceAssembler | SensorReadingResource | ProcessSensorReadingCommand | Convierte DTO de lectura en comando de dominio. |
+| UpdateSlotStatusCommandFromResourceAssembler | SlotStatusUpdateResource, Long slotId | UpdateSlotStatusCommand | Convierte DTO de actualización en comando. |
+ 
+---
+ 
+### 4.2.1.3. Application Layer
+ 
+#### 1. ParkingSlotCommandServiceImpl (Command Service Implementation)
+ 
+Implementación del servicio de comandos para gestionar espacios de estacionamiento.
+ 
+**Atributos principales:**
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| parkingSlotRepository | ParkingSlotRepository | private | Repositorio para persistencia de espacios. |
+| occupancyCalculationService | OccupancyCalculationService | private | Servicio de cálculo de ocupación y debounce. |
+ 
+**Métodos principales:**
+ 
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(RegisterParkingSlotCommand command) | Optional\<ParkingSlot> | public | Crea y persiste un nuevo espacio; valida que el slotCode sea único y el sensorId no esté ya asignado. |
+| handle(UpdateSlotStatusCommand command) | void | public | Actualiza el estado de un espacio (admin: habilitar/deshabilitar para mantenimiento); persiste el cambio y publica SlotStatusChangedEvent. |
+| handle(ProcessSensorReadingCommand command) | void | public | Procesa lectura del sensor: evalúa con OccupancyCalculationService si debe cambiar el estado, si cambia lo persiste y publica evento. |
+ 
+#### 2. ParkingSlotQueryServiceImpl (Query Service Implementation)
+ 
+**Atributos principales:**
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| parkingSlotRepository | ParkingSlotRepository | private | Repositorio para acceso de lectura. |
+ 
+**Métodos principales:**
+ 
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(GetAllSlotsQuery query) | List\<ParkingSlot> | public | Obtiene todos los espacios del estacionamiento. |
+| handle(GetAvailableSlotsQuery query) | List\<ParkingSlot> | public | Obtiene espacios con status AVAILABLE. |
+| handle(GetSlotByIdQuery query) | Optional\<ParkingSlot> | public | Obtiene un espacio por su ID. |
+| handle(GetSlotRecommendationsQuery query) | List\<ParkingSlot> | public | Obtiene espacios disponibles recomendados, priorizando por proximidad. |
+ 
+#### 3. SlotStatusChangedEventHandler (Domain Event Handler)
+ 
+Maneja el evento de cambio de estado para notificar vía WebSocket a clientes conectados.
+ 
+**Atributos principales:**
+ 
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| webSocketBroadcaster | WebSocketBroadcaster | private | Servicio para enviar actualizaciones en tiempo real. |
+ 
+**Métodos principales:**
+ 
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| on(SlotStatusChangedEvent event) | void | public | Envía la actualización de estado del espacio vía WebSocket a dashboard y app móvil. |
+ 
+---
+ 
+### 4.2.1.4. Infrastructure Layer
+ 
+#### 1. ParkingSlotRepository (Repository Interface)
+ 
+Interfaz del repositorio para gestionar espacios de estacionamiento.
+ 
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| findById(Long id) | Optional\<ParkingSlot> | public | Busca un espacio por su ID. |
+| save(ParkingSlot slot) | ParkingSlot | public | Persiste o actualiza un espacio. |
+| findByStatus(SlotStatus status) | List\<ParkingSlot> | public | Obtiene espacios por estado. |
+| findByFacilityId(FacilityId facilityId) | List\<ParkingSlot> | public | Obtiene todos los espacios de un estacionamiento. |
+| countByStatus(SlotStatus status) | long | public | Cuenta espacios por estado (para cálculo de ocupación). |
+| existsBySlotCode(SlotCode slotCode) | boolean | public | Verifica si un código de espacio ya existe. |
+| existsBySensorId(SensorId sensorId) | boolean | public | Verifica si un sensor ya está asignado. |
+| findBySensorId(SensorId sensorId) | Optional\<ParkingSlot> | public | Busca espacio por sensor (para procesar lecturas). |
+ 
+#### 2. SensorReadingRepository (Repository Interface)
+ 
+Interfaz del repositorio para almacenar lecturas históricas de sensores.
+ 
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| save(SensorReading reading) | SensorReading | public | Persiste una lectura de sensor. |
+| findBySensorIdAndTimestampBetween(String sensorId, LocalDateTime start, LocalDateTime end) | List\<SensorReading> | public | Obtiene lecturas de un sensor en un rango de tiempo. |
+ 
+#### 3. WebSocketBroadcaster (Infrastructure Service)
+ 
+Servicio que envía actualizaciones de estado en tiempo real vía WebSocket.
+ 
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| broadcastSlotUpdate(Long slotId, SlotStatus status, String slotCode) | void | public | Envía actualización de estado a todos los clientes suscritos al canal de disponibilidad. |
+| broadcastOccupancySummary(long total, long available, long occupied) | void | public | Envía resumen de ocupación actualizado. |
+ 
+---
+ 
+### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+ 
+En esta sección se presentan los diagramas de nivel componente que ilustran la arquitectura de software del contexto de Parking Monitoring. Se muestra la interacción entre los diferentes componentes, servicios y capas que conforman este bounded context.
+ 
+> **Diagrama a crear en Structurizr DSL:**
 
-### 4.2.X. Bounded Context: <Bounded Context Name>
+### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+ 
+En esta sección se presentan los diagramas de nivel código que detallan la estructura interna del contexto de Parking Monitoring.
+ 
+#### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+ 
+El diagrama de clases del Domain Layer del contexto de Parking Monitoring ilustra las entidades, objetos de valor y servicios que componen este bounded context.
+ 
+> **Diagrama a crear en LucidChart o PlantUML:**
 
-#### 4.2.X.1. Domain Layer.
-
-#### 4.2.X.2. Interface Layer.
-
-#### 4.2.X.3. Application Layer.
-
-#### 4.2.X.4. Infrastructure Layer.
-
-#### 4.2.X.5. Bounded Context Software Architecture Component Level Diagrams.
-
-#### 4.2.X.6. Bounded Context Software Architecture Code Level Diagrams.
-
-##### 4.2.X.6.1. Bounded Context Domain Layer Class Diagrams.
-
-##### 4.2.X.6.2. Bounded Context Database Design Diagram.
+#### 4.2.1.6.2. Bounded Context Database Design Diagram
+ 
+El diagrama de diseño de base de datos del contexto de Parking Monitoring muestra la estructura de las tablas y sus relaciones en la base de datos relacional.
+ 
+> **Diagrama a crear en Vertabelo:**
 
 ---
 
