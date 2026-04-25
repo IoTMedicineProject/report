@@ -319,6 +319,32 @@ Para la representación visual se utilizó la técnica de Domain Storytelling, l
 
 #### 4.1.1.3 Bounded Context Canvases.
 
+En esta sección se presentan los Bounded Context Canvases, los cuales definen los límites, responsabilidades, lenguaje ubicuo y decisiones estratégicas de cada módulo del sistema.
+
+**1. Identity & Access Management (IAM)**
+Administra el ciclo de vida de las cuentas de conductores y el registro de vehículos. Es la fuente de la verdad para validar la legitimidad de una placa antes del ingreso.
+![IAM Canvas](assets/diagrams/context-canvases/iam.png)
+
+**2. Parking Monitoring**
+Gestiona la disponibilidad de plazas mediante sensores IoT (ESP32). Se encarga de procesar las señales de ocupación y actualizar el mapa de disponibilidad en tiempo real.
+![Parking Monitoring Canvas](assets/diagrams/context-canvases/parking.png)
+
+**3. Access Control**
+El núcleo operativo que gobierna las barreras físicas y las sesiones de vehículos. Implementa la lógica de "Autorización Triple" (Placa + IAM + Espacio) para permitir el acceso.
+![Access Control Canvas](assets/diagrams/context-canvases/access.png)
+
+**4. Reservation Management**
+Controla el ciclo de vida de las reservas, gestionando el "Grace Period" de 15 minutos y la liberación automática de plazas en caso de inasistencia (No-show).
+![Reservation Management Canvas](assets/diagrams/context-canvases/reservation.png)
+
+**5. Emergency & Safety**
+Módulo de alta prioridad que ejecuta protocolos de seguridad. En caso de emergencia, activa el "Safety Override" para la apertura total e inmediata de todas las barreras.
+![Emergency & Safety Canvas](assets/diagrams/context-canvases/emergency.png)
+
+**6. Notification Management**
+Hub de comunicaciones encargado de orquestar alertas Push y correos. Valida preferencias de privacidad del usuario y asegura la entrega de mensajes críticos del sistema.
+![Notification Management Canvas](assets/diagrams/context-canvases/noti.png)
+
 ## 4.1.2. Context Mapping
 
 En esta sección se define el context mapping del sistema SpotFinder, con el propósito de representar las relaciones existentes entre los bounded contexts identificados a partir del Event Storming. Este análisis permite comprender cómo interactúan los distintos dominios del sistema y qué patrones de integración son más adecuados para mantener la independencia y coherencia del modelo.
