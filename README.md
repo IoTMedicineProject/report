@@ -1,57 +1,123 @@
-# COURSE PROJECT
 
 <p align="center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"></img><br>
+    <img src="./assets/logos/upc-logo.png" alt="UPC Logo" width="200"><br>
     <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
     <br>
     <strong>Facultad de Ingeniería</strong><br>
     <strong>Carrera de Ingeniería de Software</strong><br>
     <strong>Ciclo 2026-10</strong>
 </p>
-
+ 
 <p align="center">
   <strong>Código del curso: </strong>1ASI0572<br>
   <strong>Curso: </strong>Desarrollo de Soluciones IOT
 </p>
-
+ 
 <p align="center">
   <strong>NRC: 6772</strong>
 </p>
-
+ 
 <p align="center">
-    <strong>Profesor: </strong>Marco Antonio Leon Baca
+    <strong>Profesor: </strong>Marco Antonio León Baca
 </p>
-
+ 
 <p align="center">
     <strong>Informe de Trabajo Final</strong>
 </p>
-
+ 
 <p align="center">
-    <strong>Nombre del startup: </strong> [Startup]
+    <strong>Nombre del startup: </strong> ParkSense IoT
 </p>
-
+ 
 <p align="center">
-    <strong>Nombre del producto:</strong> [Producto]
+    <strong>Nombre del producto: </strong> SpotFinder
 </p>
-
+ 
 <p align="center">
-    <strong>Marzo, 2026</strong>
+    <strong>Abril, 2026</strong>
 </p>
-
----
 
 # Project Report Collaboration Insights
-**URL del repositorio para el Project Report:** [https://github.com/IoTMedicineProject/report.git](https://github.com/IoTMedicineProject/report.git)
-
----
+| Versión | Fecha | Autor | Descripción de modificación |
+|---|---|---|---|
+| 1.0.0 | 2026-04-04 | Esteban Román, Henry Kalet | Creación de estructura base del repositorio, carátula, CONTRIBUTING.md y registro de versiones. |
+| 1.1.0 | 2026-04-06 | Esteban Román, Henry Kalet | Redacción de Capítulo I: Startup Profile, Solution Profile (5W+2H, Lean UX Process) y Segmentos Objetivo. |
+| 1.2.0 | 2026-04-08 | Vidal Castro, Miguel Angel | Desarrollo de Capítulo II: Competidores (análisis competitivo), estrategias frente a competidores. |
+| 1.2.1 | 2026-04-09 | Cruz Ibarra, Victor Andrés | Diseño de entrevistas, registro y análisis de entrevistas del Segmento 2 (Administradores). |
+| 1.2.2 | 2026-04-11 | Allcca Guerrero, Irving Washington | Needfinding: User Personas, User Task Matrix, Empathy Mapping. |
+| 1.2.3 | 2026-04-11 | Dueñas Canales, Leonardo Manuel | Needfinding: User Journey Mapping. Registro de entrevistas Segmento 1 (Conductores). |
+| 1.3.0 | 2026-04-13 | Esteban Román, Henry Kalet | Capítulo II: Big Picture Event Storming (10 pasos), Ubiquitous Language. |
+| 1.4.0 | 2026-04-15 | Esteban Román, Henry Kalet | Capítulo III: User Stories (US, TS, SWS, SS), Impact Mapping y Product Backlog. |
+| 1.4.1 | 2026-04-16 | Vidal Castro, Miguel Angel | Capítulo III: Technical Stories adicionales (TS22-TS61) integradas al backlog. |
+| 1.5.0 | 2026-04-18 | Cruz Ibarra, Victor Andrés | Capítulo IV: Candidate Context Discovery y Domain Message Flows Modeling. |
+| 1.5.1 | 2026-04-19 | Allcca Guerrero, Irving Washington | Capítulo IV: Bounded Context Canvases (Parking Monitoring, Access Control, Payment Processing). |
+| 1.5.2 | 2026-04-20 | Vidal Castro, Miguel Angel | Capítulo IV: Context Mapping con patrones DDD y análisis de alternativas. |
+| 1.5.3 | 2026-04-21 | Dueñas Canales, Leonardo Manuel | Capítulo IV: Software Architecture (System Landscape, Context, Container, Deployment diagrams). |
+| 1.6.0 | 2026-04-22 | Esteban Román, Henry Kalet | Capítulo IV: Tactical DDD - Domain Layer, Interface Layer, Application Layer, Infrastructure Layer para los 7 Bounded Contexts. |
+| 1.6.1 | 2026-04-22 | Dueñas Canales, Leonardo Manuel | Capítulo IV: Component Level Diagrams para Bounded Contexts. |
+| 1.6.2 | 2026-04-23 | Cruz Ibarra, Victor Andrés | Capítulo IV: Database Design Diagrams para Bounded Contexts. |
+| 1.7.0 | 2026-04-24 | Esteban Román, Henry Kalet | Integración de Student Outcome, Conclusiones, Bibliografía y Anexos para AV1. |
+ 
+## Project Report Collaboration Insights
+ 
+**URL del repositorio para el Project Report:** [https://github.com/ParkSenseIoT/SpotFinder-Report](https://github.com/ParkSenseIoT/SpotFinder-Report)
+ 
+Se utilizó GitHub como plataforma de control de versiones y colaboración en equipo. Se siguió el flujo de trabajo **GitFlow** con las ramas principales `main` y `develop`, y ramas de trabajo `feature/<sección>` para cada contribución individual.
+ 
+Los integrantes del equipo y sus nombres de usuario en GitHub son los siguientes:
+ 
+| Integrante | Código | Nombre en GitHub |
+|---|---|---|
+| Esteban Román, Henry Kalet | U202310210 | kalet123-commit |
+| Dueñas Canales, Leonardo Manuel | U202117475 | insonnio |
+| Vidal Castro, Miguel Angel | U202314186 | gossk |
+| Allcca Guerrero, Irving Washington | U202213241 | eviterno17 |
+| Cruz Ibarra, Victor Andrés | U202311053 | elandrehs |
+ 
+### AV1
+ 
+#### Tareas asignadas
+ 
+Para el desarrollo del AV1 (TB1), cada participante del equipo realizó las siguientes tareas:
+ 
+| Integrante | Tareas asignadas |
+|---|---|
+| **Esteban Román, Henry Kalet** | - Capítulo I completo (Startup Profile, Solution Profile, Lean UX, Segmentos Objetivo) - Capítulo II: Big Picture Event Storming (10 pasos), Ubiquitous Language - Capítulo III: User Stories (US, TS, SWS, SS), Impact Mapping, Product Backlog - Capítulo IV: Tactical DDD (Domain Layer, Interface Layer, Application Layer, Infrastructure Layer para 7 BCs), Class Diagrams - Component Level Diagrams (en colaboración con Leonardo) |
+| **Dueñas Canales, Leonardo Manuel** | - Capítulo II: User Journey Mapping, registro de entrevistas Segmento 1 - Capítulo IV: Software Architecture (System Landscape, Context, Container, Deployment diagrams) - Component Level Diagrams para Bounded Contexts (en colaboración con Henry) |
+| **Vidal Castro, Miguel Angel** | - Capítulo II: Análisis competitivo, estrategias frente a competidores - Capítulo III: Technical Stories adicionales (integración con equipo) - Capítulo IV: Context Mapping con patrones DDD y análisis de alternativas |
+| **Allcca Guerrero, Irving Washington** | - Capítulo II: User Personas, User Task Matrix, Empathy Mapping - Capítulo IV: Bounded Context Canvases (Parking Monitoring, Access Control, Payment Processing, Emergency, Analytics, Notification, IAM) |
+| **Cruz Ibarra, Victor Andrés** | - Capítulo II: Diseño de entrevistas, registro y análisis de entrevistas Segmento 2 - Capítulo IV: Candidate Context Discovery, Domain Message Flows Modeling - Capítulo IV: Database Design Diagrams para Bounded Contexts |
+ 
+#### GitHub Collaboration Insights
+ 
+En GitHub se presenta un timeline de las principales ramas creadas por cada integrante del equipo, así como los procesos de merge realizados. Todas las ramas fueron gestionadas siguiendo el flujo de trabajo GitFlow.
+ 
+**Gráfico de commits por integrante:**
+ 
+![Commits Graph](./assets/images/screenshots/commitsgraph.png)
+ 
+**Gráfico de red (network graph) de ramas en el repositorio de GitHub:**
+ 
+![Network Graph](./assets/images/screenshots/networkgraph.png)
+ 
+**Contribuciones de los integrantes:**
+ 
+![Contributors Image](./assets/images/screenshots/contributorsimage.png)
 
 # Contenido
 
 ---
-
-# Student Outcome
-
----
+## Student Outcome
+ 
+**Criterio:** La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
+ 
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5.
+ 
+| Criterio específico | Acciones realizadas | Conclusiones |
+|---------------------|---------------------|--------------|
+| **Comunica oralmente con efectividad a diferentes rangos de audiencia** | **Esteban Román, Henry Kalet**<br>_**AV1:** Lideré las sesiones de Event Storming y Candidate Context Discovery con el equipo, explicando la metodología de los 10 pasos y guiando la identificación de bounded contexts. Presenté y justifiqué las decisiones de arquitectura DDD (clasificación Core/Supporting/Generic) utilizando un lenguaje accesible tanto para los integrantes técnicos como para la comprensión general del dominio de estacionamientos._ <br><br> **Dueñas Canales, Leonardo Manuel**<br>_**AV1:** Presenté los diagramas de arquitectura C4 (System Landscape, Context, Container, Deployment) al equipo, explicando las decisiones de diseño y las interacciones entre componentes del sistema IoT (ESP32, Edge Server, Cloud Backend). Adapté la explicación para que los compañeros sin experiencia en IoT comprendieran el flujo de datos desde los sensores hasta la app móvil._ <br><br> **Vidal Castro, Miguel Angel**<br>_**AV1:** Presenté y expliqué el Context Mapping al equipo, comunicando los patrones DDD elegidos (OHS, Customer/Supplier, ACL, Published Language) y las razones detrás de cada relación entre bounded contexts. Facilité la discusión de alternativas con el equipo, asegurando que todos comprendieran las implicaciones de cada patrón en la arquitectura._ <br><br> **Allcca Guerrero, Irving Washington**<br>_**AV1:** Comuniqué los hallazgos del Needfinding (User Personas, Empathy Maps) al equipo, explicando los perfiles de los conductores y administradores identificados en la investigación. Presenté los Bounded Context Canvases de los 3 contextos Core, detallando la comunicación inbound/outbound y las decisiones de negocio de cada contexto._ <br><br> **Cruz Ibarra, Victor Andrés**<br>_**AV1:** Conduje y presenté las entrevistas realizadas al segmento de administradores de estacionamientos, comunicando los hallazgos clave sobre la problemática actual (gestión manual, falta de analítica, costos operativos). Expliqué los Domain Message Flows al equipo, detallando los 4 escenarios de interacción entre bounded contexts con un lenguaje claro y orientado al negocio._ | **Conclusiones AV1:** El equipo logró comunicar efectivamente las decisiones técnicas y de diseño a diferentes audiencias. Las sesiones de Event Storming y las presentaciones de arquitectura DDD permitieron que todos los integrantes comprendieran el dominio del problema y las decisiones de diseño, independientemente de su nivel de experiencia previa con DDD o IoT. La comunicación oral efectiva fue clave para alinear criterios en la clasificación de bounded contexts y la definición de patrones de integración. |
+| **Comunica por escrito con efectividad a diferentes rangos de audiencia** | **Esteban Román, Henry Kalet**<br>_**AV1:** Redacté los capítulos I y III del informe, organizando de manera clara la problemática (5W+2H), el proceso Lean UX, las User Stories con formato Gherkin de 7 columnas, y el Product Backlog priorizado por valor de negocio. Documenté el Tactical DDD de los 7 bounded contexts con tablas detalladas de Domain Layer (aggregates, value objects, commands, queries, events, domain services), Interface Layer, Application Layer e Infrastructure Layer, asegurando consistencia y trazabilidad entre la documentación y la implementación._ <br><br> **Dueñas Canales, Leonardo Manuel**<br>_**AV1:** Documenté la arquitectura de software del sistema SpotFinder mediante diagramas C4 en Structurizr DSL, incluyendo código fuente replicable. Redacté las descripciones de los Component Level Diagrams para los bounded contexts, detallando las interacciones entre capas y sistemas externos con nomenclatura técnica precisa._ <br><br> **Vidal Castro, Miguel Angel**<br>_**AV1:** Redacté la sección de Context Mapping del informe, documentando las 7 relaciones entre bounded contexts con patrones DDD, análisis de alternativas (pros/contras) y decisiones sustentadas. También documenté las Technical Stories adicionales con formato estandarizado de 7 columnas, contribuyendo a la especificación completa de requisitos técnicos del backend._ <br><br> **Allcca Guerrero, Irving Washington**<br>_**AV1:** Redacté las secciones de Needfinding del Capítulo II, documentando los User Personas (Carlos Ramírez y Patricia Vega), User Task Matrix, y Empathy Maps con información extraída de las entrevistas. Documenté los Bounded Context Canvases siguiendo el template oficial de ddd-crew/bounded-context-canvas, detallando comunicación, ubiquitous language y business decisions para cada contexto._ <br><br> **Cruz Ibarra, Victor Andrés**<br>_**AV1:** Redacté el diseño y análisis de entrevistas del Capítulo II, sintetizando los hallazgos de 6 entrevistas (3 por segmento) en un análisis cruzado con validación de hipótesis Lean UX. Documenté el Candidate Context Discovery con la técnica Start-with-Value y los Domain Message Flows de 4 escenarios clave del sistema, además de los Database Design Diagrams con esquemas SQL para cada bounded context._ | **Conclusiones AV1:** La documentación escrita del proyecto refleja un alto nivel de detalle y consistencia técnica. El uso de formatos estandarizados (tablas de 7 columnas para User Stories, templates de Bounded Context Canvas, Structurizr DSL para diagramas C4, PlantUML para class diagrams, SQL para database design) aseguró que la información sea comprensible tanto para el equipo técnico como para evaluadores externos. La trazabilidad entre Event Storming, User Stories, Bounded Contexts y Tactical DDD demuestra coherencia en el diseño del sistema. |
+  
 
 # Capítulo I: Introducción
 
@@ -73,14 +139,15 @@ Transformar la experiencia de estacionamiento en centros comerciales del Perú m
 
 **Visión**
 Posicionarnos como una solución innovadora dentro del ámbito de ciudades inteligentes, integrando IoT y plataformas digitales para transformar la gestión de estacionamientos.
-### 1.1.2. Perfiles de integrantes del equipo
+## 1.1.2. Perfiles de integrantes del equipo
+ 
 | Foto | Nombres y Apellidos | Código | Carrera | Resumen de Conocimientos y Habilidades |
 | :---: | :--- | :---: | :---: | :--- |
-| ![Henry Kalet Esteban Román](./assets/images/photos/esteban-henry.png) | Henry Kalet Esteban Román | U202310210 | Ingeniería de Software | Estudiante de 7° ciclo. Posee experiencia en desarrollo fullstack (Angular, Vue.js, Spring Boot, .NET) y aplicaciones móviles. Domina arquitecturas DDD y Clean Architecture, además de metodologías ágiles como Scrum y Lean UX. Cuenta con sólidos conocimientos en Java, TypeScript y bases de datos relacionales
-| ![[Foto Compañero 2]](./assets/images/photos/perfil-vacio.png) | [Nombres y Apellidos] | [Código] | [Carrera] | [Resumen de Conocimientos y Habilidades] |
-| ![[Foto Compañero 3]](./assets/images/photos/perfil-vacio.png) | [Nombres y Apellidos] | [Código] | [Carrera] | [Resumen de Conocimientos y Habilidades] |
-| ![[Foto Compañero 4]](./assets/images/photos/perfil-vacio.png) | [Nombres y Apellidos] | [Código] | [Carrera] | [Resumen de Conocimientos y Habilidades] |
-| ![[Foto Compañero 5]](./assets/images/photos/perfil-vacio.png) | [Nombres y Apellidos] | [Código] | [Carrera] | [Resumen de Conocimientos y Habilidades] |
+| ![Henry Kalet Esteban Román](./assets/images/photos/esteban-henry.png) | Henry Kalet Esteban Román | U202310210 | Ingeniería de Software | Estudiante de 7° ciclo. Posee experiencia en desarrollo fullstack (Angular, Vue.js, Spring Boot, .NET) y aplicaciones móviles. Domina arquitecturas DDD y Clean Architecture, además de metodologías ágiles como Scrum y Lean UX. Cuenta con sólidos conocimientos en Java, TypeScript y bases de datos relacionales. |
+| ![Leonardo Manuel Dueñas Canales](./assets/images/photos/dueñas-leonardo.png) | Leonardo Manuel Dueñas Canales | U202117475 | Ingeniería de Software | Estudiante de 7° ciclo. Cuenta con experiencia en desarrollo backend con Java y Spring Boot, así como en diseño de arquitecturas de software utilizando C4 Model y Structurizr. Posee conocimientos en bases de datos relacionales (PostgreSQL, MySQL), Docker y despliegue en la nube. Familiarizado con metodologías ágiles y control de versiones con Git/GitHub. |
+| ![Miguel Angel Vidal Castro](assets\images\photos\vidal-miguel.jpeg) | Miguel Angel Vidal Castro | U202314186 | Ingeniería de Software | Estudiante de 7° ciclo. Experiencia en desarrollo web con Angular y Spring Boot. Conocimientos en diseño orientado al dominio (DDD), patrones de integración entre bounded contexts y documentación técnica. Manejo de herramientas de gestión de proyectos (Trello, Jira) y metodologías Scrum. Habilidades en análisis competitivo y elaboración de estrategias de producto. |
+| ![Irving Washington Allcca Guerrero](./assets/images/photos/allca-irving.png) | Irving Washington Allcca Guerrero | U202213241 | Ingeniería de Software | Estudiante de 7° ciclo. Posee experiencia en investigación de usuarios y diseño UX, incluyendo la elaboración de User Personas, Empathy Maps y Journey Maps. Conocimientos en desarrollo frontend con Angular y React, además de diseño de interfaces con Figma. Familiarizado con bases de datos relacionales y metodologías ágiles. |
+| ![Victor Andrés Cruz Ibarra](./assets/images/photos/cruz-andres.jpeg) | Victor Andrés Cruz Ibarra | U202311053 | Ingeniería de Software | Estudiante de 7° ciclo. Cuenta con experiencia en desarrollo backend con Spring Boot y diseño de bases de datos relacionales (PostgreSQL, MySQL). Conocimientos en modelado de datos, diagramas UML y documentación técnica. Habilidades en investigación cualitativa (entrevistas, análisis de usuarios) y redacción de informes técnicos. Familiarizado con Git/GitHub y Conventional Commits. |
 ## 1.2. Solution Profile
 
 El proyecto consiste en el desarrollo de un sistema **IoT** para la gestión inteligente de estacionamientos, basado en el monitoreo en tiempo real de los espacios disponibles. El sistema utiliza sensores instalados en cada espacio para detectar si un lugar está ocupado o libre, permitiendo generar un mapa actualizado del estacionamiento que puede ser consultado por los usuarios a través de una aplicación móvil.
