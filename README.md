@@ -1323,6 +1323,376 @@ El diagrama de clases del Domain Layer del contexto de Access Control ilustra la
 El diagrama de diseño de base de datos del contexto de Access Control muestra la estructura de las tablas y sus relaciones.
  
 > **Diagrama a crear en Vertabelo:**
+
+## 4.2.3. Bounded Context: Payment Processing
+
+Este bounded context gestiona el cálculo de tarifas y el procesamiento de pagos digitales del estacionamiento a través de la pasarela Culqi (tarjeta de crédito/débito y Yape). Genera recibos digitales, mantiene el historial de transacciones y notifica a Access Control cuando un pago se completa para autorizar la salida del vehículo.
+
+### 4.2.3.1. Domain Layer
+
+En esta sección se describen los elementos del Domain Layer del contexto de Payment Processing, que encapsulan la lógica central relacionada con el cálculo de tarifas, procesamiento de pagos y generación de recibos.
+
+#### 1. Payment (Aggregate Root)
+
+Representa una transacción de pago asociada a una sesión vehicular.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Long | private | Identificador único del pago. |
+| sessionId | SessionId | private | Identificador de la sesión vehicular asociada al pago. |
+| amount | Money | private | Monto cobrado por el estacionamiento. |
+| currency | Currency | private | Moneda de la transacción (PEN por defecto). |
+| paymentMethod | PaymentMethod | private | Método de pago utilizado (YAPE, CREDIT_CARD, DEBIT_CARD). |
+| status | PaymentTransactionStatus | private | Estado de la transacción (PENDING, COMPLETED, FAILED). |
+| transactionId | String | private | Identificador de la transacción devuelto por Culqi. |
+| receiptUrl | String | private | URL del recibo digital generado tras pago exitoso. |
+| paidAt | LocalDateTime | private | Fecha y hora en que se completó el pago. |
+| parkingFee | ParkingFee | private | Detalle del cálculo de la tarifa (duración, tarifa por hora, monto). |
+
+**Métodos principales:**
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| Payment() | Constructor | protected | Constructor protegido para JPA. |
+| Payment(InitiatePaymentCommand command) | Constructor | public | Crea un pago a partir de un comando. Inicializa con status=PENDING, paidAt=null, transactionId=null. |
+| markAsCompleted(String transactionId, String receiptUrl) | void | public | Marca el pago como completado. Registra transactionId de Culqi, receiptUrl y paidAt. Lanza excepción si ya está completado. Publica PaymentSucceededEvent. |
+| markAsFailed(String errorDetail) | void | public | Marca el pago como fallido. Registra el detalle del error. Publica PaymentFailedEvent. |
+| isCompleted() | boolean | public | Devuelve true si status es COMPLETED. |
+| isFailed() | boolean | public | Devuelve true si status es FAILED. |
+| isPending() | boolean | public | Devuelve true si status es PENDING. |
+
+#### 2. InitiatePaymentCommand (Command)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| sessionId | Long | public | ID de la sesión vehicular a pagar. |
+| paymentMethod | String | public | Método de pago ("YAPE", "CREDIT_CARD", "DEBIT_CARD"). |
+| token | String | public | Token de pago generado por Culqi Checkout en el frontend. |
+
+#### 3. CalculateFeeCommand (Command)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| sessionId | Long | public | ID de la sesión para calcular la tarifa. |
+| entryTimestamp | LocalDateTime | public | Hora de ingreso del vehículo. |
+| exitTimestamp | LocalDateTime | public | Hora actual o de salida (para cálculo). |
+
+#### 4. Queries
+
+| Query | Atributos principales | Descripción |
+|---|---|---|
+| GetPaymentByIdQuery | paymentId : Long | Obtiene un pago por su identificador. |
+| GetPaymentBySessionIdQuery | sessionId : Long | Obtiene el pago asociado a una sesión. |
+| GetPaymentHistoryQuery | userId : Long | Obtiene el historial de pagos del usuario. |
+| GetPaymentStatusQuery | sessionId : Long | Verifica el estado de pago de una sesión (usado por Access Control). |
+
+#### 5. PaymentSucceededEvent (Domain Event)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| source | Object | private | Objeto origen del evento. |
+| paymentId | Long | private | ID del pago completado. |
+| sessionId | Long | private | ID de la sesión vehicular pagada. |
+| amount | BigDecimal | private | Monto cobrado. |
+| paymentMethod | String | private | Método de pago utilizado. |
+| transactionId | String | private | ID de transacción de Culqi. |
+| paidAt | LocalDateTime | private | Momento del pago. |
+
+#### 6. PaymentFailedEvent (Domain Event)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| source | Object | private | Objeto origen del evento. |
+| paymentId | Long | private | ID del pago fallido. |
+| sessionId | Long | private | ID de la sesión vehicular. |
+| errorDetail | String | private | Detalle del error retornado por Culqi. |
+
+#### 7. PaymentCommandService (Domain Service)
+
+Proporciona métodos para manejar comandos relacionados con el procesamiento de pagos.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(InitiatePaymentCommand command) | Optional\<Payment> | public | Inicia el proceso de pago: calcula tarifa, envía a pasarela Culqi, marca como completado o fallido según respuesta. |
+| handle(CalculateFeeCommand command) | ParkingFee | public | Calcula la tarifa de estacionamiento basada en la duración de la sesión. |
+
+#### 8. PaymentQueryService (Domain Service)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(GetPaymentByIdQuery query) | Optional\<Payment> | public | Obtiene un pago por su ID. |
+| handle(GetPaymentBySessionIdQuery query) | Optional\<Payment> | public | Obtiene el pago asociado a una sesión. |
+| handle(GetPaymentHistoryQuery query) | List\<Payment> | public | Obtiene historial de pagos del usuario. |
+| handle(GetPaymentStatusQuery query) | Optional\<PaymentTransactionStatus> | public | Retorna el estado del pago de una sesión (para verificación de Access Control en la salida). |
+
+#### 9. FeeCalculationService (Domain Service)
+
+Servicio de dominio que encapsula la lógica de cálculo de tarifas de estacionamiento.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| calculateFee(LocalDateTime entryTimestamp, LocalDateTime currentTimestamp, BigDecimal ratePerHour) | ParkingFee | public | Calcula la tarifa usando la regla: monto = ceil(horas) × tarifa_por_hora. Ejemplo: 2h 15min → 3 horas × S/ 5.00 = S/ 15.00. |
+| getDefaultRatePerHour() | BigDecimal | public | Retorna la tarifa por hora configurada por defecto (S/ 5.00, configurable). |
+
+#### 10. PaymentGatewayService (Domain Service Interface)
+
+Interfaz del servicio de pasarela de pagos. La implementación concreta vive en Infrastructure Layer.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| processPayment(BigDecimal amount, String currency, String token, PaymentMethod method) | PaymentGatewayResponse | public | Envía la solicitud de cobro a la pasarela y retorna la respuesta con transactionId y status. |
+
+#### 11. Money (Value Object)
+
+Representa un monto monetario con precisión decimal.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| amount | BigDecimal | private | Monto monetario con precisión de 2 decimales. |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| Money() | Constructor | public | Constructor requerido por JPA (valor 0.00). |
+| Money(BigDecimal amount) | Constructor | public | Inicializa y valida que el monto sea >= 0. |
+| Money(double amount) | Constructor | public | Inicializa desde double, convierte a BigDecimal con escala 2. |
+| add(Money other) | Money | public | Suma dos montos y retorna nuevo Money. |
+| isGreaterThan(Money other) | boolean | public | Compara si es mayor que otro monto. |
+
+#### 12. Currency (Value Object)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| PEN | Enum | public | Sol peruano (moneda por defecto). |
+| USD | Enum | public | Dólar americano (futuro soporte). |
+
+#### 13. PaymentMethod (Value Object)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| YAPE | Enum | public | Pago via Yape (procesado a través de Culqi). |
+| CREDIT_CARD | Enum | public | Pago con tarjeta de crédito. |
+| DEBIT_CARD | Enum | public | Pago con tarjeta de débito. |
+
+#### 14. PaymentTransactionStatus (Value Object)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| PENDING | Enum | public | El pago está en proceso. |
+| COMPLETED | Enum | public | El pago se completó exitosamente. |
+| FAILED | Enum | public | El pago falló (error de pasarela, fondos insuficientes, etc.). |
+
+#### 15. ParkingFee (Value Object)
+
+Representa el detalle del cálculo de la tarifa de estacionamiento.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| amount | BigDecimal | private | Monto total a pagar. |
+| duration | Duration | private | Duración de la estancia (entre entrada y momento del cálculo). |
+| ratePerHour | BigDecimal | private | Tarifa por hora aplicada. |
+| hoursCharged | int | private | Número de horas cobradas (ceil de la duración). |
+
+| Método | Tipo Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| ParkingFee(BigDecimal amount, Duration duration, BigDecimal ratePerHour, int hoursCharged) | Constructor | public | Inicializa con todos los valores del cálculo. |
+| getFormattedDuration() | String | public | Retorna la duración formateada como "Xh Ymin". |
+
+#### 16. SessionId (Value Object)
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| sessionId | Long | private | ID de la sesión vehicular asociada; debe ser > 0. |
+
+#### 17. PaymentGatewayResponse (Value Object)
+
+Respuesta de la pasarela de pagos tras procesar una transacción.
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| success | boolean | private | Indica si la transacción fue exitosa. |
+| transactionId | String | private | ID de transacción asignado por Culqi. |
+| errorDetail | String | private | Detalle del error (null si fue exitosa). |
+| receiptUrl | String | private | URL del recibo generado por Culqi (null si falló). |
+
+---
+
+### 4.2.3.2. Interface Layer
+
+#### 1. PaymentsController (REST Controller)
+
+Controlador REST que expone endpoints para gestionar pagos de estacionamiento.
+
+| Nombre del método | Ruta base típica | Método HTTP | Descripción |
+|---|---|---|---|
+| initiatePayment | /api/v1/payments | POST | Procesa un pago asociado a una sesión vehicular. Recibe sessionId, paymentMethod y token de Culqi. |
+| getPaymentById | /api/v1/payments/{id} | GET | Obtiene los detalles de un pago específico por su ID. |
+| getPaymentBySessionId | /api/v1/payments/session/{sessionId} | GET | Obtiene el pago asociado a una sesión vehicular. |
+| getPaymentHistory | /api/v1/payments/history | GET | Obtiene el historial de pagos del usuario autenticado. |
+| calculateFee | /api/v1/payments/calculate-fee/{sessionId} | GET | Calcula y retorna la tarifa estimada para una sesión activa. |
+
+#### 2. Resources (DTOs)
+
+| Resource | Atributos principales | Descripción |
+|---|---|---|
+| InitiatePaymentResource | sessionId: Long, paymentMethod: String, token: String | Datos para iniciar un pago. El token es generado por Culqi Checkout en el frontend. |
+| PaymentResource | id: Long, sessionId: Long, amount: BigDecimal, currency: String, paymentMethod: String, status: String, transactionId: String, receiptUrl: String, paidAt: LocalDateTime, duration: String, hoursCharged: int | Representación completa de un pago para la API. |
+| ParkingFeeResource | amount: BigDecimal, duration: String, ratePerHour: BigDecimal, hoursCharged: int, currency: String | Detalle del cálculo de tarifa para mostrar al conductor. |
+| PaymentStatusResource | sessionId: Long, paymentStatus: String | Estado del pago de una sesión (para verificación en salida). |
+
+#### 3. Transform (Assemblers)
+
+| Assembler | Entrada | Salida | Descripción |
+|---|---|---|---|
+| PaymentResourceFromEntityAssembler | Payment | PaymentResource | Convierte entidad Payment a DTO de respuesta. Incluye duración formateada y horas cobradas. |
+| InitiatePaymentCommandFromResourceAssembler | InitiatePaymentResource | InitiatePaymentCommand | Convierte DTO de pago en comando de dominio. |
+| ParkingFeeResourceFromValueObjectAssembler | ParkingFee | ParkingFeeResource | Convierte value object ParkingFee a DTO de respuesta. |
+
+---
+
+### 4.2.3.3. Application Layer
+
+#### 1. PaymentCommandServiceImpl (Command Service Implementation)
+
+Implementación del servicio de comandos para gestionar pagos de estacionamiento.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| paymentRepository | PaymentRepository | private | Repositorio para persistencia de pagos. |
+| paymentGatewayService | PaymentGatewayService | private | Servicio de pasarela de pagos (Culqi). |
+| feeCalculationService | FeeCalculationService | private | Servicio de cálculo de tarifas. |
+| externalAccessControlService | ExternalAccessControlService | private | Servicio ACL para comunicarse con Access Control BC. |
+
+**Métodos principales:**
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(InitiatePaymentCommand command) | Optional\<Payment> | public | Procesa pago completo: (1) obtiene datos de sesión via ACL a Access Control, (2) calcula tarifa con FeeCalculationService, (3) crea entidad Payment, (4) envía a Culqi via PaymentGatewayService, (5) si exitoso marca como COMPLETED y publica PaymentSucceededEvent, (6) si falla marca como FAILED y publica PaymentFailedEvent. Valida que la sesión no haya sido pagada previamente (409 Conflict). |
+| handle(CalculateFeeCommand command) | ParkingFee | public | Calcula la tarifa para una sesión activa sin procesar el pago. Obtiene timestamps de la sesión y aplica la regla de cálculo. |
+
+#### 2. PaymentQueryServiceImpl (Query Service Implementation)
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| paymentRepository | PaymentRepository | private | Repositorio para acceso de lectura. |
+
+**Métodos principales:**
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| handle(GetPaymentByIdQuery query) | Optional\<Payment> | public | Obtiene un pago por su ID. |
+| handle(GetPaymentBySessionIdQuery query) | Optional\<Payment> | public | Obtiene el pago asociado a una sesión. |
+| handle(GetPaymentHistoryQuery query) | List\<Payment> | public | Obtiene pagos del usuario ordenados por fecha descendente. |
+| handle(GetPaymentStatusQuery query) | Optional\<PaymentTransactionStatus> | public | Retorna el estado del pago de una sesión. Usado por Access Control para verificar si puede abrir la barrera de salida. |
+
+#### 3. PaymentSucceededEventHandler (Domain Event Handler)
+
+Maneja el evento de pago exitoso para notificar a Access Control y al conductor.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| externalAccessControlService | ExternalAccessControlService | private | Servicio ACL para notificar a Access Control. |
+| externalNotificationService | ExternalNotificationService | private | Servicio ACL para enviar notificación al conductor. |
+
+**Métodos principales:**
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| on(PaymentSucceededEvent event) | void | public | (1) Notifica a Access Control que la sesión fue pagada (actualiza paymentStatus a PAID en VehicleSession). (2) Envía notificación push al conductor confirmando el pago con monto y recibo. |
+
+#### 4. PaymentFailedEventHandler (Domain Event Handler)
+
+**Métodos principales:**
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| on(PaymentFailedEvent event) | void | public | Envía notificación push al conductor informando que el pago falló y debe reintentar. |
+
+#### 5. ExternalAccessControlService (Outbound ACL Service)
+
+Adaptador de salida hacia Access Control BC.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| getSessionDetails(Long sessionId) | Optional\<SessionDetailsDto> | public | Obtiene los datos de la sesión (entryTimestamp, licensePlate, userId) para calcular la tarifa. |
+| markSessionAsPaid(Long sessionId) | void | public | Notifica a Access Control que la sesión ha sido pagada, actualizando el paymentStatus. |
+
+#### 6. ExternalNotificationService (Outbound ACL Service)
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| sendPaymentSuccessNotification(Long userId, BigDecimal amount, String receiptUrl) | void | public | Envía notificación push de confirmación de pago al conductor. |
+| sendPaymentFailedNotification(Long userId, String errorDetail) | void | public | Envía notificación push informando que el pago falló. |
+
+---
+
+### 4.2.3.4. Infrastructure Layer
+
+#### 1. PaymentRepository (Repository Interface)
+
+Interfaz del repositorio para gestionar pagos.
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| findById(Long id) | Optional\<Payment> | public | Busca un pago por su ID. |
+| save(Payment payment) | Payment | public | Persiste o actualiza un pago. |
+| findBySessionId(SessionId sessionId) | Optional\<Payment> | public | Busca el pago asociado a una sesión vehicular. |
+| findBySessionId_SessionIdAndStatus(Long sessionId, PaymentTransactionStatus status) | Optional\<Payment> | public | Busca pago por sesión y estado (para verificar si ya existe pago completado). |
+| findByUserIdOrderByPaidAtDesc(Long userId) | List\<Payment> | public | Obtiene historial de pagos del usuario ordenado por fecha de pago descendente. |
+| existsBySessionId(SessionId sessionId) | boolean | public | Verifica si ya existe un pago para la sesión. |
+
+#### 2. CulqiPaymentGateway (Infrastructure Service)
+
+Implementación concreta de PaymentGatewayService usando la API de Culqi como pasarela de pagos.
+
+**Atributos principales:**
+
+| Atributo | Tipo | Visibilidad | Descripción |
+|---|---|---|---|
+| culqiPublicKey | String | private | Clave pública de Culqi (configurada en application.properties). |
+| culqiPrivateKey | String | private | Clave privada de Culqi para procesar cargos. |
+| culqiApiUrl | String | private | URL base de la API de Culqi (https://api.culqi.com/v2). |
+| restTemplate | RestTemplate | private | Cliente HTTP para realizar llamadas a la API de Culqi. |
+
+**Métodos principales:**
+
+| Método | Tipo de Retorno | Visibilidad | Descripción |
+|---|---|---|---|
+| processPayment(BigDecimal amount, String currency, String token, PaymentMethod method) | PaymentGatewayResponse | public | Envía solicitud POST /v2/charges a Culqi con amount (en céntimos: S/ 15.00 → 1500), currency_code ("PEN"), source_id (token de Culqi Checkout) y email del usuario. Parsea la respuesta y retorna PaymentGatewayResponse con transactionId, success y receiptUrl. Si Culqi retorna error, retorna success=false con errorDetail. |
+
+---
+
+### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+En esta sección se presentan los diagramas de nivel componente que ilustran la arquitectura de software del contexto de Payment Processing. Se muestra la interacción entre los componentes internos y la integración con la pasarela de pagos Culqi.
+
+> **Diagrama a crear en Structurizr DSL:**
+
+
+### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas de nivel código que detallan la estructura interna del contexto de Payment Processing.
+
+#### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del Domain Layer del contexto de Payment Processing ilustra las entidades, objetos de valor y servicios que componen este bounded context.
+
+> **Diagrama a crear en LucidChart o PlantUML:**
+
+
+#### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos del contexto de Payment Processing muestra la estructura de las tablas y sus relaciones.
+
+> **Diagrama a crear en Vertabelo:**
+
 ---
 
 # Capítulo V: Product Implementation, Validation & Deployment
