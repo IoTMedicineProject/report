@@ -114,12 +114,36 @@
     - [4.7.1. Class Diagrams.](#471-class-diagrams)
   - [4.8. Database Design.](#48-database-design)
     - [4.8.1. Database Diagrams.](#481-database-diagrams)
-- [Capítulo V: Product Implementation, Validation \& Deployment](#capítulo-v-product-implementation-validation--deployment)
-  - [5.1. Software Configuration Management.](#51-software-configuration-management)
-    - [5.1.1. Software Development Environment Configuration.](#511-software-development-environment-configuration)
-    - [5.1.2. Source Code Management.](#512-source-code-management)
-    - [5.1.3. Source Code Style Guide \& Conventions.](#513-source-code-style-guide--conventions)
-    - [5.1.4. Software Deployment Configuration.](#514-software-deployment-configuration)
+- [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
+  - [5.1. Style Guidelines](#51-style-guidelines)
+    - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
+    - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
+    - [5.2. Information Architecture](#52-information-architecture)
+    - [5.2.1. Organization Systems](#521-organization-systems)
+    - [5.2.2. Labeling Systems](#522-labeling-systems)
+    - [5.2.3. SEO Tags and Meta Tags](#523-seo-tags-and-meta-tags)
+    - [5.2.4. Searching Systems \& Navigation (Core Flows)](#524-searching-systems--navigation-core-flows)
+  - [5.2.5. Navigation Systems.](#525-navigation-systems)
+  - [5.3. Landing Page UI Design.](#53-landing-page-ui-design)
+    - [5.3.1. Landing Page Wireframe.](#531-landing-page-wireframe)
+    - [5.3.2. Landing Page Mock-up.](#532-landing-page-mock-up)
+  - [5.4. Applications UX/UI Design.](#54-applications-uxui-design)
+    - [5.4.1. Applications Wireframes.](#541-applications-wireframes)
+      - [Mobile Application Wireframes](#mobile-application-wireframes)
+      - [Web Dashboard Wireframes](#web-dashboard-wireframes)
+    - [5.4.2. Applications Wireflow Diagrams.](#542-applications-wireflow-diagrams)
+    - [5.4.3. Applications Mock-ups.](#543-applications-mock-ups)
+      - [Mobile Application Mock-ups](#mobile-application-mock-ups)
+      - [Web Dashboard Mock-ups](#web-dashboard-mock-ups)
+    - [5.4.4. Applications User Flow Diagrams.](#544-applications-user-flow-diagrams)
+      - [Conductores](#conductores)
+      - [Administradores](#administradores)
+  - [5.5. Applications Prototyping.](#55-applications-prototyping)
+    - [Prototype Links](#prototype-links)
+      - [Mobile Application Prototype](#mobile-application-prototype)
+      - [Web Application Prototype](#web-application-prototype)
+      - [Web Application Wireframe Prototype](#web-application-wireframe-prototype)
+  - [5.6. IoT Device Design.](#56-iot-device-design)
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones.](#conclusiones-y-recomendaciones)
   - [Video About-the-Team.](#video-about-the-team)
@@ -429,6 +453,181 @@ Para garantizar que el usuario encuentre los datos sin esfuerzo, se implementan 
 * **Búsqueda Global (Dashboard Web):** Uso de un *Omnibox* en el Top Bar que permite al administrador realizar consultas transversales (búsqueda por número de placa `ABC-123`, ID de espacio `A-12` o ID de transacción de pasarela). Los resultados redirigen dinámicamente al módulo correspondiente.
 * **Deep Linking (App Móvil):** La navegación de la app soporta enlaces profundos manejados por Firebase Cloud Messaging (FCM). Al tocar una notificación de "Pago Pendiente", la arquitectura de navegación enruta al usuario saltando el menú principal, llevándolo directamente a la pantalla `Checkout_Screen`.
 
+## 5.2.5. Navigation Systems.
+
+## 5.3. Landing Page UI Design.
+### 5.3.1. Landing Page Wireframe.
+### 5.3.2. Landing Page Mock-up.
+
+## 5.4. Applications UX/UI Design.
+
+El diseño UX/UI de SpotFinder fue desarrollado con el objetivo de ofrecer una experiencia intuitiva, moderna y eficiente tanto para conductores como para administradores del sistema de estacionamiento inteligente. 
+
+La propuesta visual prioriza:
+- Simplicidad de uso.
+- Navegación intuitiva.
+- Acceso rápido a funcionalidades críticas.
+- Consistencia visual entre plataformas.
+- Diseño responsive y mobile-first.
+- Reducción de carga cognitiva del usuario.
+
+El ecosistema UX/UI contempla:
+- Aplicación móvil para conductores.
+- Dashboard web administrativo.
+- Integración visual con dispositivos IoT.
+
+---
+
+### 5.4.1. Applications Wireframes.
+
+Los wireframes fueron desarrollados para definir la estructura funcional y distribución de componentes antes de la implementación visual final. 
+
+Se diseñaron wireframes tanto para:
+- Aplicación móvil.
+- Dashboard web administrativo.
+
+Las vistas consideran:
+- Pantallas de autenticación.
+- Dashboard principal.
+- Visualización de estacionamientos disponibles.
+- Gestión de pagos.
+- Notificaciones.
+- Gestión de perfil.
+- Paneles administrativos y monitoreo IoT.
+
+#### Mobile Application Wireframes
+
+![Mobile Wireframes 1](./assets/ux-ui/mobile/wireframes/wireframes-1.png)
+
+![Mobile Wireframes 2](./assets/ux-ui/mobile/wireframes/wireframes-2.png)
+
+![Mobile Wireframes 3](./assets/ux-ui/mobile/wireframes/wireframes-3.png)
+
+#### Web Dashboard Wireframes
+
+![Web Wireframes 1](./assets/ux-ui/web/wireframes/wireframes-1.png)
+
+![Web Wireframes 2](./assets/ux-ui/web/wireframes/wireframes-2.png)
+
+![Web Wireframes 3](./assets/ux-ui/web/wireframes/wireframes-3.png)
+
+---
+
+### 5.4.2. Applications Wireflow Diagrams.
+
+Los Wireflow Diagrams representan el flujo de navegación y transición entre pantallas dentro del sistema SpotFinder. 
+
+Estos diagramas permiten visualizar:
+- Interacciones del usuario.
+- Rutas de navegación.
+- Flujo de autenticación.
+- Flujo de búsqueda de estacionamiento.
+- Flujo de pagos digitales.
+- Flujo de monitoreo administrativo.
+- Navegación entre módulos principales.
+
+El diseño de navegación fue desarrollado siguiendo principios de:
+- Navegación contextual.
+- Accesibilidad.
+- Reducción de pasos.
+- Optimización de tareas frecuentes.
+
+---
+
+### 5.4.3. Applications Mock-ups.
+
+Los mock-ups representan la versión visual de alta fidelidad del sistema SpotFinder, incorporando el sistema de diseño previamente definido en las Style Guidelines.
+
+Las interfaces fueron desarrolladas manteniendo:
+- Consistencia visual.
+- Componentes reutilizables.
+- Jerarquía visual clara.
+- Diseño moderno y minimalista.
+- Experiencia centrada en el usuario.
+
+#### Mobile Application Mock-ups
+
+![Mobile Mockups 1](./assets/ux-ui/mobile/mockups/mockups-1.png)
+
+![Mobile Mockups 2](./assets/ux-ui/mobile/mockups/mockups-2.png)
+
+![Mobile Mockups 3](./assets/ux-ui/mobile/mockups/mockups-3.png)
+
+#### Web Dashboard Mock-ups
+
+![Web Mockups 1](./assets/ux-ui/web/mockups/mockups-1.png)
+
+![Web Mockups 2](./assets/ux-ui/web/mockups/mockups-2.png)
+
+---
+
+### 5.4.4. Applications User Flow Diagrams.
+
+Los User Flow Diagrams modelan el recorrido completo del usuario dentro de la plataforma SpotFinder, identificando acciones, decisiones y resultados esperados.
+
+Los principales flujos diseñados incluyen:
+
+#### Conductores
+- Registro e inicio de sesión.
+- Visualización de espacios disponibles.
+- Recomendación de estacionamiento.
+- Pago digital.
+- Localización del vehículo.
+- Gestión de notificaciones.
+
+#### Administradores
+- Monitoreo de ocupación.
+- Gestión de espacios.
+- Visualización de métricas.
+- Gestión de alertas y emergencias.
+- Generación de reportes.
+
+Los diagramas permiten validar:
+- Fluidez de interacción.
+- Eficiencia de navegación.
+- Optimización de tareas.
+- Reducción de fricción en la experiencia del usuario.
+
+---
+
+## 5.5. Applications Prototyping.
+
+El prototipado de SpotFinder fue desarrollado con el objetivo de validar tempranamente la experiencia de usuario y comprobar el comportamiento de navegación de la plataforma antes de la implementación final.
+ 
+Los prototipos interactivos permiten simular:
+- Navegación entre pantallas.
+- Interacción con componentes.
+- Flujo de autenticación.
+- Flujo de búsqueda de estacionamiento.
+- Flujo de pagos.
+- Gestión de notificaciones.
+- Navegación administrativa.
+
+El proceso de prototipado permitió:
+- Detectar mejoras de usabilidad.
+- Optimizar tiempos de interacción.
+- Validar jerarquías visuales.
+- Refinar la experiencia mobile-first.
+- Verificar consistencia visual entre plataformas.
+
+Asimismo, los prototipos facilitaron la validación de:
+- Diseño responsive.
+- Navegación intuitiva.
+- Escalabilidad visual del sistema.
+- Integración entre módulos funcionales.
+
+### Prototype Links
+
+#### Mobile Application Prototype
+- https://stitch.withgoogle.com/preview/4437756468570998234?node-id=d5d266e0e79a42eea72522a5cd4632e0
+
+#### Web Application Prototype
+- https://stitch.withgoogle.com/preview/4437756468570998234?node-id=b845ebb0307f4022b9df819e8fad79ab
+
+#### Web Application Wireframe Prototype
+- https://stitch.withgoogle.com/preview/4437756468570998234?node-id=ae88b4b92bf34458b32e6b46efc3cd79
+
+## 5.6. IoT Device Design.
 
 ---
 
