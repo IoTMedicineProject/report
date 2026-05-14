@@ -2154,7 +2154,7 @@ Las comunicaciones entre componentes se realizan mediante protocolos como HTTPS 
 
 Este diagrama evidencia una arquitectura distribuida en múltiples capas, combinando dispositivos de usuario, infraestructura en la nube y procesamiento en el borde (edge computing), lo que permite escalabilidad y eficiencia en el manejo de datos en tiempo real.
 
-<img src="/assets/diagrams/c4/Deployment-Diagrams.png" width="800">
+<img src="./assets/diagrams/c4/Deployment-Diagrams.png" width="800">
 <br>
 
 # 4.2. Tactical-Level Domain-Driven Design
