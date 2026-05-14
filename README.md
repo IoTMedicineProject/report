@@ -1754,12 +1754,12 @@ Cada miembro del equipo responde en post-its naranjas a la pregunta: **"¿Qué p
 **Paso 2 — Agrupación de eventos en torno al valor:**
 Revisar los aggregates del Event Storming y sus eventos asociados. Agrupar por afinidad y preguntar: "¿Este grupo de eventos genera valor directo al negocio o es un soporte necesario?"
 
-<img src="assets/diagrams/context-candidate/candidate-context-step2.png" alt="Paso2" width="800">
+<img src="./assets/diagrams/ddd/es-2-2.png" alt="Paso2" width="800">
 
 **Paso 3 — Clasificación Core, Supporting, Generic:**
 Ubicar cada bounded context en la matriz de dos ejes (Business Differentiation vs Model Complexity).
 
-<img src="/assets/diagrams/context-candidate/candidate-context-step3.jpg" alt="Paso3" width="800">
+<img src="./assets/diagrams/context-candidate/candidate-context-step3.jpg" alt="Paso3" width="800">
 
 ### Candidate Contexts identificados para SpotFinder
  
