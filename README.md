@@ -5059,53 +5059,54 @@ En esta sección se presentan los aspectos principales abordados durante la reun
   <tr>
     <td>Attendees (to planning meeting)</td>
     <td>
-      Cruz Ibarra, Victor Andres; Dueñas Canales, Leonardo Manuel; Vidal Castro, Miguel Angel; Allcca Guerrero, Irving Washington;
-      Roman Esteban, Henry Kalet
+      Cruz Ibarra, Victor Andres; Dueñas Canales, Leonardo Manuel; Vidal Castro, Miguel Angel; 
+      Allcca Guerrero, Irving Washington; Roman Esteban, Henry Kalet
     </td>
   </tr>
 
   <tr>
     <td>Sprint n – 1 Review Summary</td>
-    <td>No existe sprint previo</td>
+    <td>No existe sprint previo debido a que este corresponde al primer Sprint del proyecto SpotFinder.</td>
   </tr>
 
   <tr>
     <th colspan="2">Sprint Goal & User Stories</th>
   </tr>
 
-<tr>
-  <td><strong>Sprint 1 Goal</strong></td>
-  <td>
-    <strong>Our focus is on</strong> delivering the first integrated version of the SpotFinder ecosystem.<br><br>
-    <strong>We believe it delivers</strong> a faster and more accessible way to locate IoT devices and available spots for users and administrators.<br><br>
-    <strong>This will be confirmed when</strong> users can successfully register, visualize, and interact with available spots through the platform without critical issues.
-  </td>
-</tr>
+  <tr>
+    <td><strong>Sprint 1 Goal</strong></td>
+    <td>
+      <strong>Our focus is on</strong> developing the first functional version of the SpotFinder ecosystem, including backend services, monitoring modules, authentication, parking session management, analytics, and the institutional landing page.
+      <strong>We believe it delivers</strong> a functional foundation for administrators and drivers to interact with parking spaces, visualize occupancy information, authenticate securely, and manage vehicle-related operations through the platform.
+      <strong>This will be confirmed when</strong> users can successfully access the platform, authenticate, visualize parking information, manage sessions and vehicles, and interact with the landing page without critical issues.
+    </td>
+  </tr>
 
   <tr>
     <td>Sprint 1 Velocity</td>
-    <td> 76 story points</td>
+    <td>177 story points</td>
   </tr>
 
   <tr>
     <td>Sum of story points</td>
-    <td> 76 story points</td>
+    <td>177 story points</td>
   </tr>
 </table>
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
 
-En esta sección se presenta la matriz de liderazgo y colaboración (Leadership-and-Collaboration Matrix - LACX) correspondiente al Sprint 1 del proyecto SpotFinder. El objetivo de esta matriz es identificar los principales aspectos funcionales y técnicos abordados durante el Sprint, así como definir qué integrantes del equipo asumieron roles de liderazgo y cuáles participaron como colaboradores en cada aspecto. Esta organización permite mejorar la coordinación, distribución de responsabilidades y comunicación interna del equipo durante el desarrollo del Sprint.
+En esta sección se presenta la matriz de liderazgo y colaboración (Leadership-and-Collaboration Matrix - LACX) correspondiente al Sprint 1 del proyecto SpotFinder. El objetivo de esta matriz es identificar los principales aspectos funcionales y técnicos abordados durante el Sprint, así como definir qué integrantes del equipo asumieron roles de liderazgo y cuáles participaron como colaboradores en cada aspecto. Esta organización permitió mejorar la coordinación, distribución de responsabilidades y comunicación interna del equipo durante el desarrollo de la primera iteración del proyecto.
 
-Los aspectos considerados para este Sprint incluyen el desarrollo del backend, frontend, modelado de dominio, integración IoT y documentación técnica, debido a que representan las áreas principales necesarias para la construcción de la primera versión integrada del ecosistema SpotFinder.
+Los aspectos considerados para este Sprint incluyen el desarrollo del backend basado en arquitectura de bounded contexts, el desarrollo frontend tanto de la Landing Page como de las aplicaciones de monitoreo y conductor, el modelado de dominio, la investigación tecnológica para futuras integraciones externas, y la documentación técnica del proyecto. Estas áreas representaron los componentes principales necesarios para construir la primera versión funcional integrada del ecosistema SpotFinder.
 
-| Team Member (Last Name, First Name) | GitHub Username | Backend Development | Frontend Development | Domain Modeling | Documentation |
-|---|---|---|---|---|---|
-| Cruz Ibarra, Victor Andres | Elandrehss | L | C | L | C |
-| Dueñas Canales, Leonardo Manuel | Insonnio | C | C | C | L |
-| Vidal Castro, Miguel Angel | Gossk | C | L | L | C |
-| Allcca Guerrero, Irving Washington | eviterno17 | C | L | C | C |
-| Roman Esteban, Henry Kalet | kalet123-commit | C | C | C | L |
+| Team Member (Last Name, First Name) | GitHub Username | Backend Development | Frontend Development | Domain Modeling | Research & Integrations | Documentation |
+| ----------------------------------- | --------------- | ------------------- | -------------------- | --------------- | ----------------------- | ------------- |
+| Cruz Ibarra, Victor Andres          | Elandrehss      | L                   | C                    | L               | L                       | C             |
+| Dueñas Canales, Leonardo Manuel     | Insonnio        | C                   | L                    | C               | C                       | L             |
+| Vidal Castro, Miguel Angel          | Gossk           | C                   | L                    | C               | L                       | C             |
+| Allcca Guerrero, Irving Washington  | eviterno17      | C                   | L                    | C               | C                       | C             |
+| Roman Esteban, Henry Kalet          | kalet123-commit | C                   | C                    | C               | C                       | L             |
+
 
 **Legend:**  
 - **L** = Leader  
@@ -5113,15 +5114,16 @@ Los aspectos considerados para este Sprint incluyen el desarrollo del backend, f
 
 #### 6.2.1.3. Sprint Backlog 1
 
-En esta sección se presenta el Sprint Backlog correspondiente al Sprint 1 del proyecto SpotFinder. Durante este Sprint, el equipo se enfocó en desarrollar la primera versión funcional de la arquitectura backend basada en bounded contexts, así como la implementación inicial de la Landing Page institucional del producto. Además, se desarrollaron los primeros endpoints principales relacionados con monitoreo de estacionamiento, sesiones, autenticación, analíticas y gestión vehicular.
+En esta sección se presenta el Sprint Backlog correspondiente al Sprint 1 del proyecto SpotFinder. Durante este Sprint, el equipo se enfocó en desarrollar la primera versión funcional integrada del ecosistema SpotFinder, incluyendo la implementación de múltiples bounded contexts del backend, el desarrollo de la Landing Page institucional, la construcción inicial de aplicaciones frontend para monitoreo y conductor, así como la integración de funcionalidades relacionadas con autenticación, gestión vehicular, sesiones de estacionamiento y analíticas.
+
+Asimismo, se avanzó en la investigación de tecnologías externas necesarias para futuras integraciones del sistema, como plataformas de pago digital y servicios complementarios. Como resultado del Sprint, se logró una base funcional tanto a nivel backend como frontend, permitiendo la interacción inicial entre usuarios, administradores y el sistema de monitoreo de estacionamientos inteligentes.
 
 A continuación, se muestra el tablero de trabajo utilizado para la gestión de tareas del Sprint:
-
 
 <img alt="Sprint Backlog 1 in Trello" src="assets\images\screenshots\sprint1_trello.png" />
 <br><br>
 
-Link Trello: [SpotFinder - Trello]()
+Link Trello: [SpotFinder - Trello](https://trello.com/invite/b/6a063ce7c05f01d94a8fe05d/ATTIe188c97067261542e445eb5c5d25c1de04E08C40/spotfinder-sprint1)
 
 <table border="1" cellpadding="6" cellspacing="0">
   <thead>
@@ -5165,10 +5167,10 @@ Link Trello: [SpotFinder - Trello]()
   <td>Cruz Ibarra, Victor Andres</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">US02</td>
   <td rowspan="2">Visualización de espacios en tiempo real</td>
-
   <td>T03</td>
   <td>Implementación de consultas de espacios</td>
   <td>Desarrollar lógica de consulta de espacios disponibles.</td>
@@ -5185,6 +5187,7 @@ Link Trello: [SpotFinder - Trello]()
   <td>Cruz Ibarra, Victor Andres</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">US03</td>
   <td rowspan="2">Ingreso automático con ALPR</td>
@@ -5204,6 +5207,7 @@ Link Trello: [SpotFinder - Trello]()
   <td>Cruz Ibarra, Victor Andres</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">US04</td>
   <td rowspan="2">Salida automática con verificación de pago</td>
@@ -5223,10 +5227,10 @@ Link Trello: [SpotFinder - Trello]()
   <td>Cruz Ibarra, Victor Andres</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">US06</td>
   <td rowspan="2">Dashboard de monitoreo en tiempo real</td>
-
   <td>T09</td>
   <td>Diseño del bounded context Analytics</td>
   <td>Definir estructura y componentes del módulo Analytics.</td>
@@ -5243,10 +5247,10 @@ Link Trello: [SpotFinder - Trello]()
   <td>Cruz Ibarra, Victor Andres</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">US18</td>
   <td rowspan="2">Registro de usuario conductor</td>
-
   <td>T11</td>
   <td>Diseño de entidades IAM</td>
   <td>Definir entidades y lógica inicial de autenticación.</td>
@@ -5263,10 +5267,10 @@ Link Trello: [SpotFinder - Trello]()
   <td>Cruz Ibarra, Victor Andres</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">US20</td>
   <td rowspan="2">Inicio de sesión</td>
-
   <td>T13</td>
   <td>Diseño del flujo de autenticación</td>
   <td>Definir flujo de login y validación de credenciales para usuarios.</td>
@@ -5275,7 +5279,6 @@ Link Trello: [SpotFinder - Trello]()
   <td>Done</td>
   <td rowspan="2">3</td>
 </tr>
-
 <tr>
   <td>T14</td>
   <td>Implementación de autenticación JWT</td>
@@ -5284,6 +5287,7 @@ Link Trello: [SpotFinder - Trello]()
   <td>Cruz Ibarra, Victor Andres</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">US23</td>
   <td rowspan="2">Registro de vehículo adicional</td>
@@ -5306,7 +5310,7 @@ Link Trello: [SpotFinder - Trello]()
 <tr>
   <td rowspan="2">SWS01</td>
   <td rowspan="2">Ver sección Hero</td>
-  <td>T13</td>
+  <td>T17</td>
   <td>Diseño visual de Hero Section</td>
   <td>Crear estructura visual y contenido principal del Hero.</td>
   <td>2</td>
@@ -5315,17 +5319,18 @@ Link Trello: [SpotFinder - Trello]()
   <td rowspan="2">2</td>
 </tr>
 <tr>
-  <td>T14</td>
+  <td>T18</td>
   <td>Implementación responsive de Hero</td>
   <td>Adaptar Hero Section para desktop y dispositivos móviles.</td>
   <td>1</td>
   <td>Allcca Guerrero, Irving Washington</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">SWS02</td>
   <td rowspan="2">Ver sección Features</td>
-  <td>T17</td>
+  <td>T19</td>
   <td>Diseño visual de sección Features</td>
   <td>Crear estructura visual para mostrar funcionalidades principales.</td>
   <td>1</td>
@@ -5334,18 +5339,18 @@ Link Trello: [SpotFinder - Trello]()
   <td rowspan="2">2</td>
 </tr>
 <tr>
-  <td>T18</td>
+  <td>T20</td>
   <td>Implementación responsive de Features</td>
   <td>Adaptar sección Features para desktop y dispositivos móviles.</td>
   <td>2</td>
   <td>Allcca Guerrero, Irving Washington</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">SWS03</td>
   <td rowspan="2">Ver sección How It Works</td>
-
-  <td>T19</td>
+  <td>T21</td>
   <td>Diseño de flujo explicativo</td>
   <td>Definir estructura visual y contenido explicativo del sistema.</td>
   <td>1</td>
@@ -5354,17 +5359,18 @@ Link Trello: [SpotFinder - Trello]()
   <td rowspan="2">2</td>
 </tr>
 <tr>
-  <td>T20</td>
+  <td>T22</td>
   <td>Implementación sección How It Works</td>
   <td>Desarrollar componentes visuales y responsive de la sección.</td>
   <td>2</td>
   <td>Dueñas Canales, Leonardo Manuel</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">SWS04</td>
   <td rowspan="2">Ver sección About The Product</td>
-  <td>T21</td>
+  <td>T23</td>
   <td>Redacción de contenido institucional</td>
   <td>Preparar contenido descriptivo e información principal del producto.</td>
   <td>2</td>
@@ -5373,18 +5379,18 @@ Link Trello: [SpotFinder - Trello]()
   <td rowspan="2">3</td>
 </tr>
 <tr>
-  <td>T22</td>
+  <td>T24</td>
   <td>Implementación sección About Product</td>
   <td>Desarrollar componentes visuales y responsive de la sección.</td>
   <td>2</td>
   <td>Dueñas Canales, Leonardo Manuel</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">SWS05</td>
   <td rowspan="2">Ver sección Pricing</td>
-
-  <td>T23</td>
+  <td>T25</td>
   <td>Diseño de cards de precios</td>
   <td>Diseñar estructura visual de planes y beneficios del servicio.</td>
   <td>2</td>
@@ -5393,18 +5399,18 @@ Link Trello: [SpotFinder - Trello]()
   <td rowspan="2">3</td>
 </tr>
 <tr>
-  <td>T24</td>
+  <td>T26</td>
   <td>Implementación responsive de Pricing</td>
   <td>Implementar sección de precios adaptable para múltiples dispositivos.</td>
   <td>2</td>
   <td>Roman Esteban, Henry Kalet</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">SWS06</td>
   <td rowspan="2">Ver sección Testimonials</td>
-
-  <td>T25</td>
+  <td>T27</td>
   <td>Diseño visual de Testimonials</td>
   <td>Crear diseño de testimonios y experiencias de usuarios.</td>
   <td>1</td>
@@ -5413,17 +5419,18 @@ Link Trello: [SpotFinder - Trello]()
   <td rowspan="2">2</td>
 </tr>
 <tr>
-  <td>T26</td>
+  <td>T28</td>
   <td>Implementación sección Testimonials</td>
   <td>Desarrollar estructura responsive de testimonios.</td>
   <td>2</td>
   <td>Roman Esteban, Henry Kalet</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">SWS07</td>
   <td rowspan="2">Ver sección About Us y About The Team</td>
-  <td>T27</td>
+  <td>T29</td>
   <td>Diseño sección Team</td>
   <td>Diseñar estructura visual para presentación del equipo.</td>
   <td>1</td>
@@ -5432,7 +5439,7 @@ Link Trello: [SpotFinder - Trello]()
   <td rowspan="2">2</td>
 </tr>
 <tr>
-  <td>T28</td>
+  <td>T30</td>
   <td>Implementación sección Team</td>
   <td>Implementar componentes responsive de presentación del equipo.</td>
   <td>2</td>
@@ -5442,7 +5449,7 @@ Link Trello: [SpotFinder - Trello]()
 <tr>
   <td rowspan="2">SWS08</td>
   <td rowspan="2">Ver sección FAQ</td>
-  <td>T29</td>
+  <td>T31</td>
   <td>Redacción de preguntas frecuentes</td>
   <td>Preparar contenido FAQ relacionado al funcionamiento del sistema.</td>
   <td>1</td>
@@ -5451,18 +5458,18 @@ Link Trello: [SpotFinder - Trello]()
   <td rowspan="2">2</td>
 </tr>
 <tr>
-  <td>T30</td>
+  <td>T32</td>
   <td>Implementación sección FAQ</td>
   <td>Desarrollar diseño responsive de preguntas frecuentes.</td>
   <td>2</td>
   <td>Vidal Castro, Miguel Angel</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">SWS09</td>
   <td rowspan="2">Ver sección Contact</td>
-
-  <td>T31</td>
+  <td>T33</td>
   <td>Diseño formulario de contacto</td>
   <td>Diseñar formulario y estructura de contacto institucional.</td>
   <td>1</td>
@@ -5471,17 +5478,18 @@ Link Trello: [SpotFinder - Trello]()
   <td rowspan="2">2</td>
 </tr>
 <tr>
-  <td>T32</td>
+  <td>T34</td>
   <td>Implementación sección Contact</td>
   <td>Desarrollar sección responsive de contacto.</td>
   <td>2</td>
   <td>Allcca Guerrero, Irving Washington</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">SWS10</td>
   <td rowspan="2">Ver sección Footer</td>
-  <td>T33</td>
+  <td>T35</td>
   <td>Diseño del Footer</td>
   <td>Definir estructura visual y enlaces principales del footer.</td>
   <td>1</td>
@@ -5490,17 +5498,18 @@ Link Trello: [SpotFinder - Trello]()
   <td rowspan="2">2</td>
 </tr>
 <tr>
-  <td>T34</td>
+  <td>T36</td>
   <td>Implementación responsive del Footer</td>
   <td>Desarrollar footer adaptable para dispositivos móviles y desktop.</td>
   <td>1</td>
   <td>Allcca Guerrero, Irving Washington</td>
   <td>Done</td>
 </tr>
+
 <tr>
   <td rowspan="2">SWS11</td>
   <td rowspan="2">Navegación responsive</td>
-  <td>T35</td>
+  <td>T37</td>
   <td>Diseño de navbar responsive</td>
   <td>Diseñar navegación adaptable para distintos tamaños de pantalla.</td>
   <td>2</td>
@@ -5509,11 +5518,488 @@ Link Trello: [SpotFinder - Trello]()
   <td rowspan="2">3</td>
 </tr>
 <tr>
-  <td>T36</td>
+  <td>T38</td>
   <td>Implementación de navegación responsive</td>
   <td>Desarrollar comportamiento responsive de la barra de navegación.</td>
   <td>2</td>
   <td>Dueñas Canales, Leonardo Manuel</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">SS01</td>
+  <td rowspan="2">Investigación de integración de Culqi</td>
+  <td>T39</td>
+  <td>Investigación de API Culqi</td>
+  <td>Analizar documentación oficial y flujo de integración de pagos digitales.</td>
+  <td>4</td>
+  <td>Roman Esteban, Henry Kalet</td>
+  <td>Done</td>
+  <td rowspan="2">8</td>
+</tr>
+<tr>
+  <td>T40</td>
+  <td>Pruebas iniciales de integración</td>
+  <td>Realizar pruebas iniciales de consumo de endpoints y generación de tokens.</td>
+  <td>4</td>
+  <td>Roman Esteban, Henry Kalet</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">TS02</td>
+  <td rowspan="2">Exponer endpoint para listar espacios</td>
+  <td>T41</td>
+  <td>Diseño de consultas de espacios</td>
+  <td>Definir estructura de consultas y filtros para listado de espacios.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T42</td>
+  <td>Implementación endpoint GET de espacios</td>
+  <td>Desarrollar endpoint REST para listar espacios registrados.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS03</td>
+  <td rowspan="2">Exponer endpoint para consultar espacios disponibles</td>
+  <td>T43</td>
+  <td>Diseño de lógica de disponibilidad</td>
+  <td>Definir reglas de negocio para consulta de disponibilidad.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T44</td>
+  <td>Implementación endpoint de espacios disponibles</td>
+  <td>Implementar endpoint REST para consultar espacios libres.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS04</td>
+  <td rowspan="2">Exponer endpoint para actualizar estado de espacio</td>
+  <td>T45</td>
+  <td>Diseño de actualización de estados</td>
+  <td>Definir flujo de actualización de ocupación y disponibilidad.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T46</td>
+  <td>Implementación endpoint PATCH de espacios</td>
+  <td>Desarrollar endpoint REST para actualizar estado de espacios.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS05</td>
+  <td rowspan="2">Exponer endpoint para obtener detalles de un espacio</td>
+  <td>T47</td>
+  <td>Diseño de detalle de espacios</td>
+  <td>Definir atributos y estructura de respuesta de detalle de espacio.</td>
+  <td>1</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T48</td>
+  <td>Implementación endpoint GET detalle</td>
+  <td>Desarrollar endpoint REST para obtener detalle de un espacio.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS07</td>
+  <td rowspan="2">Exponer endpoint para registrar ingreso vehicular</td>
+  <td>T49</td>
+  <td>Diseño de flujo de ingreso vehicular</td>
+  <td>Definir validaciones y estructura de registro de ingresos.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">5</td>
+</tr>
+<tr>
+  <td>T50</td>
+  <td>Implementación endpoint de ingreso</td>
+  <td>Desarrollar endpoint REST para registrar ingreso de vehículos.</td>
+  <td>3</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS08</td>
+  <td rowspan="2">Exponer endpoint para registrar salida vehicular</td>
+  <td>T51</td>
+  <td>Diseño de flujo de salida vehicular</td>
+  <td>Definir reglas y validaciones para salida de vehículos.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">5</td>
+</tr>
+<tr>
+  <td>T52</td>
+  <td>Implementación endpoint de salida</td>
+  <td>Desarrollar endpoint REST para registrar salida vehicular.</td>
+  <td>3</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS10</td>
+  <td rowspan="2">Exponer endpoint para crear sesión de estacionamiento</td>
+  <td>T53</td>
+  <td>Diseño de creación de sesiones</td>
+  <td>Definir estructura de sesiones activas de estacionamiento.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">5</td>
+</tr>
+<tr>
+  <td>T54</td>
+  <td>Implementación endpoint de sesiones</td>
+  <td>Implementar endpoint REST para creación de sesiones.</td>
+  <td>3</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS11</td>
+  <td rowspan="2">Exponer endpoint para obtener sesión activa</td>
+  <td>T55</td>
+  <td>Diseño de consulta de sesión activa</td>
+  <td>Definir estructura de consulta para sesiones activas.</td>
+  <td>1</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T56</td>
+  <td>Implementación endpoint de sesión activa</td>
+  <td>Desarrollar endpoint REST para obtener sesión activa.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS12</td>
+  <td rowspan="2">Exponer endpoint para consultar sesión por ID</td>
+  <td>T57</td>
+  <td>Diseño de consulta por identificador</td>
+  <td>Definir estructura de consulta detallada de sesiones.</td>
+  <td>1</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T58</td>
+  <td>Implementación endpoint de consulta por ID</td>
+  <td>Desarrollar endpoint REST para consultar sesiones por identificador.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS13</td>
+  <td rowspan="2">Exponer endpoint para finalizar sesión</td>
+  <td>T59</td>
+  <td>Diseño de finalización de sesiones</td>
+  <td>Definir flujo y validaciones para cierre de sesiones.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">5</td>
+</tr>
+<tr>
+  <td>T60</td>
+  <td>Implementación endpoint de finalización</td>
+  <td>Desarrollar endpoint REST para finalizar sesiones activas.</td>
+  <td>3</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">TS20</td>
+  <td rowspan="2">Exponer endpoint para métricas de ocupación</td>
+  <td>T61</td>
+  <td>Diseño de métricas de ocupación</td>
+  <td>Definir indicadores y estructura de métricas de ocupación.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">5</td>
+</tr>
+<tr>
+  <td>T62</td>
+  <td>Implementación endpoint de métricas</td>
+  <td>Desarrollar endpoint REST para métricas de ocupación en tiempo real.</td>
+  <td>3</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS21</td>
+  <td rowspan="2">Exponer endpoint para métricas de ingresos</td>
+  <td>T63</td>
+  <td>Diseño de métricas financieras</td>
+  <td>Definir indicadores relacionados a ingresos y sesiones.</td>
+  <td>1</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T64</td>
+  <td>Implementación endpoint de ingresos</td>
+  <td>Desarrollar endpoint REST para métricas de ingresos.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS22</td>
+  <td rowspan="2">Exponer endpoint para generar mapa de calor</td>
+  <td>T65</td>
+  <td>Diseño de estructura de heatmap</td>
+  <td>Definir modelo de datos y representación visual de ocupación.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T66</td>
+  <td>Implementación parcial de heatmap</td>
+  <td>Desarrollar endpoint inicial para generación de mapa de calor.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Partial</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS30</td>
+  <td rowspan="2">Exponer endpoint para registrar usuario</td>
+  <td>T67</td>
+  <td>Diseño de registro de usuarios</td>
+  <td>Definir validaciones y estructura para creación de usuarios.</td>
+  <td>1</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T68</td>
+  <td>Implementación endpoint de registro</td>
+  <td>Desarrollar endpoint REST para registro de usuarios.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS31</td>
+  <td rowspan="2">Exponer endpoint para autenticación</td>
+  <td>T69</td>
+  <td>Diseño de autenticación</td>
+  <td>Definir flujo de autenticación y validación de credenciales.</td>
+  <td>1</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T70</td>
+  <td>Implementación endpoint de autenticación</td>
+  <td>Implementar endpoint REST para autenticación con JWT.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS32</td>
+  <td rowspan="2">Exponer endpoint para obtener perfil</td>
+  <td>T71</td>
+  <td>Diseño de consulta de perfil</td>
+  <td>Definir estructura y atributos de perfil de usuario.</td>
+  <td>1</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T72</td>
+  <td>Implementación endpoint de perfil</td>
+  <td>Desarrollar endpoint REST para obtener información de perfil.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS33</td>
+  <td rowspan="2">Exponer endpoint para actualizar perfil</td>
+  <td>T73</td>
+  <td>Diseño de actualización de perfil</td>
+  <td>Definir validaciones y flujo de actualización de usuarios.</td>
+  <td>1</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T74</td>
+  <td>Implementación parcial de actualización</td>
+  <td>Desarrollar funcionalidad inicial de actualización de perfil.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Partial</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS36</td>
+  <td rowspan="2">Exponer endpoint para registrar vehículo</td>
+  <td>T75</td>
+  <td>Diseño de registro vehicular</td>
+  <td>Definir atributos y validaciones para vehículos registrados.</td>
+  <td>1</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T76</td>
+  <td>Implementación endpoint de registro vehicular</td>
+  <td>Desarrollar endpoint REST para registrar vehículos.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS37</td>
+  <td rowspan="2">Exponer endpoint para listar vehículos</td>
+  <td>T77</td>
+  <td>Diseño de listado de vehículos</td>
+  <td>Definir estructura de consulta y filtros de vehículos.</td>
+  <td>1</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T78</td>
+  <td>Implementación endpoint de listado</td>
+  <td>Desarrollar endpoint REST para listar vehículos registrados.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">TS38</td>
+  <td rowspan="2">Exponer endpoint para eliminar vehículo</td>
+  <td>T79</td>
+  <td>Diseño de eliminación de vehículos</td>
+  <td>Definir validaciones y reglas para eliminación de vehículos.</td>
+  <td>1</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T80</td>
+  <td>Implementación endpoint DELETE de vehículos</td>
+  <td>Desarrollar endpoint REST para eliminación de vehículos.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">US11</td>
+  <td rowspan="2">Gestión de disponibilidad de espacios</td>
+  <td>T81</td>
+  <td>Diseño de gestión de disponibilidad</td>
+  <td>Definir reglas de negocio y estructura de disponibilidad de espacios.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T82</td>
+  <td>Implementación de lógica de disponibilidad</td>
+  <td>Desarrollar funcionalidades para gestión dinámica de disponibilidad.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">US12</td>
+  <td rowspan="2">Estadísticas de ocupación</td>
+  <td>T83</td>
+  <td>Diseño de estadísticas de ocupación</td>
+  <td>Definir indicadores y métricas de ocupación del estacionamiento.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">5</td>
+</tr>
+<tr>
+  <td>T84</td>
+  <td>Implementación de reportes estadísticos</td>
+  <td>Desarrollar generación y consulta de estadísticas de ocupación.</td>
+  <td>3</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+
+<tr>
+  <td rowspan="2">US19</td>
+  <td rowspan="2">Registro de usuario administrador</td>
+  <td>T85</td>
+  <td>Diseño de entidades de administrador</td>
+  <td>Definir atributos y roles asociados a usuarios administradores.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">5</td>
+</tr>
+<tr>
+  <td>T86</td>
+  <td>Implementación de registro administrativo</td>
+  <td>Desarrollar endpoints REST para registro de administradores.</td>
+  <td>3</td>
+  <td>Cruz Ibarra, Victor Andres</td>
   <td>Done</td>
 </tr>
   </tbody>
