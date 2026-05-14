@@ -4990,6 +4990,188 @@ Asimismo, los prototipos facilitaron la validación de:
 
 ## 5.6. IoT Device Design.
 
+# Capítulo VI: Product Implementation, Validation \& Deployment
+
+## 6.1. Software Configuration Management
+## 6.1.1 Software Development Environment Configuration
+
+Utilizaremos principalmente como IDEs: Visual Studio Code y IntelliJ IDEA, cada una con su configuración correspondiente para evitar conflictos entre extensiones, dependencias y carpetas personalizadas de desarrollo. Visual Studio Code será utilizado principalmente para el desarrollo frontend, mobile y landing page, mientras que IntelliJ IDEA será empleado para el desarrollo de las Web APIs y servicios backend con Spring Boot.
+
+Como herramientas de desarrollo se hará uso de la última versión estable de Node.js. Para el frontend web se utilizará Angular como framework SPA, acompañado de Angular Material como biblioteca de componentes UI basada en Material Design. Para el backend se utilizará Java con el framework Spring Boot para la construcción de APIs RESTful.
+
+Como IDE de desarrollo para la aplicación móvil se utilizará Visual Studio Code junto con el SDK más reciente de Flutter y Android Studio como emulador de dispositivos Android. Flutter permitirá el desarrollo multiplataforma de la aplicación móvil utilizando Dart como lenguaje de programación.
+
+Como base de datos principal se utilizará PostgreSQL para el almacenamiento de usuarios, reservas, pagos, ocupación y demás información del sistema.
+
+Como herramientas SaaS y de colaboración se utilizará GitHub para el control de versiones y trabajo colaborativo. Además, se empleará Trello para la gestión del Product Backlog y seguimiento de tareas. Para la elaboración de diagramas y modelado se utilizarán LucidChart y Structurizr.
+
+Como herramienta de diseño UX/UI se utilizará Figma para la creación de wireframes, mockups y prototipos interactivos de la aplicación móvil y dashboard web.
+
+Como herramienta de desarrollo para el componente IoT y Edge Computing se utilizará Visual Studio Code junto con Python/Flask y el protocolo MQTT para la comunicación con sensores y dispositivos IoT.
+
+Para el desarrollo de la landing page se utilizarán HTML5, CSS3 y JavaScript, debido a la facilidad de implementación y compatibilidad con despliegues estáticos modernos.
+
+Las herramientas tecnológicas seleccionadas para el proyecto son las siguientes:
+
+### Visual Studio Code
+Es un editor de código gratuito, moderno y altamente configurable mediante extensiones. Será utilizado para el desarrollo frontend, mobile, landing page e integración IoT.
+
+### IntelliJ IDEA
+IDE especializado para desarrollo backend en Java y Spring Boot. Facilita la gestión de dependencias, debugging y arquitectura de APIs REST.
+
+### Flutter SDK
+Framework multiplataforma utilizado para el desarrollo de la aplicación móvil SpotFinder utilizando Dart.
+
+### Android Studio
+Herramienta utilizada para la ejecución de emuladores Android y pruebas de la aplicación móvil Flutter.
+
+### Git y GitHub
+Se utilizarán para el control de versiones, manejo de ramas, colaboración entre desarrolladores y almacenamiento de repositorios.
+
+### PostgreSQL
+Sistema de gestión de bases de datos relacional utilizado para almacenar la información principal del sistema.
+
+### Spring Boot
+Framework backend utilizado para el desarrollo de servicios RESTful y lógica de negocio del sistema.
+
+### Angular
+Framework frontend utilizado para el desarrollo del dashboard web administrativo.
+
+### Angular Material
+Biblioteca de componentes UI basada en Material Design utilizada para mejorar la experiencia visual de la aplicación web.
+
+### Figma
+Herramienta de diseño UI/UX para la creación de prototipos y mockups del sistema.
+
+### LucidChart
+Herramienta utilizada para la creación de diagramas UML, diagramas de arquitectura y modelados adicionales.
+
+### Structurizr
+Herramienta utilizada para la elaboración de diagramas C4 del sistema.
+
+### Discord
+Herramienta de comunicación utilizada para coordinación y reuniones rápidas entre los integrantes del equipo.
+
+### WhatsApp
+Aplicación de mensajería utilizada para comunicación inmediata y coordinación rápida del equipo.
+
+### Zoom
+Plataforma utilizada para reuniones virtuales, sustentaciones y coordinación remota del proyecto.
+
+### Trello
+Herramienta utilizada para la gestión ágil del proyecto y organización del Product Backlog.
+
+### Miro
+Plataforma colaborativa utilizada para brainstorming, ideación y modelado de flujos del sistema.
+
+### Google Docs
+Herramienta utilizada para documentación colaborativa del proyecto y redacción de entregables.
+
+### 6.1.2. Source Code Management
+Como mencionamos anteriormente, se utilizará GitHub para llevar un control de las versiones de desarrollo y poder trabajar de forma colaborativa. Para ello, se creó una organización llamada:
+
+Repositorio de Landing Page: https://github.com/ParkSenseIoT/SpotFinder-LandingPage
+
+Repositorio de pruebas de aceptación:
+
+Repositorio frontend: https://github.com/ParkSenseIoT/SpotFinder-Frontend
+### 6.1.3. Source Code Style Guide \& Conventions
+
+A continuación, se presentan las convenciones, estilos y buenas prácticas utilizadas en los lenguajes y tecnologías empleadas en la solución: HTML, CSS, JavaScript/TypeScript, Java, Dart y Gherkin.
+
+## HTML
+
+Se seguirá la guía **“HTML Style Guide and Coding”** de W3Schools. Las principales convenciones consideradas son:
+
+- Declarar siempre el tipo de documento HTML.
+- Utilizar nombres de etiquetas y atributos en minúscula.
+- Cerrar correctamente todas las etiquetas.
+- Usar comillas en todos los atributos.
+- Definir atributos `alt`, `width` y `height` en imágenes.
+- Mantener correctamente definidos los metadatos y etiquetas SEO.
+
+## CSS
+
+Se utilizará la guía **“Google HTML/CSS Style Guide”**. Las principales recomendaciones consideradas son:
+
+- Utilizar nombres de clases descriptivos y cortos.
+- Separar nombres mediante guiones.
+- Evitar selectores por ID.
+- Utilizar propiedades abreviadas cuando sea posible.
+- Mantener estilos reutilizables y organizados.
+
+## JavaScript / TypeScript
+
+Se seguirán buenas prácticas basadas en la guía de W3C y Angular Style Guide:
+
+- Utilizar nombres claros y legibles.
+- Evitar variables globales innecesarias.
+- Modularizar componentes y servicios.
+- Documentar funciones complejas.
+- Utilizar tipado fuerte mediante TypeScript.
+
+## Java
+
+Para el backend desarrollado en Spring Boot se utilizarán convenciones estándar de Java:
+
+- Uso de CamelCase para clases y métodos.
+- Separación por capas (`Controller`, `Service`, `Repository`).
+- Uso de DTOs para transferencia de datos.
+- Documentación de endpoints REST.
+- Manejo centralizado de excepciones.
+
+## Flutter / Dart
+
+Para el desarrollo mobile con Flutter se seguirán las convenciones oficiales de Dart:
+
+- Uso de widgets reutilizables.
+- Separación de pantallas, servicios y modelos.
+- Uso de nombres descriptivos en clases y variables.
+- Organización modular del proyecto.
+- Aplicación de principios de diseño responsive.
+
+## Gherkin
+
+Se utilizará Gherkin para pruebas de aceptación siguiendo las convenciones:
+
+- Uso correcto de bloques `Given-When-Then`.
+- Uso de indentación adecuada.
+- Separación clara de escenarios.
+- Uso de tablas para datos complejos.
+- Redacción legible y entendible para negocio y desarrollo.
+
+En resumen, las convenciones y estilos de programación seguirán las guías oficiales de Google, Angular, Flutter y Spring Boot para garantizar mantenibilidad, escalabilidad y consistencia del código.
+
+Para el control de versiones se utilizará **GitFlow Workflow** junto con **Conventional Commits** y **Semantic Versioning**.
+
+El lenguaje visual del sistema estará basado en **Material Design**, utilizando Angular Material para el dashboard web y componentes adaptativos en Flutter para la aplicación móvil.
+
+Para el desarrollo de Web Services se utilizará **RESTful API Architectural Style** mediante Spring Boot Framework y Java.
+
+Para el desarrollo de la Mobile App se utilizará **Flutter/Dart** consumiendo las APIs REST del backend.
+
+### 6.1.4. Software Deployment Configuration
+
+Para el despliegue de la landing page y aplicación web se utilizará **Netlify** y/o **Vercel** como plataformas de hosting frontend.
+
+Para el despliegue del backend API se utilizará **Render**, **Railway** o **Zeabur** mediante contenedores y servicios cloud compatibles con Spring Boot.
+
+Para la base de datos PostgreSQL se utilizará **Railway** o **Supabase** como servicio administrado.
+
+Para el despliegue de la aplicación móvil se utilizará **Android Studio** para generación de builds APK y **Google Play Console** para distribución futura.
+
+Para los servicios IoT y Edge Processing se utilizarán servidores Linux o servicios cloud compatibles con MQTT y Flask.
+
+El despliegue seguirá los siguientes pasos:
+
+1. Iniciar sesión en la plataforma de despliegue utilizando GitHub.
+2. Conectar el repositorio correspondiente.
+3. Configurar variables de entorno necesarias.
+4. Configurar comandos de build y directorios de salida.
+5. Realizar despliegue automático mediante integración continua.
+6. Verificar funcionamiento y disponibilidad del sistema desplegado.
+
+## 6.2. Landing Page, Services \& Applications Implementation
 
 <div style="page-break-after: always;"></div>
 
