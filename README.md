@@ -4853,6 +4853,38 @@ Para garantizar que el usuario encuentre los datos sin esfuerzo, se implementan 
 
 ## 5.2.5. Navigation Systems.
 
+# Estructura de Navegación del Proyecto
+
+## Landing Page
+
+| Elemento de navegación | Descripción |
+| :--- | :--- |
+| **Top Navigation Bar (sticky)** | Fija en la parte superior. Contiene logo, enlaces a secciones principales (Dashboard, Analytics, Hardware, Enterprise) y CTAs (Get Started). En móvil, colapsa a menú hamburguesa. |
+| **Scroll to anchors** | Los enlaces del menú desplazan suavemente a las secciones correspondientes dentro de la misma página (#features, #how-it-works, etc.). |
+| **Botones CTA** | Guían al usuario fuera de la landing: "Registrar Centro Comercial" lleva a formulario de registro; "Book a Demo" abre modal de calendario; "Contact Sales" redirige al formulario de contacto al final de la página. |
+| **Footer** | Enlaces secundarios a páginas legales (Privacy Policy, Terms of Service), documentación técnica (API Documentation) y soporte (Contact Support). |
+
+## App Web (Dashboard)
+
+| Elemento de navegación | Descripción |
+| :--- | :--- |
+| **Sidebar navigation** | Panel lateral izquierdo con íconos y etiquetas. Secciones: Live Map, Analytics, Finances, Security, Settings. Colapsable a modo ícono en pantallas pequeñas. Indica activo con highlight primary y borde izquierdo. |
+| **Breadcrumbs** | Barra superior: Home > Analytics > Heatmap. Permite regresar a niveles superiores con un clic. |
+| **Top bar utilities** | Búsqueda global, notificaciones (campana con badge de alertas no leídas), avatar de usuario con dropdown (Profile, Logout). |
+| **Tabs dentro de secciones** | Ej. en Analytics: Overview, Trends, Heatmap. Navegación horizontal sin recargar página. |
+| **Modales y drawers** | Para acciones contextuales: marcar espacio OOS, confirmar activación de emergencia, vista previa de PDF. |
+| **Paginación y scroll infinito** | Tablas con paginación numérica; listas de eventos con carga progresiva al hacer scroll. |
+
+## App Móvil
+
+| Elemento de navegación | Descripción |
+| :--- | :--- |
+| **Bottom Navigation Bar** | 4 destinos fijos: Mapa (icono map), Estancia (icono timer), Pagos (icono credit_card), Perfil (icono person). Visible en todas las pantallas principales. El ítem activo se resalta en primary. |
+| **Top App Bar** | Título de la pantalla actual, botón de retroceso en pantallas secundarias, accesos contextuales (filtro, notificaciones). |
+| **Deep linking desde push notifications** | Al tocar una notificación FCM, la app se abre directamente en la pantalla relevante (ej. recordatorio de pago → pantalla de pago). |
+| **Gestos** | Swipe horizontal para cambiar entre niveles del mapa. Swipe hacia abajo para cerrar modales. Long press en vehículo del garaje para editar o eliminar. |
+| **Onboarding guiado** | Primera ejecución: breve tutorial con swipe de tarjetas que explica las 4 funciones principales antes de llegar al mapa. |
+
 ## 5.3. Landing Page UI Design.
 ### 5.3.1. Landing Page Wireframe.
 
