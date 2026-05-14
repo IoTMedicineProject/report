@@ -5006,7 +5006,530 @@ Asimismo, los prototipos facilitaron la validación de:
 
 
 ---
-# Conclusiones
+# Capítulo VI: Product Implementation, Validation \& Deployment
+
+## 6.1. Software Configuration Management
+
+### 6.1.1. Software Development Environment Configuration
+
+### 6.1.2. Source Code Management
+
+### 6.1.3. Source Code Style Guide \& Conventions
+
+### 6.1.4. Software Deployment Configuration
+
+## 6.2. Landing Page, Services \& Applications Implementation
+
+### 6.2.1. Sprint 1
+
+#### 6.2.1.1. Sprint Planning 1
+
+En esta sección se presentan los aspectos principales abordados durante la reunión de planificación del Sprint 1. Se detallan elementos como la fecha, participantes, objetivo del sprint, velocidad estimada y cantidad de story points comprometidos para esta iteración del proyecto SpotFinder.
+
+<table>
+  <tr>
+    <th>Sprint #</th>
+    <th>Sprint 1</th>
+  </tr>
+
+  <tr>
+    <th colspan="2">Sprint Planning Background</th>
+  </tr>
+
+  <tr>
+    <td>Date</td>
+    <td>2026-05-05</td>
+  </tr>
+
+  <tr>
+    <td>Time</td>
+    <td>10:20 PM</td>
+  </tr>
+
+  <tr>
+    <td>Location</td>
+    <td>Reunión virtual a través de Discord</td>
+  </tr>
+
+  <tr>
+    <td>Prepared by</td>
+    <td>Cruz Ibarra, Victor Andres</td>
+  </tr>
+
+  <tr>
+    <td>Attendees (to planning meeting)</td>
+    <td>
+      Cruz Ibarra, Victor Andres; Dueñas Canales, Leonardo Manuel; Vidal Castro, Miguel Angel; Allcca Guerrero, Irving Washington;
+      Roman Esteban, Henry Kalet
+    </td>
+  </tr>
+
+  <tr>
+    <td>Sprint n – 1 Review Summary</td>
+    <td>No existe sprint previo</td>
+  </tr>
+
+  <tr>
+    <th colspan="2">Sprint Goal & User Stories</th>
+  </tr>
+
+<tr>
+  <td><strong>Sprint 1 Goal</strong></td>
+  <td>
+    <strong>Our focus is on</strong> delivering the first integrated version of the SpotFinder ecosystem.<br><br>
+    <strong>We believe it delivers</strong> a faster and more accessible way to locate IoT devices and available spots for users and administrators.<br><br>
+    <strong>This will be confirmed when</strong> users can successfully register, visualize, and interact with available spots through the platform without critical issues.
+  </td>
+</tr>
+
+  <tr>
+    <td>Sprint 1 Velocity</td>
+    <td> 76 story points</td>
+  </tr>
+
+  <tr>
+    <td>Sum of story points</td>
+    <td> 76 story points</td>
+  </tr>
+</table>
+
+#### 6.2.1.2. Aspect Leaders and Collaborators
+
+En esta sección se presenta la matriz de liderazgo y colaboración (Leadership-and-Collaboration Matrix - LACX) correspondiente al Sprint 1 del proyecto SpotFinder. El objetivo de esta matriz es identificar los principales aspectos funcionales y técnicos abordados durante el Sprint, así como definir qué integrantes del equipo asumieron roles de liderazgo y cuáles participaron como colaboradores en cada aspecto. Esta organización permite mejorar la coordinación, distribución de responsabilidades y comunicación interna del equipo durante el desarrollo del Sprint.
+
+Los aspectos considerados para este Sprint incluyen el desarrollo del backend, frontend, modelado de dominio, integración IoT y documentación técnica, debido a que representan las áreas principales necesarias para la construcción de la primera versión integrada del ecosistema SpotFinder.
+
+| Team Member (Last Name, First Name) | GitHub Username | Backend Development | Frontend Development | Domain Modeling | Documentation |
+|---|---|---|---|---|---|
+| Cruz Ibarra, Victor Andres | Elandrehss | L | C | L | C |
+| Dueñas Canales, Leonardo Manuel | Insonnio | C | C | C | L |
+| Vidal Castro, Miguel Angel | Gossk | C | L | L | C |
+| Allcca Guerrero, Irving Washington | eviterno17 | C | L | C | C |
+| Roman Esteban, Henry Kalet | kalet123-commit | C | C | C | L |
+
+**Legend:**  
+- **L** = Leader  
+- **C** = Collaborator
+
+#### 6.2.1.3. Sprint Backlog 1
+
+En esta sección se presenta el Sprint Backlog correspondiente al Sprint 1 del proyecto SpotFinder. Durante este Sprint, el equipo se enfocó en desarrollar la primera versión funcional de la arquitectura backend basada en bounded contexts, así como la implementación inicial de la Landing Page institucional del producto. Además, se desarrollaron los primeros endpoints principales relacionados con monitoreo de estacionamiento, sesiones, autenticación, analíticas y gestión vehicular.
+
+A continuación, se muestra el tablero de trabajo utilizado para la gestión de tareas del Sprint:
+
+
+<img alt="Sprint Backlog 1 in Trello" src="assets\images\screenshots\sprint1_trello.png" />
+<br><br>
+
+Link Trello: [SpotFinder - Trello]()
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Sprint #</th>
+      <th colspan="8">Sprint 1</th>
+    </tr>
+    <tr>
+      <th colspan="2">User Story</th>
+      <th colspan="7">Work Item / Task</th>
+    </tr>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Estimation (hours)</th>
+      <th>Assigned To</th>
+      <th>Status</th>
+      <th>Story Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <td rowspan="2">US01</td>
+  <td rowspan="2">Detección de ocupación por sensores</td>
+  <td>T01</td>
+  <td>Diseño de entidades de Parking Monitoring</td>
+  <td>Modelar entidades y agregados relacionados a espacios y sensores.</td>
+  <td>4</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">8</td>
+</tr>
+<tr>
+  <td>T02</td>
+  <td>Implementación de endpoints de ocupación</td>
+  <td>Desarrollar endpoints REST para registrar y consultar ocupación.</td>
+  <td>6</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">US02</td>
+  <td rowspan="2">Visualización de espacios en tiempo real</td>
+
+  <td>T03</td>
+  <td>Implementación de consultas de espacios</td>
+  <td>Desarrollar lógica de consulta de espacios disponibles.</td>
+  <td>4</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">8</td>
+</tr>
+<tr>
+  <td>T04</td>
+  <td>Implementación de actualización de estados</td>
+  <td>Implementar actualización dinámica del estado de espacios.</td>
+  <td>4</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">US03</td>
+  <td rowspan="2">Ingreso automático con ALPR</td>
+  <td>T05</td>
+  <td>Implementación base de Access Control</td>
+  <td>Desarrollar bounded context inicial para control de acceso.</td>
+  <td>4</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">8</td>
+</tr>
+<tr>
+  <td>T06</td>
+  <td>Implementación de endpoints de ingreso vehicular</td>
+  <td>Desarrollar endpoints REST para registrar ingresos vehiculares.</td>
+  <td>4</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">US04</td>
+  <td rowspan="2">Salida automática con verificación de pago</td>
+  <td>T07</td>
+  <td>Diseño de Parking Sessions</td>
+  <td>Modelar sesiones activas y flujo de salida vehicular.</td>
+  <td>4</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">8</td>
+</tr>
+<tr>
+  <td>T08</td>
+  <td>Endpoints de sesiones activas</td>
+  <td>Implementar endpoints para gestión y finalización de sesiones.</td>
+  <td>4</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">US06</td>
+  <td rowspan="2">Dashboard de monitoreo en tiempo real</td>
+
+  <td>T09</td>
+  <td>Diseño del bounded context Analytics</td>
+  <td>Definir estructura y componentes del módulo Analytics.</td>
+  <td>4</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">8</td>
+</tr>
+<tr>
+  <td>T10</td>
+  <td>Endpoints de métricas y monitoreo</td>
+  <td>Implementar endpoints REST para métricas de ocupación.</td>
+  <td>4</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">US18</td>
+  <td rowspan="2">Registro de usuario conductor</td>
+
+  <td>T11</td>
+  <td>Diseño de entidades IAM</td>
+  <td>Definir entidades y lógica inicial de autenticación.</td>
+  <td>3</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">5</td>
+</tr>
+<tr>
+  <td>T12</td>
+  <td>Endpoints de registro de usuarios</td>
+  <td>Implementar endpoints para registro de usuarios conductores.</td>
+  <td>3</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">US20</td>
+  <td rowspan="2">Inicio de sesión</td>
+
+  <td>T13</td>
+  <td>Diseño del flujo de autenticación</td>
+  <td>Definir flujo de login y validación de credenciales para usuarios.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+
+<tr>
+  <td>T14</td>
+  <td>Implementación de autenticación JWT</td>
+  <td>Implementar generación y validación de tokens JWT para autenticación.</td>
+  <td>3</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">US23</td>
+  <td rowspan="2">Registro de vehículo adicional</td>
+  <td>T15</td>
+  <td>Diseño de entidades Vehicle</td>
+  <td>Modelar entidades y atributos relacionados a vehículos registrados.</td>
+  <td>2</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T16</td>
+  <td>Implementación de endpoints de vehículos</td>
+  <td>Desarrollar endpoints REST para registrar y gestionar vehículos.</td>
+  <td>3</td>
+  <td>Cruz Ibarra, Victor Andres</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">SWS01</td>
+  <td rowspan="2">Ver sección Hero</td>
+  <td>T13</td>
+  <td>Diseño visual de Hero Section</td>
+  <td>Crear estructura visual y contenido principal del Hero.</td>
+  <td>2</td>
+  <td>Allcca Guerrero, Irving Washington</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T14</td>
+  <td>Implementación responsive de Hero</td>
+  <td>Adaptar Hero Section para desktop y dispositivos móviles.</td>
+  <td>1</td>
+  <td>Allcca Guerrero, Irving Washington</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">SWS02</td>
+  <td rowspan="2">Ver sección Features</td>
+  <td>T17</td>
+  <td>Diseño visual de sección Features</td>
+  <td>Crear estructura visual para mostrar funcionalidades principales.</td>
+  <td>1</td>
+  <td>Allcca Guerrero, Irving Washington</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T18</td>
+  <td>Implementación responsive de Features</td>
+  <td>Adaptar sección Features para desktop y dispositivos móviles.</td>
+  <td>2</td>
+  <td>Allcca Guerrero, Irving Washington</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">SWS03</td>
+  <td rowspan="2">Ver sección How It Works</td>
+
+  <td>T19</td>
+  <td>Diseño de flujo explicativo</td>
+  <td>Definir estructura visual y contenido explicativo del sistema.</td>
+  <td>1</td>
+  <td>Dueñas Canales, Leonardo Manuel</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T20</td>
+  <td>Implementación sección How It Works</td>
+  <td>Desarrollar componentes visuales y responsive de la sección.</td>
+  <td>2</td>
+  <td>Dueñas Canales, Leonardo Manuel</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">SWS04</td>
+  <td rowspan="2">Ver sección About The Product</td>
+  <td>T21</td>
+  <td>Redacción de contenido institucional</td>
+  <td>Preparar contenido descriptivo e información principal del producto.</td>
+  <td>2</td>
+  <td>Dueñas Canales, Leonardo Manuel</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T22</td>
+  <td>Implementación sección About Product</td>
+  <td>Desarrollar componentes visuales y responsive de la sección.</td>
+  <td>2</td>
+  <td>Dueñas Canales, Leonardo Manuel</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">SWS05</td>
+  <td rowspan="2">Ver sección Pricing</td>
+
+  <td>T23</td>
+  <td>Diseño de cards de precios</td>
+  <td>Diseñar estructura visual de planes y beneficios del servicio.</td>
+  <td>2</td>
+  <td>Roman Esteban, Henry Kalet</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T24</td>
+  <td>Implementación responsive de Pricing</td>
+  <td>Implementar sección de precios adaptable para múltiples dispositivos.</td>
+  <td>2</td>
+  <td>Roman Esteban, Henry Kalet</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">SWS06</td>
+  <td rowspan="2">Ver sección Testimonials</td>
+
+  <td>T25</td>
+  <td>Diseño visual de Testimonials</td>
+  <td>Crear diseño de testimonios y experiencias de usuarios.</td>
+  <td>1</td>
+  <td>Roman Esteban, Henry Kalet</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T26</td>
+  <td>Implementación sección Testimonials</td>
+  <td>Desarrollar estructura responsive de testimonios.</td>
+  <td>2</td>
+  <td>Roman Esteban, Henry Kalet</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">SWS07</td>
+  <td rowspan="2">Ver sección About Us y About The Team</td>
+  <td>T27</td>
+  <td>Diseño sección Team</td>
+  <td>Diseñar estructura visual para presentación del equipo.</td>
+  <td>1</td>
+  <td>Vidal Castro, Miguel Angel</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T28</td>
+  <td>Implementación sección Team</td>
+  <td>Implementar componentes responsive de presentación del equipo.</td>
+  <td>2</td>
+  <td>Vidal Castro, Miguel Angel</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">SWS08</td>
+  <td rowspan="2">Ver sección FAQ</td>
+  <td>T29</td>
+  <td>Redacción de preguntas frecuentes</td>
+  <td>Preparar contenido FAQ relacionado al funcionamiento del sistema.</td>
+  <td>1</td>
+  <td>Vidal Castro, Miguel Angel</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T30</td>
+  <td>Implementación sección FAQ</td>
+  <td>Desarrollar diseño responsive de preguntas frecuentes.</td>
+  <td>2</td>
+  <td>Vidal Castro, Miguel Angel</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">SWS09</td>
+  <td rowspan="2">Ver sección Contact</td>
+
+  <td>T31</td>
+  <td>Diseño formulario de contacto</td>
+  <td>Diseñar formulario y estructura de contacto institucional.</td>
+  <td>1</td>
+  <td>Allcca Guerrero, Irving Washington</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T32</td>
+  <td>Implementación sección Contact</td>
+  <td>Desarrollar sección responsive de contacto.</td>
+  <td>2</td>
+  <td>Allcca Guerrero, Irving Washington</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">SWS10</td>
+  <td rowspan="2">Ver sección Footer</td>
+  <td>T33</td>
+  <td>Diseño del Footer</td>
+  <td>Definir estructura visual y enlaces principales del footer.</td>
+  <td>1</td>
+  <td>Allcca Guerrero, Irving Washington</td>
+  <td>Done</td>
+  <td rowspan="2">2</td>
+</tr>
+<tr>
+  <td>T34</td>
+  <td>Implementación responsive del Footer</td>
+  <td>Desarrollar footer adaptable para dispositivos móviles y desktop.</td>
+  <td>1</td>
+  <td>Allcca Guerrero, Irving Washington</td>
+  <td>Done</td>
+</tr>
+<tr>
+  <td rowspan="2">SWS11</td>
+  <td rowspan="2">Navegación responsive</td>
+  <td>T35</td>
+  <td>Diseño de navbar responsive</td>
+  <td>Diseñar navegación adaptable para distintos tamaños de pantalla.</td>
+  <td>2</td>
+  <td>Dueñas Canales, Leonardo Manuel</td>
+  <td>Done</td>
+  <td rowspan="2">3</td>
+</tr>
+<tr>
+  <td>T36</td>
+  <td>Implementación de navegación responsive</td>
+  <td>Desarrollar comportamiento responsive de la barra de navegación.</td>
+  <td>2</td>
+  <td>Dueñas Canales, Leonardo Manuel</td>
+  <td>Done</td>
+</tr>
+  </tbody>
+</table>
+
+#### 6.2.1.4. Development Evidence for Sprint Review
+
+#### 6.2.1.5. Testing Suite Evidence for Sprint Review
+
+#### 6.2.1.6. Execution Evidence for Sprint Review
+
+#### 6.2.1.7. Services Documentation Evidence for Sprint Review
+
+#### 6.2.1.8. Software Deployment Evidence for Sprint Review
+
+#### 6.2.1.9. Team Collaboration Insights during Sprint
 
 En esta sección se presentan las conclusiones y recomendaciones derivadas del desarrollo del proyecto **SpotFinder**.
 
