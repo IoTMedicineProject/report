@@ -4855,7 +4855,12 @@ Para garantizar que el usuario encuentre los datos sin esfuerzo, se implementan 
 
 ## 5.3. Landing Page UI Design.
 ### 5.3.1. Landing Page Wireframe.
+
+![landing Wireframes 1](./assets/ux-ui/web/wireframes/wirelanding.png)
+
 ### 5.3.2. Landing Page Mock-up.
+
+![landing Mockup 1](./assets/ux-ui/web/mockups/mocklanding.png)
 
 ## 5.4. Applications UX/UI Design.
 
