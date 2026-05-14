@@ -6087,6 +6087,7 @@ La estrategia de despliegue implementada permitió mantener integración continu
 
 Durante el Sprint 1 el equipo trabajó colaborativamente utilizando Trello como herramienta principal para la gestión y seguimiento
 
+
 En esta sección se presentan las conclusiones y recomendaciones derivadas del desarrollo del proyecto **SpotFinder**.
 
 
