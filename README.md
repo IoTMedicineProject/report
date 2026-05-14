@@ -1793,7 +1793,7 @@ Se definieron **8 candidate bounded contexts**, de los cuales:
 La aplicación de la técnica Start-with-Value permitió asegurar que la atención principal del diseño táctico se concentre en **Parking Monitoring, Access Control y Payment Processing**, dado que allí reside la propuesta de valor diferenciadora de SpotFinder frente a competidores como Apparka, ParkHelp y Quadra.
 
 
-<img src="assets/diagrams/context-candidate/candidate-context-step2.png" alt="Paso2" width="800">
+<img src="assets/diagrams/ddd/es-2-1.pngalt="Paso2" width="800">
 
 
 #### 4.1.1.2 Domain Message Flows Modeling
