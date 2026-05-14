@@ -1,41 +1,46 @@
 
 <p align="center">
-    <img src="./assets/logos/upc-logo.png" alt="UPC Logo" width="200"><br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" alt="UPC Logo" width="100"><br><br>
     <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
-    <br>
-    <strong>Facultad de Ingeniería</strong><br>
-    <strong>Carrera de Ingeniería de Software</strong><br>
-    <strong>Ciclo 2026-10</strong>
+    <strong>Facultad de Ingeniería</strong>
 </p>
- 
+<br>
 <p align="center">
-  <strong>Código del curso: </strong>1ASI0572<br>
-  <strong>Curso: </strong>Desarrollo de Soluciones IOT
+    <strong>Curso:</strong> 1ASI0572 - Desarrollo de Soluciones IOT<br>
+    <strong>Sección:</strong> 6772
 </p>
- 
+<br>
 <p align="center">
-  <strong>NRC: 6772</strong>
+    <strong>Nombre del profesor:</strong> Marco Antonio León Baca
 </p>
- 
+<br>
 <p align="center">
-    <strong>Profesor: </strong>Marco Antonio León Baca
+    <strong>"Informe del Trabajo Final"</strong>
 </p>
- 
+<br>
 <p align="center">
-    <strong>Informe de Trabajo Final</strong>
+    <strong>Nombre del grupo:</strong> ParkSense IoT<br>
+    <strong>Nombre del producto:</strong> SpotFinder
 </p>
- 
-<p align="center">
-    <strong>Nombre del startup: </strong> ParkSense IoT
-</p>
- 
-<p align="center">
-    <strong>Nombre del producto: </strong> SpotFinder
-</p>
- 
-<p align="center">
-    <strong>Abril, 2026</strong>
-</p>
+<br>
+<p align="center"><strong>Integrantes:</strong></p>
+
+<div align="center">
+
+| Código | Apellidos y Nombres |
+|:---:|:---:|
+| U202310210 | Esteban Román, Henry Kalet |
+| U202117475 | Dueñas Canales, Leonardo Manuel |
+| U202314186 | Vidal Castro, Miguel Angel |
+| U202213241 | Allcca Guerrero, Irving Washington |
+| U202311053 | Cruz Ibarra, Victor Andrés |
+
+</div>
+
+<br>
+<p align="center">Lima – Abril 2026</p>
+
+<div style="page-break-after: always;"></div>
 
 # Project Report Collaboration Insights
 | Versión | Fecha | Autor | Descripción de modificación |
@@ -103,6 +108,8 @@ En GitHub se presenta un timeline de las principales ramas creadas por cada inte
 **Contribuciones de los integrantes:**
  
 ![Contributors Image](./assets/images/screenshots/contributorsimage.png)
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -493,6 +500,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 | **Comunica por escrito con efectividad a diferentes rangos de audiencia** | **Esteban Román, Henry Kalet**<br>_**AV1:** Redacté los capítulos I y III del informe, organizando de manera clara la problemática (5W+2H), el proceso Lean UX, las User Stories con formato Gherkin de 7 columnas, y el Product Backlog priorizado por valor de negocio. Documenté el Tactical DDD de los 7 bounded contexts con tablas detalladas de Domain Layer (aggregates, value objects, commands, queries, events, domain services), Interface Layer, Application Layer e Infrastructure Layer, asegurando consistencia y trazabilidad entre la documentación y la implementación._ <br><br> **Dueñas Canales, Leonardo Manuel**<br>_**AV1:** Documenté la arquitectura de software del sistema SpotFinder mediante diagramas C4 en Structurizr DSL, incluyendo código fuente replicable. Redacté las descripciones de los Component Level Diagrams para los bounded contexts, detallando las interacciones entre capas y sistemas externos con nomenclatura técnica precisa._ <br><br> **Vidal Castro, Miguel Angel**<br>_**AV1:** Redacté la sección de Context Mapping del informe, documentando las 7 relaciones entre bounded contexts con patrones DDD, análisis de alternativas (pros/contras) y decisiones sustentadas. También documenté las Technical Stories adicionales con formato estandarizado de 7 columnas, contribuyendo a la especificación completa de requisitos técnicos del backend._ <br><br> **Allcca Guerrero, Irving Washington**<br>_**AV1:** Redacté las secciones de Needfinding del Capítulo II, documentando los User Personas (Carlos Ramírez y Patricia Vega), User Task Matrix, y Empathy Maps con información extraída de las entrevistas. Documenté los Bounded Context Canvases siguiendo el template oficial de ddd-crew/bounded-context-canvas, detallando comunicación, ubiquitous language y business decisions para cada contexto._ <br><br> **Cruz Ibarra, Victor Andrés**<br>_**AV1:** Redacté el diseño y análisis de entrevistas del Capítulo II, sintetizando los hallazgos de 6 entrevistas (3 por segmento) en un análisis cruzado con validación de hipótesis Lean UX. Documenté el Candidate Context Discovery con la técnica Start-with-Value y los Domain Message Flows de 4 escenarios clave del sistema, además de los Database Design Diagrams con esquemas SQL para cada bounded context._ | **Conclusiones AV1:** La documentación escrita del proyecto refleja un alto nivel de detalle y consistencia técnica. El uso de formatos estandarizados (tablas de 7 columnas para User Stories, templates de Bounded Context Canvas, Structurizr DSL para diagramas C4, PlantUML para class diagrams, SQL para database design) aseguró que la información sea comprensible tanto para el equipo técnico como para evaluadores externos. La trazabilidad entre Event Storming, User Stories, Bounded Contexts y Tactical DDD demuestra coherencia en el diseño del sistema. |
   
 
+<div style="page-break-after: always;"></div>
+
 # Capítulo I: Introducción
 
 ## 1.1. Startup Profile
@@ -519,7 +528,7 @@ Posicionarnos como una solución innovadora dentro del ámbito de ciudades intel
 | :---: | :--- | :---: | :---: | :--- |
 | ![Henry Kalet Esteban Román](./assets/images/photos/esteban-henry.png) | Henry Kalet Esteban Román | U202310210 | Ingeniería de Software | Estudiante de 7° ciclo. Posee experiencia en desarrollo fullstack (Angular, Vue.js, Spring Boot, .NET) y aplicaciones móviles. Domina arquitecturas DDD y Clean Architecture, además de metodologías ágiles como Scrum y Lean UX. Cuenta con sólidos conocimientos en Java, TypeScript y bases de datos relacionales. |
 | ![Leonardo Manuel Dueñas Canales](./assets/images/photos/dueñas-leonardo.png) | Leonardo Manuel Dueñas Canales | U202117475 | Ingeniería de Software | Estudiante de 7° ciclo. Cuenta con experiencia en desarrollo backend con Java y Spring Boot, así como en diseño de arquitecturas de software utilizando C4 Model y Structurizr. Posee conocimientos en bases de datos relacionales (PostgreSQL, MySQL), Docker y despliegue en la nube. Familiarizado con metodologías ágiles y control de versiones con Git/GitHub. |
-| ![Miguel Angel Vidal Castro](assets\images\photos\vidal-miguel.jpeg) | Miguel Angel Vidal Castro | U202314186 | Ingeniería de Software | Estudiante de 7° ciclo. Experiencia en desarrollo web con Angular y Spring Boot. Conocimientos en diseño orientado al dominio (DDD), patrones de integración entre bounded contexts y documentación técnica. Manejo de herramientas de gestión de proyectos (Trello, Jira) y metodologías Scrum. Habilidades en análisis competitivo y elaboración de estrategias de producto. |
+| ![Miguel Angel Vidal Castro](assets/images/photos/vidal-miguel.jpeg) | Miguel Angel Vidal Castro | U202314186 | Ingeniería de Software | Estudiante de 7° ciclo. Experiencia en desarrollo web con Angular y Spring Boot. Conocimientos en diseño orientado al dominio (DDD), patrones de integración entre bounded contexts y documentación técnica. Manejo de herramientas de gestión de proyectos (Trello, Jira) y metodologías Scrum. Habilidades en análisis competitivo y elaboración de estrategias de producto. |
 | ![Irving Washington Allcca Guerrero](./assets/images/photos/allca-irving.png) | Irving Washington Allcca Guerrero | U202213241 | Ingeniería de Software | Estudiante de 7° ciclo. Posee experiencia en investigación de usuarios y diseño UX, incluyendo la elaboración de User Personas, Empathy Maps y Journey Maps. Conocimientos en desarrollo frontend con Angular y React, además de diseño de interfaces con Figma. Familiarizado con bases de datos relacionales y metodologías ágiles. |
 | ![Victor Andrés Cruz Ibarra](./assets/images/photos/cruz-andres.jpeg) | Victor Andrés Cruz Ibarra | U202311053 | Ingeniería de Software | Estudiante de 7° ciclo. Cuenta con experiencia en desarrollo backend con Spring Boot y diseño de bases de datos relacionales (PostgreSQL, MySQL). Conocimientos en modelado de datos, diagramas UML y documentación técnica. Habilidades en investigación cualitativa (entrevistas, análisis de usuarios) y redacción de informes técnicos. Familiarizado con Git/GitHub y Conventional Commits. |
 ## 1.2. Solution Profile
@@ -725,6 +734,8 @@ Actualmente, gran parte de los operadores en Perú (como Apparka, que lidera el 
   * Generación de reportes analíticos para toma de decisiones.
   * Cumplimiento de protocolos de seguridad y emergencia.
 * **Adopción Tecnológica:** Conocimiento intermedio/avanzado. Usuarios habituales de *dashboards*, ERPs y sistemas de gestión. Requieren interfaces visuales, intuitivas y accionables en web y tablets.
+
+<div style="page-break-after: always;"></div>
 
 ---
 
@@ -1320,6 +1331,9 @@ Finalmente, se delimitaron los bounded contexts a partir de los eventos, agregad
 |Notification Channel | Canal de notificación          | Medio por el cual se envía una notificación: push (FCM), email, o in-app.                |
 | Notification Template | Plantilla de notificación           | PFormato predefinido de mensaje para cada tipo de evento.                |
 | Notification Preference| Preferencia de notificación          | Proceso de solicitud y ejecución de servicios adicionales.                |
+
+<div style="page-break-after: always;"></div>
+
 ---
 
 # Capítulo III: Requirements Specification
@@ -1353,89 +1367,89 @@ Static Web Stories (SWS): historias relacionadas con la presentación y navegaci
 
  | |  | | |  |  |  |
 |---|---|---|---|---|---|---|
-| US01 | Administrador | Detección de ocupación por sensores | Como administrador, deseo que los sensores ultrasónicos detecten automáticamente si un espacio está ocupado o libre para tener información precisa sin intervención manual. | Scenario 1: Given sensor detecta objeto  When edge server procesa Then estado cambia a "Occupied" y LED a rojo. Scenario 2: Given sensor detecta ausencia When procesa Then estado cambia a "Available" y LED a verde. Scenario 3: Given lectura intermitente When procesa Then estado no cambia (debounce). | Alta | EP01 |
-| US02 | Conductor | Visualización de espacios en tiempo real | Como conductor, deseo ver  en tiempo real de los espacios disponibles y ocupados en la app móvil para encontrar estacionamiento rápidamente. | Scenario 1: Given conductor accede a la información When carga información Then muestra espacios con colores (verde=libre, rojo=ocupado). Scenario 2: Given sensor cambia estado When sistema actualiza Then referencia  refleja cambio. | Alta | EP03 |
-| US03 | Conductor | Ingreso automático con ALPR | Como conductor registrado, deseo que al llegar a la barrera, el sistema reconozca mi placa y abra la barrera sin ticket. | Scenario 1: Given conductor registrado llega When ALPR reconoce placa Then barrera se abre y sesión inicia. Scenario 2: Given placa no reconocida tras 3 intentos When sistema agota reintentos Then emite ticket temporal. Scenario 3: Given conductor no registrado When se captura placa Then crea sesión asociada a esa placa. | Alta | EP02 |
-| US04 | Conductor | Salida automática con verificación de pago | Como conductor, deseo que al salir, el sistema verifique mi pago y abra la barrera automáticamente. | Scenario 1: Given conductor con pago completado When ALPR reconoce placa y estado "Paid" Then barrera se abre y sesión se cierra. Scenario 2: Given conductor sin pagar When ALPR reconoce placa Then barrera cerrada y envía notificación push con enlace de pago. | Alta | EP02 |
-| US05 | Conductor | Pago digital del estacionamiento | Como conductor, deseo pagar desde la app con Yape o tarjeta para evitar colas. | Scenario 1: Given conductor elige Yape When confirma y Culqi procesa Then muestra confirmación con monto y recibo. Scenario 2: Given pago falla When Culqi retorna error Then muestra mensaje y ofrece reintentar. Scenario 3: Given pago con tarjeta When ingresa datos y confirma Then procesa y muestra recibo. | Alta | EP04 |
-| US06 | Administrador | Dashboard de monitoreo en tiempo real | Como administrador, deseo un panel con ocupación en tiempo real para supervisar la operación. | Scenario 1: Given admin accede al dashboard When carga Then muestra plano interactivo con espacios y colores. Scenario 2: Given espacio cambia estado When sensor actualiza Then dashboard refleja sin refrescar. Scenario 3: Given admin accede When carga Then muestra tasa de ocupación, espacios libres y ocupados. | Alta | EP05 |
-| US07 | Conductor | Find My Car | Como conductor, deseo localizar mi vehículo en el estacionamiento para encontrarlo al regresar. | Scenario 1: Given conductor con sesión activa When accede a "Find My Car" Then muestra código del espacio. Scenario 2: Given sin sesión activa When intenta consultar Then indica que no hay vehículo. | Alta | EP03 |
-| US08 | Conductor | Visualización de tiempo y costo estimado | Como conductor, deseo ver el tiempo estacionado y costo acumulado para saber cuánto pagaré. | Scenario 1: Given sesión activa When consulta detalles Then muestra hora ingreso, duración y monto. Scenario 2: Given tiempo avanza When consulta de nuevo Then monto se actualiza dinámicamente. | Media | EP04 |
-| US09 | Conductor | Espacios recomendados | Como conductor, deseo que el sistema me sugiera espacios cercanos disponibles para reducir tiempo de búsqueda. | Scenario 1: Given conductor consulta disponibilidad When sistema procesa Then sugiere espacios más cercanos. Scenario 2: Given múltiples espacios When muestra opciones Then prioriza los más próximos. | Media | EP03 |
-| US10 | Conductor | Notificaciones de eventos del vehículo | Como conductor, deseo recibir notificaciones push sobre eventos relevantes de mi vehículo. | Scenario 1: Given vehículo ingresa When ALPR identifica Then recibe notificación de ingreso. Scenario 2: Given pago pendiente en salida When sistema detecta Then recibe notificación con enlace de pago. Scenario 3: Given emergencia activa When protocolo se dispara Then todos los conductores reciben alerta. | Media | EP07 |
-| US11 | Administrador | Gestión de disponibilidad de espacios | Como administrador, deseo habilitar/deshabilitar espacios para gestionar mantenimientos. | Scenario 1: Given admin selecciona espacio When marca "Out of Service" Then deja de aparecer disponible y LED se apaga. Scenario 2: Given admin reactiva espacio When marca "Active" Then vuelve a ser monitoreado. | Media | EP05 |
-| US12 | Administrador | Estadísticas de ocupación | Como administrador, deseo visualizar estadísticas para identificar patrones y optimizar gestión. | Scenario 1: Given admin accede a estadísticas When selecciona rango de fechas Then muestra gráficos de ocupación, horas punta y rotación. Scenario 2: Given datos históricos When consulta Then presenta comparativos con tendencias. | Media | EP06 |
-| US13 | Administrador | Generación de reportes | Como administrador, deseo generar reportes de ocupación e ingresos para presentar a gerencia. | Scenario 1: Given admin selecciona período When genera reporte Then produce PDF descargable. Scenario 2: Given sin datos para período When intenta Then indica que no hay datos. | Media | EP06 |
-| US14 | Administrador | Detección y alerta de emergencia | Como administrador, deseo que el sistema detecte gas/humo y active protocolos automáticamente. | Scenario 1: Given sensor MQ-2 detecta gas > 900 PPM When edge server procesa Then activa protocolo: LEDs rojo intermitente, barreras abiertas, alerta a admin. Scenario 2: Given emergencia activa When admin marca "Resolved" Then restaura operación normal. | Alta | EP08 |
-| US15 | Conductor | Historial de pagos | Como conductor, deseo ver mi historial de pagos para llevar registro de gastos. | Scenario 1: Given conductor con pagos When accede al historial Then muestra lista con fecha, duración, monto y método. Scenario 2: Given sin pagos When accede Then indica que no hay registros. | Baja | EP04 |
-| US16 | Conductor | Generación de pase digital (Google Wallet) | Como conductor Premium, deseo recibir un pase digital en Google Wallet al ingresar para ver info de estancia sin abrir app. | Scenario 1: Given conductor Premium ingresa When ALPR identifica Then recibe notificación para añadir pase con placa, hora, QR. Scenario 2: Given pase activo When paga Then pase cambia a verde y QR se activa para salida. | Baja | EP09 |
-| US17 | Conductor | Solicitud de servicio de lavado | Como conductor Premium, deseo solicitar lavado desde la app mientras mi auto está estacionado. | Scenario 1: Given conductor Premium When selecciona "Lavado" y confirma Then registra solicitud con tiempo estimado. Scenario 2: Given conductor Free/Pro When intenta Then indica que debe actualizar plan. | Baja | EP09 |
-| US18 | Conductor | Registro de usuario conductor | Como conductor nuevo, deseo registrarme proporcionando datos personales y placa para acceder al sistema. | Scenario 1: Given datos válidos When envía formulario Then cuenta se crea y recibe email de confirmación. Scenario 2: Given email ya registrado When intenta Then muestra que email está en uso. Scenario 3: Given campos vacíos When intenta enviar Then muestra errores específicos. | Alta | EP10 |
-| US19 | Administrador | Registro de usuario administrador | Como administrador de centro comercial, deseo registrarme para acceder al dashboard. | Scenario 1: Given datos válidos When envía Then cuenta con rol admin y confirmación. Scenario 2: Given datos inválidos When intenta Then muestra errores. | Alta | EP10 |
-| US20 | Usuario | Inicio de sesión | Como usuario registrado, deseo iniciar sesión de forma segura. | Scenario 1: Given credenciales válidas When inicia sesión Then accede según rol. Scenario 2: Given credenciales incorrectas When intenta Then muestra error genérico. | Alta | EP10 |
-| US21 | Usuario | Recuperación de contraseña | Como usuario, deseo recuperar mi contraseña en caso de olvidarla. | Scenario 1: Given correo registrado When solicita Then recibe enlace. Scenario 2: Given correo no registrado When solicita Then muestra mensaje genérico. | Media | EP10 |
-| US22 | Usuario | Edición de perfil | Como usuario, deseo editar mi información personal para mantener cuenta actualizada. | Scenario 1: Given datos válidos When guarda Then perfil se actualiza. Scenario 2: Given datos inválidos When intenta Then muestra errores. | Baja | EP10 |
-| US23 | Conductor | Registro de vehículo adicional | Como conductor, deseo registrar más de un vehículo para usar el sistema con cualquiera de mis autos. | Scenario 1: Given cuenta activa When agrega vehículo con placa válida Then se asocia. Scenario 2: Given placa ya registrada When intenta Then indica que placa está en uso. | Baja | EP10 |
-| US24 | Usuario | Configuración de preferencias de notificación | Como usuario, deseo configurar qué notificaciones deseo recibir para no ser interrumpido con alertas que no me interesan. |Scenario 1: Given usuario accede a configuración de notificaciones When activa/desactiva tipos específicos Then el sistema respeta las preferencias y solo envía las notificaciones habilitadas. Scenario 2: Given usuario desactiva notificaciones de marketing When se genera una Then no se envía al usuario.| Baja | EP07 |
+| US01 | Administrador | Detección de ocupación por sensores | Como administrador, deseo que los sensores ultrasónicos detecten automáticamente si un espacio está ocupado o libre para tener información precisa sin intervención manual. | **Escenario 1: Detección de vehículo**<br>**Given** sensor detecta objeto,<br>**When** edge server procesa,<br>**Then** estado cambia a "Occupied" y LED a rojo.<br><br>**Escenario 2: Liberación de espacio**<br>**Given** sensor detecta ausencia,<br>**When** edge server procesa,<br>**Then** estado cambia a "Available" y LED a verde.<br><br>**Escenario 3: Lectura intermitente (debounce)**<br>**Given** lectura intermitente,<br>**When** edge server procesa,<br>**Then** estado no cambia (debounce). | Alta | EP01 |
+| US02 | Conductor | Visualización de espacios en tiempo real | Como conductor, deseo ver  en tiempo real de los espacios disponibles y ocupados en la app móvil para encontrar estacionamiento rápidamente. | **Escenario 1: Visualización inicial de espacios**<br>**Given** conductor accede a la información,<br>**When** carga información,<br>**Then** muestra espacios con colores (verde=libre, rojo=ocupado).<br><br>**Escenario 2: Actualización en tiempo real**<br>**Given** sensor cambia estado,<br>**When** sistema actualiza,<br>**Then** referencia refleja cambio. | Alta | EP03 |
+| US03 | Conductor | Ingreso automático con ALPR | Como conductor registrado, deseo que al llegar a la barrera, el sistema reconozca mi placa y abra la barrera sin ticket. | **Escenario 1: Ingreso con placa reconocida**<br>**Given** conductor registrado llega,<br>**When** ALPR reconoce placa,<br>**Then** barrera se abre y sesión inicia.<br><br>**Escenario 2: Placa no reconocida**<br>**Given** placa no reconocida tras 3 intentos,<br>**When** sistema agota reintentos,<br>**Then** emite ticket temporal.<br><br>**Escenario 3: Conductor no registrado**<br>**Given** conductor no registrado,<br>**When** se captura placa,<br>**Then** crea sesión asociada a esa placa. | Alta | EP02 |
+| US04 | Conductor | Salida automática con verificación de pago | Como conductor, deseo que al salir, el sistema verifique mi pago y abra la barrera automáticamente. | **Escenario 1: Salida con pago completado**<br>**Given** conductor con pago completado,<br>**When** ALPR reconoce placa y estado "Paid",<br>**Then** barrera se abre y sesión se cierra.<br><br>**Escenario 2: Salida con pago pendiente**<br>**Given** conductor sin pagar,<br>**When** ALPR reconoce placa,<br>**Then** barrera cerrada y envía notificación push con enlace de pago. | Alta | EP02 |
+| US05 | Conductor | Pago digital del estacionamiento | Como conductor, deseo pagar desde la app con Yape o tarjeta para evitar colas. | **Escenario 1: Pago exitoso con Yape**<br>**Given** conductor elige Yape,<br>**When** confirma y Culqi procesa,<br>**Then** muestra confirmación con monto y recibo.<br><br>**Escenario 2: Pago fallido**<br>**Given** pago falla,<br>**When** Culqi retorna error,<br>**Then** muestra mensaje y ofrece reintentar.<br><br>**Escenario 3: Pago con tarjeta**<br>**Given** pago con tarjeta,<br>**When** ingresa datos y confirma,<br>**Then** procesa y muestra recibo. | Alta | EP04 |
+| US06 | Administrador | Dashboard de monitoreo en tiempo real | Como administrador, deseo un panel con ocupación en tiempo real para supervisar la operación. | **Escenario 1: Visualización del plano interactivo**<br>**Given** admin accede al dashboard,<br>**When** carga,<br>**Then** muestra plano interactivo con espacios y colores.<br><br>**Escenario 2: Actualización en tiempo real**<br>**Given** espacio cambia estado,<br>**When** sensor actualiza,<br>**Then** dashboard refleja sin refrescar.<br><br>**Escenario 3: Métricas de ocupación**<br>**Given** admin accede,<br>**When** carga,<br>**Then** muestra tasa de ocupación, espacios libres y ocupados. | Alta | EP05 |
+| US07 | Conductor | Find My Car | Como conductor, deseo localizar mi vehículo en el estacionamiento para encontrarlo al regresar. | **Escenario 1: Localización con sesión activa**<br>**Given** conductor con sesión activa,<br>**When** accede a "Find My Car",<br>**Then** muestra código del espacio.<br><br>**Escenario 2: Sin sesión activa**<br>**Given** sin sesión activa,<br>**When** intenta consultar,<br>**Then** indica que no hay vehículo. | Alta | EP03 |
+| US08 | Conductor | Visualización de tiempo y costo estimado | Como conductor, deseo ver el tiempo estacionado y costo acumulado para saber cuánto pagaré. | **Escenario 1: Consulta de detalles de sesión**<br>**Given** sesión activa,<br>**When** consulta detalles,<br>**Then** muestra hora ingreso, duración y monto.<br><br>**Escenario 2: Actualización dinámica del monto**<br>**Given** tiempo avanza,<br>**When** consulta de nuevo,<br>**Then** monto se actualiza dinámicamente. | Media | EP04 |
+| US09 | Conductor | Espacios recomendados | Como conductor, deseo que el sistema me sugiera espacios cercanos disponibles para reducir tiempo de búsqueda. | **Escenario 1: Sugerencia de espacios cercanos**<br>**Given** conductor consulta disponibilidad,<br>**When** sistema procesa,<br>**Then** sugiere espacios más cercanos.<br><br>**Escenario 2: Priorización por proximidad**<br>**Given** múltiples espacios,<br>**When** muestra opciones,<br>**Then** prioriza los más próximos. | Media | EP03 |
+| US10 | Conductor | Notificaciones de eventos del vehículo | Como conductor, deseo recibir notificaciones push sobre eventos relevantes de mi vehículo. | **Escenario 1: Notificación de ingreso**<br>**Given** vehículo ingresa,<br>**When** ALPR identifica,<br>**Then** recibe notificación de ingreso.<br><br>**Escenario 2: Notificación de pago pendiente**<br>**Given** pago pendiente en salida,<br>**When** sistema detecta,<br>**Then** recibe notificación con enlace de pago.<br><br>**Escenario 3: Alerta de emergencia**<br>**Given** emergencia activa,<br>**When** protocolo se dispara,<br>**Then** todos los conductores reciben alerta. | Media | EP07 |
+| US11 | Administrador | Gestión de disponibilidad de espacios | Como administrador, deseo habilitar/deshabilitar espacios para gestionar mantenimientos. | **Escenario 1: Deshabilitar espacio**<br>**Given** admin selecciona espacio,<br>**When** marca "Out of Service",<br>**Then** deja de aparecer disponible y LED se apaga.<br><br>**Escenario 2: Reactivar espacio**<br>**Given** admin reactiva espacio,<br>**When** marca "Active",<br>**Then** vuelve a ser monitoreado. | Media | EP05 |
+| US12 | Administrador | Estadísticas de ocupación | Como administrador, deseo visualizar estadísticas para identificar patrones y optimizar gestión. | **Escenario 1: Consulta de estadísticas por rango**<br>**Given** admin accede a estadísticas,<br>**When** selecciona rango de fechas,<br>**Then** muestra gráficos de ocupación, horas punta y rotación.<br><br>**Escenario 2: Comparativos históricos**<br>**Given** datos históricos,<br>**When** consulta,<br>**Then** presenta comparativos con tendencias. | Media | EP06 |
+| US13 | Administrador | Generación de reportes | Como administrador, deseo generar reportes de ocupación e ingresos para presentar a gerencia. | **Escenario 1: Generación de reporte PDF**<br>**Given** admin selecciona período,<br>**When** genera reporte,<br>**Then** produce PDF descargable.<br><br>**Escenario 2: Período sin datos**<br>**Given** sin datos para período,<br>**When** intenta,<br>**Then** indica que no hay datos. | Media | EP06 |
+| US14 | Administrador | Detección y alerta de emergencia | Como administrador, deseo que el sistema detecte gas/humo y active protocolos automáticamente. | **Escenario 1: Detección de gas/humo**<br>**Given** sensor MQ-2 detecta gas > 900 PPM,<br>**When** edge server procesa,<br>**Then** activa protocolo: LEDs rojo intermitente, barreras abiertas, alerta a admin.<br><br>**Escenario 2: Resolución de emergencia**<br>**Given** emergencia activa,<br>**When** admin marca "Resolved",<br>**Then** restaura operación normal. | Alta | EP08 |
+| US15 | Conductor | Historial de pagos | Como conductor, deseo ver mi historial de pagos para llevar registro de gastos. | **Escenario 1: Visualización del historial**<br>**Given** conductor con pagos,<br>**When** accede al historial,<br>**Then** muestra lista con fecha, duración, monto y método.<br><br>**Escenario 2: Historial vacío**<br>**Given** sin pagos,<br>**When** accede,<br>**Then** indica que no hay registros. | Baja | EP04 |
+| US16 | Conductor | Generación de pase digital (Google Wallet) | Como conductor Premium, deseo recibir un pase digital en Google Wallet al ingresar para ver info de estancia sin abrir app. | **Escenario 1: Emisión de pase digital**<br>**Given** conductor Premium ingresa,<br>**When** ALPR identifica,<br>**Then** recibe notificación para añadir pase con placa, hora, QR.<br><br>**Escenario 2: Activación de QR tras pago**<br>**Given** pase activo,<br>**When** paga,<br>**Then** pase cambia a verde y QR se activa para salida. | Baja | EP09 |
+| US17 | Conductor | Solicitud de servicio de lavado | Como conductor Premium, deseo solicitar lavado desde la app mientras mi auto está estacionado. | **Escenario 1: Solicitud de lavado Premium**<br>**Given** conductor Premium,<br>**When** selecciona "Lavado" y confirma,<br>**Then** registra solicitud con tiempo estimado.<br><br>**Escenario 2: Plan insuficiente**<br>**Given** conductor Free/Pro,<br>**When** intenta,<br>**Then** indica que debe actualizar plan. | Baja | EP09 |
+| US18 | Conductor | Registro de usuario conductor | Como conductor nuevo, deseo registrarme proporcionando datos personales y placa para acceder al sistema. | **Escenario 1: Registro exitoso**<br>**Given** datos válidos,<br>**When** envía formulario,<br>**Then** cuenta se crea y recibe email de confirmación.<br><br>**Escenario 2: Email duplicado**<br>**Given** email ya registrado,<br>**When** intenta,<br>**Then** muestra que email está en uso.<br><br>**Escenario 3: Campos vacíos**<br>**Given** campos vacíos,<br>**When** intenta enviar,<br>**Then** muestra errores específicos. | Alta | EP10 |
+| US19 | Administrador | Registro de usuario administrador | Como administrador de centro comercial, deseo registrarme para acceder al dashboard. | **Escenario 1: Registro de admin exitoso**<br>**Given** datos válidos,<br>**When** envía,<br>**Then** cuenta con rol admin y confirmación.<br><br>**Escenario 2: Datos inválidos en registro**<br>**Given** datos inválidos,<br>**When** intenta,<br>**Then** muestra errores. | Alta | EP10 |
+| US20 | Usuario | Inicio de sesión | Como usuario registrado, deseo iniciar sesión de forma segura. | **Escenario 1: Login exitoso**<br>**Given** credenciales válidas,<br>**When** inicia sesión,<br>**Then** accede según rol.<br><br>**Escenario 2: Credenciales incorrectas**<br>**Given** credenciales incorrectas,<br>**When** intenta,<br>**Then** muestra error genérico. | Alta | EP10 |
+| US21 | Usuario | Recuperación de contraseña | Como usuario, deseo recuperar mi contraseña en caso de olvidarla. | **Escenario 1: Solicitud con correo registrado**<br>**Given** correo registrado,<br>**When** solicita,<br>**Then** recibe enlace.<br><br>**Escenario 2: Correo no registrado**<br>**Given** correo no registrado,<br>**When** solicita,<br>**Then** muestra mensaje genérico. | Media | EP10 |
+| US22 | Usuario | Edición de perfil | Como usuario, deseo editar mi información personal para mantener cuenta actualizada. | **Escenario 1: Actualización exitosa**<br>**Given** datos válidos,<br>**When** guarda,<br>**Then** perfil se actualiza.<br><br>**Escenario 2: Datos inválidos**<br>**Given** datos inválidos,<br>**When** intenta,<br>**Then** muestra errores. | Baja | EP10 |
+| US23 | Conductor | Registro de vehículo adicional | Como conductor, deseo registrar más de un vehículo para usar el sistema con cualquiera de mis autos. | **Escenario 1: Asociación de vehículo**<br>**Given** cuenta activa,<br>**When** agrega vehículo con placa válida,<br>**Then** se asocia.<br><br>**Escenario 2: Placa duplicada**<br>**Given** placa ya registrada,<br>**When** intenta,<br>**Then** indica que placa está en uso. | Baja | EP10 |
+| US24 | Usuario | Configuración de preferencias de notificación | Como usuario, deseo configurar qué notificaciones deseo recibir para no ser interrumpido con alertas que no me interesan. | **Escenario 1: Configuración de preferencias**<br>**Given** usuario accede a configuración de notificaciones,<br>**When** activa/desactiva tipos específicos,<br>**Then** el sistema respeta las preferencias y solo envía las notificaciones habilitadas.<br><br>**Escenario 2: Bloqueo de notificaciones de marketing**<br>**Given** usuario desactiva notificaciones de marketing,<br>**When** se genera una,<br>**Then** no se envía al usuario. | Baja | EP07 |
 
  
 | | || |  |  |  |
 |---|---|---|---|---|---|---|
-| TS01 | Developer | Exponer endpoint para registrar lectura de sensor | Como developer, deseo exponer POST /api/v1/sensor-readings para recibir lecturas de sensores desde el edge server. | Scenario 1: Given datos válidos (sensorId, slotId, distance, timestamp) When servidor procesa Then almacena y devuelve 201 Created. Scenario 2: Given sensorId no registrado When procesa Then devuelve 404 Not Found. Scenario 3: Given datos inválidos (distancia negativa) When procesa Then devuelve 400 Bad Request. | Alta | EP12 |
-| TS02 | Developer | Exponer endpoint para listar espacios de estacionamiento | Como developer, deseo exponer GET /api/v1/parking-slots para obtener lista de espacios con estado actual. | Scenario 1: Given espacios registrados When procesa Then devuelve 200 OK con lista (id, slotCode, status, lastUpdated). Scenario 2: Given sin registros When procesa Then devuelve 200 OK con lista vacía. | Alta | EP12 |
-| TS03 | Developer | Exponer endpoint para consultar espacios disponibles | Como developer, deseo exponer GET /api/v1/parking-slots/available para obtener solo espacios libres. | Scenario 1: Given espacios disponibles When procesa Then devuelve 200 OK con lista filtrada. Scenario 2: Given sin disponibilidad When procesa Then devuelve 200 OK con lista vacía. | Alta | EP12 |
-| TS04 | Developer | Exponer endpoint para actualizar estado de espacio | Como developer, deseo exponer PATCH /api/v1/parking-slots/{id}/status para actualizar el estado de un espacio. | Scenario 1: Given status válido (AVAILABLE, OCCUPIED, OUT_OF_SERVICE) When procesa Then actualiza y devuelve 200 OK. Scenario 2: Given espacio inexistente When procesa Then devuelve 404 Not Found. Scenario 3: Given status inválido When procesa Then devuelve 400 Bad Request. | Alta | EP12 |
-| TS05 | Developer | Exponer endpoint para obtener detalles de un espacio | Como developer, deseo exponer GET /api/v1/parking-slots/{id} para obtener detalles de un espacio específico. | Scenario 1: Given espacio existente When procesa Then devuelve 200 OK con detalles (slotCode, status, sensorId, lastUpdated). Scenario 2: Given espacio inexistente When procesa Then devuelve 404 Not Found. | Alta | EP12 |
-| TS06 | Developer | Exponer endpoint para recomendar espacios | Como developer, deseo exponer GET /api/v1/parking-slots/recommendations para sugerir espacios cercanos disponibles. | Scenario 1: Given recomendaciones disponibles When procesa Then devuelve 200 OK con lista priorizada por proximidad. Scenario 2: Given sin resultados When procesa Then devuelve 200 OK con lista vacía. | Media | EP12 |
-| TS07 | Developer | Exponer endpoint para registrar ingreso vehicular | Como developer, deseo exponer POST /api/v1/access/entries para registrar el ingreso de un vehículo al estacionamiento. | Scenario 1: Given registro exitoso con placa reconocida When procesa Then devuelve 201 Created con sessionId y entryTimestamp. Scenario 2: Given placa no registrada en el sistema When procesa Then crea sesión como unidentified y devuelve 201 Created. Scenario 3: Given datos inválidos (imagen vacía) When procesa Then devuelve 400 Bad Request. | Alta | EP12 |
-| TS08 | Developer | Exponer endpoint para registrar salida vehicular | Como developer, deseo exponer POST /api/v1/access/exits para registrar la salida de un vehículo del estacionamiento. | Scenario 1: Given salida con pago completado When procesa Then devuelve 200 OK, cierra sesión y libera espacio. Scenario 2: Given pago pendiente When procesa Then devuelve 402 Payment Required con mensaje indicando que debe completar el pago. Scenario 3: Given placa sin sesión activa When procesa Then devuelve 404 Not Found. | Alta | EP12 |
-| TS09 | Developer | Exponer endpoint para reconocimiento de placas | Como developer, deseo exponer POST /api/v1/access/alpr para procesar imagen de placa vehicular. | Scenario 1: Given imagen válida con placa detectada When procesa Then devuelve 200 OK con licensePlate y confidence. Scenario 2: Given imagen inválida o ilegible When procesa Then devuelve 400 Bad Request con mensaje de error. Scenario 3: Given placa detectada con confianza < 85% When procesa Then devuelve 200 OK con flag lowConfidence=true. | Alta | EP12 |
-| TS10 | Developer | Exponer endpoint para crear sesión de estacionamiento | Como developer, deseo exponer POST /api/v1/parking-sessions para crear una nueva sesión vehicular. | Scenario 1: Given datos válidos (licensePlate, entryTimestamp) When procesa Then crea sesión con status ACTIVE y devuelve 201 Created. Scenario 2: Given sesión activa existente para esa placa When procesa Then devuelve 409 Conflict indicando que ya tiene sesión en curso. Scenario 3: Given datos inválidos (placa vacía) When procesa Then devuelve 400 Bad Request. | Alta | EP12 |
-| TS11 | Developer | Exponer endpoint para obtener sesión activa | Como developer, deseo exponer GET /api/v1/parking-sessions/active para consultar la sesión en curso del usuario autenticado. | Scenario 1: Given sesión activa existente When procesa Then devuelve 200 OK con sessionId, licensePlate, entryTimestamp, currentDuration, estimatedFee, slotCode. Scenario 2: Given sin sesión activa When procesa Then devuelve 404 Not Found. | Alta | EP12 |
-| TS12 | Developer | Exponer endpoint para consultar sesión por ID | Como developer, deseo exponer GET /api/v1/parking-sessions/{id} para obtener detalles de una sesión específica. | Scenario 1: Given sesión existente When procesa Then devuelve 200 OK con todos los detalles. Scenario 2: Given sesión inexistente When procesa Then devuelve 404 Not Found. | Media | EP12 |
-| TS13 | Developer | Exponer endpoint para finalizar sesión | Como developer, deseo exponer PATCH /api/v1/parking-sessions/{id}/end para cerrar una sesión vehicular al momento de la salida. | Scenario 1: Given sesión activa con pago completado When procesa Then cierra sesión, registra exitTimestamp, libera espacio y devuelve 200 OK. Scenario 2: Given sesión activa con pago pendiente When procesa Then devuelve 402 Payment Required. Scenario 3: Given sesión inexistente When procesa Then devuelve 404 Not Found. | Alta | EP12 |
-| TS14 | Developer | Exponer endpoint para historial de sesiones | Como developer, deseo exponer GET /api/v1/parking-sessions/history para consultar sesiones pasadas del usuario. | Scenario 1: Given historial disponible When procesa Then devuelve 200 OK con lista ordenada por fecha descendente. Scenario 2: Given sin registros When procesa Then devuelve 200 OK con lista vacía. | Baja | EP12 |
-| TS15 | Developer | Exponer endpoint para registrar pago | Como developer, deseo exponer POST /api/v1/payments para procesar un pago asociado a una sesión vehicular a través de Culqi. | Scenario 1: Given datos válidos (sessionId, paymentMethod, amount) y Culqi procesa exitosamente When procesa Then devuelve 201 Created con paymentId, amount, status COMPLETED y receiptUrl. Scenario 2: Given error de pasarela When Culqi falla Then devuelve 402 Payment Required con detalle del error. Scenario 3: Given sesión ya pagada When intenta pagar Then devuelve 409 Conflict. | Alta | EP12 |
-| TS16 | Developer | Exponer endpoint para consultar pago | Como developer, deseo exponer GET /api/v1/payments/{id} para obtener detalles de un pago específico. | Scenario 1: Given pago existente When procesa Then devuelve 200 OK con paymentId, amount, method, status, timestamp, receiptUrl. Scenario 2: Given pago inexistente When procesa Then devuelve 404 Not Found. | Media | EP12 |
-| TS17 | Developer | Exponer endpoint para historial de pagos | Como developer, deseo exponer GET /api/v1/payments/history para consultar pagos pasados del usuario autenticado. | Scenario 1: Given pagos registrados When procesa Then devuelve 200 OK con lista ordenada por fecha descendente incluyendo amount, method, date, duration. Scenario 2: Given sin pagos When procesa Then devuelve 200 OK con lista vacía. | Baja | EP12 |
-| TS18 | Developer | Exponer endpoint para enviar notificación push | Como developer, deseo exponer POST /api/v1/notifications para enviar notificaciones push a usuarios via Firebase Cloud Messaging. |Scenario 1: Given datos válidos (userId, title, body, type) When FCM procesa Then devuelve 200 OK con notificationId y deliveryStatus. Scenario 2: Given userId sin token FCM When intenta Then devuelve 404 Not Found. Scenario 3: Given datos inválidos When procesa Then devuelve 400 Bad Request. | Media | EP12 |
-| TS19 | Developer | Exponer endpoint para listar notificaciones de un usuario | Como developer, deseo exponer GET /api/v1/notifications/user/{id} para listar las notificaciones recibidas por un usuario. | Scenario 1: Given notificaciones existentes When procesa Then devuelve 200 OK con lista ordenada por fecha. Scenario 2: Given sin notificaciones When procesa Then devuelve 200 OK con lista vacía. | Baja | EP12 |
-| TS20 | Developer | Exponer endpoint para métricas de ocupación | Como developer, deseo exponer GET /api/v1/analytics/occupancy para obtener estadísticas de ocupación del estacionamiento. | Scenario 1: Given datos disponibles y parámetros válidos (startDate, endDate) When procesa Then devuelve 200 OK con occupancyRate, peakHours, turnoverRate y datos por hora. Scenario 2: Given fechas inválidas (startDate posterior a endDate) When procesa Then devuelve 400 Bad Request. Scenario 3: Given sin datos para el rango When procesa Then devuelve 200 OK con valores en cero. | Media | EP12 |
-| TS21 | Developer | Exponer endpoint para métricas de ingresos | Como developer, deseo exponer GET /api/v1/analytics/revenue para obtener estadísticas financieras del estacionamiento. | Scenario 1: Given datos disponibles y rango válido When procesa Then devuelve 200 OK con totalRevenue, averageTicket, paymentsByMethod y datos por día. Scenario 2: Given sin datos para el rango When procesa Then devuelve 200 OK con valores en cero. | Media | EP12 |
-| TS22 | Developer | Exponer endpoint para generar mapa de calor | Como developer, deseo exponer GET /api/v1/analytics/heatmap para visualizar patrones de ocupación por espacio. | Scenario 1: Given datos de ocupación disponibles When procesa Then devuelve 200 OK con datos de heatmap por slot y hora. Scenario 2: Given sin datos suficientes When procesa Then devuelve 200 OK con mapa vacío. | Baja | EP12 |
-| TS23 | Developer | Exponer endpoint para registrar alerta de emergencia | Como developer, deseo exponer POST /api/v1/emergency/alerts para registrar una alerta de emergencia disparada por sensores de gas/humo. | Scenario 1: Given datos válidos (sensorId, gasLevel, type) When procesa Then crea alerta, activa protocolo de emergencia y devuelve 201 Created con emergencyId y activatedAt. Scenario 2: Given datos inválidos (gasLevel negativo) When procesa Then devuelve 400 Bad Request. | Alta | EP12 |
-| TS24 | Developer | Exponer endpoint para consultar estado de emergencia | Como developer, deseo exponer GET /api/v1/emergency/status para consultar si hay una emergencia activa en el estacionamiento. | Scenario 1: Given emergencia activa When procesa Then devuelve 200 OK con emergencyId, type, triggeredAt, sensorLocation. Scenario 2: Given sin emergencias activas When procesa Then devuelve 200 OK con status "NORMAL". | Alta | EP12 |
-| TS25 | Developer | Exponer endpoint para activar protocolo de evacuación | Como developer, deseo exponer POST /api/v1/emergency/evacuate para activar manualmente el protocolo de evacuación. | Scenario 1: Given emergencia activa When admin autorizado solicita Then activa protocolo (abrir barreras, LEDs evacuación) y devuelve 200 OK. Scenario 2: Given sin emergencia activa When solicita evacuación Then devuelve 409 Conflict indicando que no hay emergencia que justifique evacuación. | Alta | EP12 |
-| TS26 | Developer | Exponer endpoint para resolver emergencia | Como developer, deseo exponer PATCH /api/v1/emergencies/{id}/resolve para marcar una emergencia como resuelta y restaurar operación normal. | Scenario 1: Given emergencia activa When admin envía solicitud de resolución Then marca como RESOLVED, restaura operación normal y devuelve 200 OK. Scenario 2: Given emergencia inexistente When procesa Then devuelve 404 Not Found. Scenario 3: Given emergencia ya resuelta When intenta resolver de nuevo Then devuelve 409 Conflict. | Alta | EP12 |
-| TS27 | Developer | Exponer endpoint para generar pase digital | Como developer, deseo exponer POST /api/v1/wallet/passes para generar un pase digital de estancia asociado a una sesión vehicular. | Scenario 1: Given sesión activa válida When procesa Then genera pase con placa, hora, QR y devuelve 201 Created con passId y passUrl. Scenario 2: Given sesión inexistente When procesa Then devuelve 404 Not Found. Scenario 3: Given usuario sin plan Premium When solicita Then devuelve 403 Forbidden. | Baja | EP12 |
-| TS28 | Developer | Exponer endpoint para obtener pase digital | Como developer, deseo exponer GET /api/v1/wallet/passes/{id} para consultar los detalles de un pase digital existente. | Scenario 1: Given pase existente When procesa Then devuelve 200 OK con passId, licensePlate, entryTime, currentAmount, qrCode, status. Scenario 2: Given pase inexistente When procesa Then devuelve 404 Not Found. | Baja | EP12 |
-| TS29 | Developer | Exponer endpoint para generar pase Google Wallet | Como developer, deseo exponer POST /api/v1/wallet/google para crear un pase en Google Wallet del conductor. | Scenario 1: Given datos válidos (sessionId, userId) When Google Wallet API procesa Then genera pase y devuelve 201 Created con saveUrl para añadir a Wallet. Scenario 2: Given datos inválidos When procesa Then devuelve 400 Bad Request. Scenario 3: Given error de Google Wallet API When falla Then devuelve 502 Bad Gateway. | Baja | EP12 |
-| TS30 | Developer | Exponer endpoint para registrar usuario | Como developer, deseo exponer POST /api/v1/auth/register para permitir el registro de nuevos usuarios en el sistema. | Scenario 1: Given datos válidos (name, email, password, role, licensePlate) When procesa Then crea cuenta y devuelve 201 Created con userId y role. Scenario 2: Given correo ya registrado When procesa Then devuelve 409 Conflict. Scenario 3: Given datos inválidos (email mal formado, contraseña corta) When procesa Then devuelve 400 Bad Request con errores específicos. | Alta | EP12 |
-| TS31 | Developer | Exponer endpoint para autenticación de usuario | Como developer, deseo exponer POST /api/v1/auth/login para autenticar usuarios y devolver un token JWT. | Scenario 1: Given credenciales válidas (email, password) When procesa Then devuelve 200 OK con accessToken JWT, refreshToken y datos básicos del usuario. Scenario 2: Given credenciales inválidas When procesa Then devuelve 401 Unauthorized con mensaje genérico. Scenario 3: Given cuenta no verificada When intenta login Then devuelve 403 Forbidden indicando que debe verificar su cuenta. | Alta | EP12 |
-| TS32 | Developer | Exponer endpoint para obtener perfil de usuario | Como developer, deseo exponer GET /api/v1/users/{id} para obtener los datos del perfil de un usuario. | Scenario 1: Given usuario existente When procesa Then devuelve 200 OK con name, email, role, vehicles, plan. Scenario 2: Given usuario inexistente When procesa Then devuelve 404 Not Found. | Media | EP12 |
-| TS33 | Developer | Exponer endpoint para actualizar perfil de usuario | Como developer, deseo exponer PUT /api/v1/users/{id} para actualizar los datos del perfil de un usuario. | Scenario 1: Given datos válidos When procesa Then actualiza perfil y devuelve 200 OK con datos actualizados. Scenario 2: Given datos inválidos (email mal formado) When procesa Then devuelve 400 Bad Request. Scenario 3: Given usuario inexistente When procesa Then devuelve 404 Not Found. | Media | EP12 |
-| TS34 | Developer | Exponer endpoint para recuperación de contraseña | Como developer, deseo exponer POST /api/v1/auth/forgot-password para enviar enlace de recuperación al correo del usuario. | Scenario 1: Given correo válido registrado When procesa Then envía enlace de recuperación y devuelve 200 OK. Scenario 2: Given correo inexistente When procesa Then devuelve 200 OK con mensaje genérico (por seguridad, no revela si el correo existe). | Media | EP12 |
-| TS35 | Developer | Exponer endpoint para restablecer contraseña | Como developer, deseo exponer POST /api/v1/auth/reset-password para permitir cambiar la contraseña mediante un token de recuperación. | Scenario 1: Given token válido y contraseña nueva que cumple requisitos When procesa Then actualiza contraseña y devuelve 200 OK. Scenario 2: Given token inválido o expirado When procesa Then devuelve 400 Bad Request. Scenario 3: Given contraseña que no cumple requisitos (< 8 caracteres) When procesa Then devuelve 400 Bad Request con detalle. | Media | EP12 |
-| TS36 | Developer | Exponer endpoint para registrar vehículo | Como developer, deseo exponer POST /api/v1/users/{id}/vehicles para agregar un vehículo a la cuenta de un usuario. | Scenario 1: Given datos válidos (licensePlate, make, model) When procesa Then agrega vehículo y devuelve 201 Created con vehicleId. Scenario 2: Given placa ya registrada en otra cuenta When procesa Then devuelve 409 Conflict. Scenario 3: Given usuario inexistente When procesa Then devuelve 404 Not Found. | Media | EP12 |
-| TS37 | Developer | Exponer endpoint para listar vehículos de un usuario | Como developer, deseo exponer GET /api/v1/users/{id}/vehicles para obtener la lista de vehículos registrados por un usuario. | Scenario 1: Given usuario con vehículos registrados When procesa Then devuelve 200 OK con lista (vehicleId, licensePlate, make, model). Scenario 2: Given usuario sin vehículos When procesa Then devuelve 200 OK con lista vacía. Scenario 3: Given usuario inexistente When procesa Then devuelve 404 Not Found. | Media | EP12 |
-| TS38 | Developer | Exponer endpoint para eliminar vehículo | Como developer, deseo exponer DELETE /api/v1/users/{userId}/vehicles/{vehicleId} para eliminar un vehículo de la cuenta de un usuario. | Scenario 1: Given vehículo existente asociado al usuario When procesa Then elimina vehículo y devuelve 204 No Content. Scenario 2: Given vehículo inexistente When procesa Then devuelve 404 Not Found. Scenario 3: Given vehículo con sesión activa When intenta eliminar Then devuelve 409 Conflict indicando que debe finalizar la sesión primero. | Media | EP12 |
-| TS39 | Developer | Exponer endpoint para marcar notificación como leída |Como developer, deseo exponer PATCH /api/v1/notifications/{id}/read para marcar una notificación como leída. | Scenario 1: Given notificación existente no leída When procesa Then marca como leída y devuelve 200 OK. Scenario 2: Given notificación inexistente When procesa Then devuelve 404 Not Found. | Baja | EP12 |
-| TS40 | Developer | Exponer endpoint para actualizar preferencias de notificación | Como developer, deseo exponer PUT /api/v1/users/{id}/notification-preferences para guardar las preferencias del usuario.|Scenario 1: Given preferencias válidas When procesa Then actualiza y devuelve 200 OK. Scenario 2: Given usuario inexistente When procesa Then devuelve 404 Not Found. | Baja | EP12 |
+| TS01 | Developer | Exponer endpoint para registrar lectura de sensor | Como developer, deseo exponer POST /api/v1/sensor-readings para recibir lecturas de sensores desde el edge server. | **Escenario 1: Registro exitoso de lectura**<br>**Given** datos válidos (sensorId, slotId, distance, timestamp),<br>**When** servidor procesa,<br>**Then** almacena y devuelve 201 Created.<br><br>**Escenario 2: Sensor no registrado**<br>**Given** sensorId no registrado,<br>**When** procesa,<br>**Then** devuelve 404 Not Found.<br><br>**Escenario 3: Datos inválidos**<br>**Given** datos inválidos (distancia negativa),<br>**When** procesa,<br>**Then** devuelve 400 Bad Request. | Alta | EP12 |
+| TS02 | Developer | Exponer endpoint para listar espacios de estacionamiento | Como developer, deseo exponer GET /api/v1/parking-slots para obtener lista de espacios con estado actual. | **Escenario 1: Listado de espacios**<br>**Given** espacios registrados,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista (id, slotCode, status, lastUpdated).<br><br>**Escenario 2: Lista vacía**<br>**Given** sin registros,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista vacía. | Alta | EP12 |
+| TS03 | Developer | Exponer endpoint para consultar espacios disponibles | Como developer, deseo exponer GET /api/v1/parking-slots/available para obtener solo espacios libres. | **Escenario 1: Listado filtrado por disponibilidad**<br>**Given** espacios disponibles,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista filtrada.<br><br>**Escenario 2: Sin disponibilidad**<br>**Given** sin disponibilidad,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista vacía. | Alta | EP12 |
+| TS04 | Developer | Exponer endpoint para actualizar estado de espacio | Como developer, deseo exponer PATCH /api/v1/parking-slots/{id}/status para actualizar el estado de un espacio. | **Escenario 1: Actualización exitosa**<br>**Given** status válido (AVAILABLE, OCCUPIED, OUT_OF_SERVICE),<br>**When** procesa,<br>**Then** actualiza y devuelve 200 OK.<br><br>**Escenario 2: Espacio inexistente**<br>**Given** espacio inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found.<br><br>**Escenario 3: Status inválido**<br>**Given** status inválido,<br>**When** procesa,<br>**Then** devuelve 400 Bad Request. | Alta | EP12 |
+| TS05 | Developer | Exponer endpoint para obtener detalles de un espacio | Como developer, deseo exponer GET /api/v1/parking-slots/{id} para obtener detalles de un espacio específico. | **Escenario 1: Detalles del espacio**<br>**Given** espacio existente,<br>**When** procesa,<br>**Then** devuelve 200 OK con detalles (slotCode, status, sensorId, lastUpdated).<br><br>**Escenario 2: Espacio inexistente**<br>**Given** espacio inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Alta | EP12 |
+| TS06 | Developer | Exponer endpoint para recomendar espacios | Como developer, deseo exponer GET /api/v1/parking-slots/recommendations para sugerir espacios cercanos disponibles. | **Escenario 1: Recomendaciones por proximidad**<br>**Given** recomendaciones disponibles,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista priorizada por proximidad.<br><br>**Escenario 2: Sin resultados**<br>**Given** sin resultados,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista vacía. | Media | EP12 |
+| TS07 | Developer | Exponer endpoint para registrar ingreso vehicular | Como developer, deseo exponer POST /api/v1/access/entries para registrar el ingreso de un vehículo al estacionamiento. | **Escenario 1: Ingreso con placa reconocida**<br>**Given** registro exitoso con placa reconocida,<br>**When** procesa,<br>**Then** devuelve 201 Created con sessionId y entryTimestamp.<br><br>**Escenario 2: Placa no registrada**<br>**Given** placa no registrada en el sistema,<br>**When** procesa,<br>**Then** crea sesión como unidentified y devuelve 201 Created.<br><br>**Escenario 3: Datos inválidos**<br>**Given** datos inválidos (imagen vacía),<br>**When** procesa,<br>**Then** devuelve 400 Bad Request. | Alta | EP12 |
+| TS08 | Developer | Exponer endpoint para registrar salida vehicular | Como developer, deseo exponer POST /api/v1/access/exits para registrar la salida de un vehículo del estacionamiento. | **Escenario 1: Salida exitosa**<br>**Given** salida con pago completado,<br>**When** procesa,<br>**Then** devuelve 200 OK, cierra sesión y libera espacio.<br><br>**Escenario 2: Pago pendiente**<br>**Given** pago pendiente,<br>**When** procesa,<br>**Then** devuelve 402 Payment Required con mensaje indicando que debe completar el pago.<br><br>**Escenario 3: Placa sin sesión activa**<br>**Given** placa sin sesión activa,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Alta | EP12 |
+| TS09 | Developer | Exponer endpoint para reconocimiento de placas | Como developer, deseo exponer POST /api/v1/access/alpr para procesar imagen de placa vehicular. | **Escenario 1: Placa detectada**<br>**Given** imagen válida con placa detectada,<br>**When** procesa,<br>**Then** devuelve 200 OK con licensePlate y confidence.<br><br>**Escenario 2: Imagen inválida**<br>**Given** imagen inválida o ilegible,<br>**When** procesa,<br>**Then** devuelve 400 Bad Request con mensaje de error.<br><br>**Escenario 3: Baja confianza en detección**<br>**Given** placa detectada con confianza < 85%,<br>**When** procesa,<br>**Then** devuelve 200 OK con flag lowConfidence=true. | Alta | EP12 |
+| TS10 | Developer | Exponer endpoint para crear sesión de estacionamiento | Como developer, deseo exponer POST /api/v1/parking-sessions para crear una nueva sesión vehicular. | **Escenario 1: Creación exitosa**<br>**Given** datos válidos (licensePlate, entryTimestamp),<br>**When** procesa,<br>**Then** crea sesión con status ACTIVE y devuelve 201 Created.<br><br>**Escenario 2: Sesión duplicada**<br>**Given** sesión activa existente para esa placa,<br>**When** procesa,<br>**Then** devuelve 409 Conflict indicando que ya tiene sesión en curso.<br><br>**Escenario 3: Datos inválidos**<br>**Given** datos inválidos (placa vacía),<br>**When** procesa,<br>**Then** devuelve 400 Bad Request. | Alta | EP12 |
+| TS11 | Developer | Exponer endpoint para obtener sesión activa | Como developer, deseo exponer GET /api/v1/parking-sessions/active para consultar la sesión en curso del usuario autenticado. | **Escenario 1: Sesión activa encontrada**<br>**Given** sesión activa existente,<br>**When** procesa,<br>**Then** devuelve 200 OK con sessionId, licensePlate, entryTimestamp, currentDuration, estimatedFee, slotCode.<br><br>**Escenario 2: Sin sesión activa**<br>**Given** sin sesión activa,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Alta | EP12 |
+| TS12 | Developer | Exponer endpoint para consultar sesión por ID | Como developer, deseo exponer GET /api/v1/parking-sessions/{id} para obtener detalles de una sesión específica. | **Escenario 1: Detalles de sesión**<br>**Given** sesión existente,<br>**When** procesa,<br>**Then** devuelve 200 OK con todos los detalles.<br><br>**Escenario 2: Sesión inexistente**<br>**Given** sesión inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Media | EP12 |
+| TS13 | Developer | Exponer endpoint para finalizar sesión | Como developer, deseo exponer PATCH /api/v1/parking-sessions/{id}/end para cerrar una sesión vehicular al momento de la salida. | **Escenario 1: Cierre exitoso de sesión**<br>**Given** sesión activa con pago completado,<br>**When** procesa,<br>**Then** cierra sesión, registra exitTimestamp, libera espacio y devuelve 200 OK.<br><br>**Escenario 2: Cierre con pago pendiente**<br>**Given** sesión activa con pago pendiente,<br>**When** procesa,<br>**Then** devuelve 402 Payment Required.<br><br>**Escenario 3: Sesión inexistente**<br>**Given** sesión inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Alta | EP12 |
+| TS14 | Developer | Exponer endpoint para historial de sesiones | Como developer, deseo exponer GET /api/v1/parking-sessions/history para consultar sesiones pasadas del usuario. | **Escenario 1: Historial ordenado**<br>**Given** historial disponible,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista ordenada por fecha descendente.<br><br>**Escenario 2: Historial vacío**<br>**Given** sin registros,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista vacía. | Baja | EP12 |
+| TS15 | Developer | Exponer endpoint para registrar pago | Como developer, deseo exponer POST /api/v1/payments para procesar un pago asociado a una sesión vehicular a través de Culqi. | **Escenario 1: Pago exitoso**<br>**Given** datos válidos (sessionId, paymentMethod, amount) y Culqi procesa exitosamente,<br>**When** procesa,<br>**Then** devuelve 201 Created con paymentId, amount, status COMPLETED y receiptUrl.<br><br>**Escenario 2: Error de pasarela**<br>**Given** error de pasarela,<br>**When** Culqi falla,<br>**Then** devuelve 402 Payment Required con detalle del error.<br><br>**Escenario 3: Sesión ya pagada**<br>**Given** sesión ya pagada,<br>**When** intenta pagar,<br>**Then** devuelve 409 Conflict. | Alta | EP12 |
+| TS16 | Developer | Exponer endpoint para consultar pago | Como developer, deseo exponer GET /api/v1/payments/{id} para obtener detalles de un pago específico. | **Escenario 1: Detalles del pago**<br>**Given** pago existente,<br>**When** procesa,<br>**Then** devuelve 200 OK con paymentId, amount, method, status, timestamp, receiptUrl.<br><br>**Escenario 2: Pago inexistente**<br>**Given** pago inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Media | EP12 |
+| TS17 | Developer | Exponer endpoint para historial de pagos | Como developer, deseo exponer GET /api/v1/payments/history para consultar pagos pasados del usuario autenticado. | **Escenario 1: Historial de pagos**<br>**Given** pagos registrados,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista ordenada por fecha descendente incluyendo amount, method, date, duration.<br><br>**Escenario 2: Historial vacío**<br>**Given** sin pagos,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista vacía. | Baja | EP12 |
+| TS18 | Developer | Exponer endpoint para enviar notificación push | Como developer, deseo exponer POST /api/v1/notifications para enviar notificaciones push a usuarios via Firebase Cloud Messaging. | **Escenario 1: Envío exitoso**<br>**Given** datos válidos (userId, title, body, type),<br>**When** FCM procesa,<br>**Then** devuelve 200 OK con notificationId y deliveryStatus.<br><br>**Escenario 2: Usuario sin token FCM**<br>**Given** userId sin token FCM,<br>**When** intenta,<br>**Then** devuelve 404 Not Found.<br><br>**Escenario 3: Datos inválidos**<br>**Given** datos inválidos,<br>**When** procesa,<br>**Then** devuelve 400 Bad Request. | Media | EP12 |
+| TS19 | Developer | Exponer endpoint para listar notificaciones de un usuario | Como developer, deseo exponer GET /api/v1/notifications/user/{id} para listar las notificaciones recibidas por un usuario. | **Escenario 1: Listado de notificaciones**<br>**Given** notificaciones existentes,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista ordenada por fecha.<br><br>**Escenario 2: Sin notificaciones**<br>**Given** sin notificaciones,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista vacía. | Baja | EP12 |
+| TS20 | Developer | Exponer endpoint para métricas de ocupación | Como developer, deseo exponer GET /api/v1/analytics/occupancy para obtener estadísticas de ocupación del estacionamiento. | **Escenario 1: Métricas disponibles**<br>**Given** datos disponibles y parámetros válidos (startDate, endDate),<br>**When** procesa,<br>**Then** devuelve 200 OK con occupancyRate, peakHours, turnoverRate y datos por hora.<br><br>**Escenario 2: Fechas inválidas**<br>**Given** fechas inválidas (startDate posterior a endDate),<br>**When** procesa,<br>**Then** devuelve 400 Bad Request.<br><br>**Escenario 3: Rango sin datos**<br>**Given** sin datos para el rango,<br>**When** procesa,<br>**Then** devuelve 200 OK con valores en cero. | Media | EP12 |
+| TS21 | Developer | Exponer endpoint para métricas de ingresos | Como developer, deseo exponer GET /api/v1/analytics/revenue para obtener estadísticas financieras del estacionamiento. | **Escenario 1: Métricas de ingresos**<br>**Given** datos disponibles y rango válido,<br>**When** procesa,<br>**Then** devuelve 200 OK con totalRevenue, averageTicket, paymentsByMethod y datos por día.<br><br>**Escenario 2: Rango sin datos**<br>**Given** sin datos para el rango,<br>**When** procesa,<br>**Then** devuelve 200 OK con valores en cero. | Media | EP12 |
+| TS22 | Developer | Exponer endpoint para generar mapa de calor | Como developer, deseo exponer GET /api/v1/analytics/heatmap para visualizar patrones de ocupación por espacio. | **Escenario 1: Mapa de calor generado**<br>**Given** datos de ocupación disponibles,<br>**When** procesa,<br>**Then** devuelve 200 OK con datos de heatmap por slot y hora.<br><br>**Escenario 2: Datos insuficientes**<br>**Given** sin datos suficientes,<br>**When** procesa,<br>**Then** devuelve 200 OK con mapa vacío. | Baja | EP12 |
+| TS23 | Developer | Exponer endpoint para registrar alerta de emergencia | Como developer, deseo exponer POST /api/v1/emergency/alerts para registrar una alerta de emergencia disparada por sensores de gas/humo. | **Escenario 1: Activación de protocolo**<br>**Given** datos válidos (sensorId, gasLevel, type),<br>**When** procesa,<br>**Then** crea alerta, activa protocolo de emergencia y devuelve 201 Created con emergencyId y activatedAt.<br><br>**Escenario 2: Datos inválidos**<br>**Given** datos inválidos (gasLevel negativo),<br>**When** procesa,<br>**Then** devuelve 400 Bad Request. | Alta | EP12 |
+| TS24 | Developer | Exponer endpoint para consultar estado de emergencia | Como developer, deseo exponer GET /api/v1/emergency/status para consultar si hay una emergencia activa en el estacionamiento. | **Escenario 1: Emergencia activa**<br>**Given** emergencia activa,<br>**When** procesa,<br>**Then** devuelve 200 OK con emergencyId, type, triggeredAt, sensorLocation.<br><br>**Escenario 2: Sin emergencias**<br>**Given** sin emergencias activas,<br>**When** procesa,<br>**Then** devuelve 200 OK con status "NORMAL". | Alta | EP12 |
+| TS25 | Developer | Exponer endpoint para activar protocolo de evacuación | Como developer, deseo exponer POST /api/v1/emergency/evacuate para activar manualmente el protocolo de evacuación. | **Escenario 1: Activación de evacuación**<br>**Given** emergencia activa,<br>**When** admin autorizado solicita,<br>**Then** activa protocolo (abrir barreras, LEDs evacuación) y devuelve 200 OK.<br><br>**Escenario 2: Evacuación sin emergencia**<br>**Given** sin emergencia activa,<br>**When** solicita evacuación,<br>**Then** devuelve 409 Conflict indicando que no hay emergencia que justifique evacuación. | Alta | EP12 |
+| TS26 | Developer | Exponer endpoint para resolver emergencia | Como developer, deseo exponer PATCH /api/v1/emergencies/{id}/resolve para marcar una emergencia como resuelta y restaurar operación normal. | **Escenario 1: Resolución exitosa**<br>**Given** emergencia activa,<br>**When** admin envía solicitud de resolución,<br>**Then** marca como RESOLVED, restaura operación normal y devuelve 200 OK.<br><br>**Escenario 2: Emergencia inexistente**<br>**Given** emergencia inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found.<br><br>**Escenario 3: Emergencia ya resuelta**<br>**Given** emergencia ya resuelta,<br>**When** intenta resolver de nuevo,<br>**Then** devuelve 409 Conflict. | Alta | EP12 |
+| TS27 | Developer | Exponer endpoint para generar pase digital | Como developer, deseo exponer POST /api/v1/wallet/passes para generar un pase digital de estancia asociado a una sesión vehicular. | **Escenario 1: Pase generado**<br>**Given** sesión activa válida,<br>**When** procesa,<br>**Then** genera pase con placa, hora, QR y devuelve 201 Created con passId y passUrl.<br><br>**Escenario 2: Sesión inexistente**<br>**Given** sesión inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found.<br><br>**Escenario 3: Plan no Premium**<br>**Given** usuario sin plan Premium,<br>**When** solicita,<br>**Then** devuelve 403 Forbidden. | Baja | EP12 |
+| TS28 | Developer | Exponer endpoint para obtener pase digital | Como developer, deseo exponer GET /api/v1/wallet/passes/{id} para consultar los detalles de un pase digital existente. | **Escenario 1: Detalles del pase**<br>**Given** pase existente,<br>**When** procesa,<br>**Then** devuelve 200 OK con passId, licensePlate, entryTime, currentAmount, qrCode, status.<br><br>**Escenario 2: Pase inexistente**<br>**Given** pase inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Baja | EP12 |
+| TS29 | Developer | Exponer endpoint para generar pase Google Wallet | Como developer, deseo exponer POST /api/v1/wallet/google para crear un pase en Google Wallet del conductor. | **Escenario 1: Generación exitosa**<br>**Given** datos válidos (sessionId, userId),<br>**When** Google Wallet API procesa,<br>**Then** genera pase y devuelve 201 Created con saveUrl para añadir a Wallet.<br><br>**Escenario 2: Datos inválidos**<br>**Given** datos inválidos,<br>**When** procesa,<br>**Then** devuelve 400 Bad Request.<br><br>**Escenario 3: Error de API externa**<br>**Given** error de Google Wallet API,<br>**When** falla,<br>**Then** devuelve 502 Bad Gateway. | Baja | EP12 |
+| TS30 | Developer | Exponer endpoint para registrar usuario | Como developer, deseo exponer POST /api/v1/auth/register para permitir el registro de nuevos usuarios en el sistema. | **Escenario 1: Registro exitoso**<br>**Given** datos válidos (name, email, password, role, licensePlate),<br>**When** procesa,<br>**Then** crea cuenta y devuelve 201 Created con userId y role.<br><br>**Escenario 2: Correo duplicado**<br>**Given** correo ya registrado,<br>**When** procesa,<br>**Then** devuelve 409 Conflict.<br><br>**Escenario 3: Datos inválidos**<br>**Given** datos inválidos (email mal formado, contraseña corta),<br>**When** procesa,<br>**Then** devuelve 400 Bad Request con errores específicos. | Alta | EP12 |
+| TS31 | Developer | Exponer endpoint para autenticación de usuario | Como developer, deseo exponer POST /api/v1/auth/login para autenticar usuarios y devolver un token JWT. | **Escenario 1: Login exitoso**<br>**Given** credenciales válidas (email, password),<br>**When** procesa,<br>**Then** devuelve 200 OK con accessToken JWT, refreshToken y datos básicos del usuario.<br><br>**Escenario 2: Credenciales inválidas**<br>**Given** credenciales inválidas,<br>**When** procesa,<br>**Then** devuelve 401 Unauthorized con mensaje genérico.<br><br>**Escenario 3: Cuenta no verificada**<br>**Given** cuenta no verificada,<br>**When** intenta login,<br>**Then** devuelve 403 Forbidden indicando que debe verificar su cuenta. | Alta | EP12 |
+| TS32 | Developer | Exponer endpoint para obtener perfil de usuario | Como developer, deseo exponer GET /api/v1/users/{id} para obtener los datos del perfil de un usuario. | **Escenario 1: Perfil encontrado**<br>**Given** usuario existente,<br>**When** procesa,<br>**Then** devuelve 200 OK con name, email, role, vehicles, plan.<br><br>**Escenario 2: Usuario inexistente**<br>**Given** usuario inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Media | EP12 |
+| TS33 | Developer | Exponer endpoint para actualizar perfil de usuario | Como developer, deseo exponer PUT /api/v1/users/{id} para actualizar los datos del perfil de un usuario. | **Escenario 1: Actualización exitosa**<br>**Given** datos válidos,<br>**When** procesa,<br>**Then** actualiza perfil y devuelve 200 OK con datos actualizados.<br><br>**Escenario 2: Datos inválidos**<br>**Given** datos inválidos (email mal formado),<br>**When** procesa,<br>**Then** devuelve 400 Bad Request.<br><br>**Escenario 3: Usuario inexistente**<br>**Given** usuario inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Media | EP12 |
+| TS34 | Developer | Exponer endpoint para recuperación de contraseña | Como developer, deseo exponer POST /api/v1/auth/forgot-password para enviar enlace de recuperación al correo del usuario. | **Escenario 1: Envío de enlace**<br>**Given** correo válido registrado,<br>**When** procesa,<br>**Then** envía enlace de recuperación y devuelve 200 OK.<br><br>**Escenario 2: Correo inexistente**<br>**Given** correo inexistente,<br>**When** procesa,<br>**Then** devuelve 200 OK con mensaje genérico (por seguridad, no revela si el correo existe). | Media | EP12 |
+| TS35 | Developer | Exponer endpoint para restablecer contraseña | Como developer, deseo exponer POST /api/v1/auth/reset-password para permitir cambiar la contraseña mediante un token de recuperación. | **Escenario 1: Cambio exitoso**<br>**Given** token válido y contraseña nueva que cumple requisitos,<br>**When** procesa,<br>**Then** actualiza contraseña y devuelve 200 OK.<br><br>**Escenario 2: Token inválido**<br>**Given** token inválido o expirado,<br>**When** procesa,<br>**Then** devuelve 400 Bad Request.<br><br>**Escenario 3: Contraseña débil**<br>**Given** contraseña que no cumple requisitos (< 8 caracteres),<br>**When** procesa,<br>**Then** devuelve 400 Bad Request con detalle. | Media | EP12 |
+| TS36 | Developer | Exponer endpoint para registrar vehículo | Como developer, deseo exponer POST /api/v1/users/{id}/vehicles para agregar un vehículo a la cuenta de un usuario. | **Escenario 1: Vehículo registrado**<br>**Given** datos válidos (licensePlate, make, model),<br>**When** procesa,<br>**Then** agrega vehículo y devuelve 201 Created con vehicleId.<br><br>**Escenario 2: Placa duplicada**<br>**Given** placa ya registrada en otra cuenta,<br>**When** procesa,<br>**Then** devuelve 409 Conflict.<br><br>**Escenario 3: Usuario inexistente**<br>**Given** usuario inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Media | EP12 |
+| TS37 | Developer | Exponer endpoint para listar vehículos de un usuario | Como developer, deseo exponer GET /api/v1/users/{id}/vehicles para obtener la lista de vehículos registrados por un usuario. | **Escenario 1: Listado de vehículos**<br>**Given** usuario con vehículos registrados,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista (vehicleId, licensePlate, make, model).<br><br>**Escenario 2: Sin vehículos**<br>**Given** usuario sin vehículos,<br>**When** procesa,<br>**Then** devuelve 200 OK con lista vacía.<br><br>**Escenario 3: Usuario inexistente**<br>**Given** usuario inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Media | EP12 |
+| TS38 | Developer | Exponer endpoint para eliminar vehículo | Como developer, deseo exponer DELETE /api/v1/users/{userId}/vehicles/{vehicleId} para eliminar un vehículo de la cuenta de un usuario. | **Escenario 1: Eliminación exitosa**<br>**Given** vehículo existente asociado al usuario,<br>**When** procesa,<br>**Then** elimina vehículo y devuelve 204 No Content.<br><br>**Escenario 2: Vehículo inexistente**<br>**Given** vehículo inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found.<br><br>**Escenario 3: Vehículo con sesión activa**<br>**Given** vehículo con sesión activa,<br>**When** intenta eliminar,<br>**Then** devuelve 409 Conflict indicando que debe finalizar la sesión primero. | Media | EP12 |
+| TS39 | Developer | Exponer endpoint para marcar notificación como leída | Como developer, deseo exponer PATCH /api/v1/notifications/{id}/read para marcar una notificación como leída. | **Escenario 1: Marca exitosa**<br>**Given** notificación existente no leída,<br>**When** procesa,<br>**Then** marca como leída y devuelve 200 OK.<br><br>**Escenario 2: Notificación inexistente**<br>**Given** notificación inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Baja | EP12 |
+| TS40 | Developer | Exponer endpoint para actualizar preferencias de notificación | Como developer, deseo exponer PUT /api/v1/users/{id}/notification-preferences para guardar las preferencias del usuario. | **Escenario 1: Actualización exitosa**<br>**Given** preferencias válidas,<br>**When** procesa,<br>**Then** actualiza y devuelve 200 OK.<br><br>**Escenario 2: Usuario inexistente**<br>**Given** usuario inexistente,<br>**When** procesa,<br>**Then** devuelve 404 Not Found. | Baja | EP12 |
 
  
 | |  |  | || |  |
 |---|---|---|---|---|---|---|
-| SWS01 | Visitante | Ver sección Hero | Como visitante del segmento conductor, deseo ver la sección Hero para entender rápidamente el propósito de SpotFinder. | Scenario 1: Given visitante accede a landing When carga Then muestra título, descripción y CTA visible. Scenario 2: Given acceso móvil When carga Then contenido se adapta responsivamente. | Baja | EP11 |
-| SWS02 | Visitante | Ver sección Features | Como visitante del segmento conductor, deseo ver funcionalidades principales para evaluar la solución. | Scenario 1: Given visitante navega a Features When visualiza Then encuentra al menos 4 funcionalidades con ícono y descripción. | Baja | EP11 |
-| SWS03 | Visitante | Ver sección How It Works | Como visitante del segmento conductor, deseo entender el proceso paso a paso. | Scenario 1: Given visitante navega a How It Works When visualiza Then encuentra pasos numerados del flujo completo. | Baja | EP11 |
-| SWS04 | Visitante | Ver sección About The Product | Como visitante del segmento administrador, deseo conocer las capacidades del producto. | Scenario 1: Given visitante navega a About The Product When visualiza Then encuentra descripción del dashboard, sensores y métricas. | Baja | EP11 |
-| SWS05 | Visitante | Ver sección Pricing | Como visitante, deseo ver planes y precios para decidir cuál me conviene. | Scenario 1: Given visitante navega a Pricing When visualiza Then encuentra tabla comparativa de planes Free, Pro y Premium. | Baja | EP11 |
-| SWS06 | Visitante | Ver sección Testimonials | Como visitante, deseo ver testimonios para generar confianza. | Scenario 1: Given visitante navega a Testimonials When visualiza Then encuentra al menos 2 testimonios con nombre, foto y opinión. | Baja | EP11 |
-| SWS07 | Visitante | Ver sección About Us y About The Team | Como visitante, deseo conocer al equipo de ParkSense IoT. | Scenario 1: Given visitante navega a About Us When visualiza Then encuentra misión, visión y equipo con fotos y roles. | Baja | EP11 |
-| SWS08 | Visitante | Ver sección FAQ | Como visitante, deseo encontrar respuestas a preguntas frecuentes. | Scenario 1: Given visitante navega a FAQ When visualiza Then encuentra al menos 5 preguntas con respuestas expandibles. | Baja | EP11 |
-| SWS09 | Visitante | Ver sección Contact | Como visitante, deseo contactar al equipo de SpotFinder. | Scenario 1: Given visitante navega a Contact When visualiza Then encuentra formulario con nombre, email y mensaje. | Baja | EP11 |
-| SWS10 | Visitante | Ver sección Footer | Como visitante, deseo acceder a enlaces legales y redes sociales. | Scenario 1: Given visitante visualiza footer When revisa Then encuentra enlaces a términos, privacidad y redes sociales. | Baja | EP11 |
-| SWS11 | Visitante | Navegación responsive | Como visitante, deseo navegar fluidamente en desktop y móvil. | Scenario 1: Given visitante en desktop When selecciona sección Then scroll suave. Scenario 2: Given visitante en móvil When abre menú hamburguesa y selecciona Then navega y menú se cierra. | Baja | EP11 |
+| SWS01 | Visitante | Ver sección Hero | Como visitante del segmento conductor, deseo ver la sección Hero para entender rápidamente el propósito de SpotFinder. | **Escenario 1: Visualización del Hero**<br>**Given** visitante accede a landing,<br>**When** carga,<br>**Then** muestra título, descripción y CTA visible.<br><br>**Escenario 2: Adaptación responsive**<br>**Given** acceso móvil,<br>**When** carga,<br>**Then** contenido se adapta responsivamente. | Baja | EP11 |
+| SWS02 | Visitante | Ver sección Features | Como visitante del segmento conductor, deseo ver funcionalidades principales para evaluar la solución. | **Escenario 1: Listado de funcionalidades**<br>**Given** visitante navega a Features,<br>**When** visualiza,<br>**Then** encuentra al menos 4 funcionalidades con ícono y descripción. | Baja | EP11 |
+| SWS03 | Visitante | Ver sección How It Works | Como visitante del segmento conductor, deseo entender el proceso paso a paso. | **Escenario 1: Flujo numerado**<br>**Given** visitante navega a How It Works,<br>**When** visualiza,<br>**Then** encuentra pasos numerados del flujo completo. | Baja | EP11 |
+| SWS04 | Visitante | Ver sección About The Product | Como visitante del segmento administrador, deseo conocer las capacidades del producto. | **Escenario 1: Capacidades del producto**<br>**Given** visitante navega a About The Product,<br>**When** visualiza,<br>**Then** encuentra descripción del dashboard, sensores y métricas. | Baja | EP11 |
+| SWS05 | Visitante | Ver sección Pricing | Como visitante, deseo ver planes y precios para decidir cuál me conviene. | **Escenario 1: Tabla comparativa de planes**<br>**Given** visitante navega a Pricing,<br>**When** visualiza,<br>**Then** encuentra tabla comparativa de planes Free, Pro y Premium. | Baja | EP11 |
+| SWS06 | Visitante | Ver sección Testimonials | Como visitante, deseo ver testimonios para generar confianza. | **Escenario 1: Listado de testimonios**<br>**Given** visitante navega a Testimonials,<br>**When** visualiza,<br>**Then** encuentra al menos 2 testimonios con nombre, foto y opinión. | Baja | EP11 |
+| SWS07 | Visitante | Ver sección About Us y About The Team | Como visitante, deseo conocer al equipo de ParkSense IoT. | **Escenario 1: Información del equipo**<br>**Given** visitante navega a About Us,<br>**When** visualiza,<br>**Then** encuentra misión, visión y equipo con fotos y roles. | Baja | EP11 |
+| SWS08 | Visitante | Ver sección FAQ | Como visitante, deseo encontrar respuestas a preguntas frecuentes. | **Escenario 1: Preguntas frecuentes**<br>**Given** visitante navega a FAQ,<br>**When** visualiza,<br>**Then** encuentra al menos 5 preguntas con respuestas expandibles. | Baja | EP11 |
+| SWS09 | Visitante | Ver sección Contact | Como visitante, deseo contactar al equipo de SpotFinder. | **Escenario 1: Formulario de contacto**<br>**Given** visitante navega a Contact,<br>**When** visualiza,<br>**Then** encuentra formulario con nombre, email y mensaje. | Baja | EP11 |
+| SWS10 | Visitante | Ver sección Footer | Como visitante, deseo acceder a enlaces legales y redes sociales. | **Escenario 1: Enlaces del footer**<br>**Given** visitante visualiza footer,<br>**When** revisa,<br>**Then** encuentra enlaces a términos, privacidad y redes sociales. | Baja | EP11 |
+| SWS11 | Visitante | Navegación responsive | Como visitante, deseo navegar fluidamente en desktop y móvil. | **Escenario 1: Navegación en desktop**<br>**Given** visitante en desktop,<br>**When** selecciona sección,<br>**Then** scroll suave.<br><br>**Escenario 2: Navegación en móvil**<br>**Given** visitante en móvil,<br>**When** abre menú hamburguesa y selecciona,<br>**Then** navega y menú se cierra. | Baja | EP11 |
  
 
  
@@ -1540,6 +1554,9 @@ Static Web Stories (SWS): historias relacionadas con la presentación y navegaci
 | 79 | SS04 | Investigación de Google Wallet API | 8 |
 | 80 | SS05 | Prueba de bibliotecas MQTT para ESP32 | 5 |
 | 81 | SS06 | Prueba de bibliotecas para generación de PDF | 5 |
+
+<div style="page-break-after: always;"></div>
+
 ---
 
 # Capítulo IV: Solution Software Design
@@ -1556,21 +1573,18 @@ La sesión de Candidate Context Discovery debe realizarse inmediatamente despué
 **Paso 1 — Identificación de valor estratégico:**
 Cada miembro del equipo responde en post-its naranjas a la pregunta: **"¿Qué parte del sistema genera directamente valor para los usuarios y diferencia a SpotFinder de otras soluciones?"**
 
-<img src="assets/diagrams/context-candidate/candidate-context-step1.png" alt="Paso1" width="800
-">
+<img src="assets/diagrams/context-candidate/candidate-context-step1.png" alt="Paso1" width="800">
 
 
 **Paso 2 — Agrupación de eventos en torno al valor:**
 Revisar los aggregates del Event Storming y sus eventos asociados. Agrupar por afinidad y preguntar: "¿Este grupo de eventos genera valor directo al negocio o es un soporte necesario?"
 
-<img src="assets/diagrams/context-candidate/candidate-context-step2.png" alt="Paso2" width="800
-">
+<img src="assets/diagrams/context-candidate/candidate-context-step2.png" alt="Paso2" width="800">
 
 **Paso 3 — Clasificación Core, Supporting, Generic:**
 Ubicar cada bounded context en la matriz de dos ejes (Business Differentiation vs Model Complexity).
 
-<img src="assets/diagrams/context-candidate/candidate-context-step3.jpg" alt="Paso3" width="800
-">
+<img src="assets/diagrams/context-candidate/candidate-context-step3.jpg" alt="Paso3" width="800">
 
 ### Candidate Contexts identificados para SpotFinder
  
@@ -1591,8 +1605,7 @@ Ubicar cada bounded context en la matriz de dos ejes (Business Differentiation v
 > - **Eje Y:** Model Complexity (Low → High)
 
 
-<img src="assets/diagrams/context-candidate/candidate-context-discovery.png" alt="Paso3" width="800
-">
+<img src="assets/diagrams/context-candidate/candidate-context-discovery.png" alt="Paso3" width="800">
 
 
 ### Resultados
@@ -1605,8 +1618,7 @@ Se definieron **8 candidate bounded contexts**, de los cuales:
 La aplicación de la técnica Start-with-Value permitió asegurar que la atención principal del diseño táctico se concentre en **Parking Monitoring, Access Control y Payment Processing**, dado que allí reside la propuesta de valor diferenciadora de SpotFinder frente a competidores como Apparka, ParkHelp y Quadra.
 
 
-<img src="assets/diagrams/context-candidate/candidate-context-step2.png" alt="Paso2" width="800
-">
+<img src="assets/diagrams/context-candidate/candidate-context-step2.png" alt="Paso2" width="800">
 
 
 #### 4.1.1.2 Domain Message Flows Modeling
@@ -1624,8 +1636,7 @@ Para la representación visual se utilizó la técnica de Domain Storytelling, l
 
 ####  **Escenario 1: Vehículo registrado ingresa al estacionamiento**
 
-<img src="assets/diagrams/context-flow/escenario1-ingreso.png" alt="Ingreso de vehículo registrado" width="800
-">
+<img src="assets/diagrams/context-flow/escenario1-ingreso.png" alt="Ingreso de vehículo registrado" width="800">
 <br>
 
 **Flujo de Integración:**
@@ -1653,8 +1664,7 @@ Para la representación visual se utilizó la técnica de Domain Storytelling, l
 
 ####  **Escenario 2: Sensor detecta vehículo y actualiza disponibilidad**
 
-<img src="assets/diagrams/context-flow/escenario2-sensor.png" alt="Detección de ocupación de espacio" width="800
-">
+<img src="assets/diagrams/context-flow/escenario2-sensor.png" alt="Detección de ocupación de espacio" width="800">
 <br>
 
 **Flujo de Integración:**
@@ -1674,8 +1684,7 @@ Para la representación visual se utilizó la técnica de Domain Storytelling, l
 
 ####  **Escenario 3: Conductor paga y sale del estacionamiento**
 
-<img src="assets/diagrams/context-flow/escenario3-pago-salida.png" alt="Pago y salida del estacionamiento" width="800
-">
+<img src="assets/diagrams/context-flow/escenario3-pago-salida.png" alt="Pago y salida del estacionamiento" width="800">
 <br>
 
 **Flujo de Integración:**
@@ -1701,8 +1710,7 @@ Para la representación visual se utilizó la técnica de Domain Storytelling, l
 
 ####  **Escenario 4: Emergencia detectada por sensor de gas**
 
-<img src="assets/diagrams/context-flow/escenario4-emergencia.png" alt="Alerta de emergencia por gas" width="800
-">
+<img src="assets/diagrams/context-flow/escenario4-emergencia.png" alt="Alerta de emergencia por gas" width="800">
 <br>
 
 **Flujo de Integración:**
@@ -1917,8 +1925,7 @@ Además, SpotFinder se integra con múltiples sistemas externos que complementan
 
 Este diagrama permite entender el sistema como parte de un entorno más amplio, donde diferentes servicios externos enriquecen las capacidades de la plataforma.
 
-<img src="/assets/diagrams/c4/System-Landscape.png" width="800
-">
+<img src="/assets/diagrams/c4/System-Landscape.png" width="800">
 <br>
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams.
@@ -1934,8 +1941,7 @@ El sistema central SpotFinder actúa como núcleo de interacción, conectándose
 
 En conjunto, este diagrama permite visualizar claramente los límites del sistema y sus dependencias externas.
 
-<img src="/assets/diagrams/c4/Context-Diagram.png" width="800
-">
+<img src="/assets/diagrams/c4/Context-Diagram.png" width="800">
 <br>
 
 
@@ -1953,8 +1959,7 @@ El sistema está compuesto por los siguientes contenedores:
 
 El Backend API también se encarga de integrarse con servicios externos como el sistema de pagos, el reconocimiento de placas y las notificaciones.
 
-<img src="/assets/diagrams/c4/Container-Diagram.png" width="800
-">
+<img src="/assets/diagrams/c4/Container-Diagram.png" width="800">
 <br>
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams.
@@ -1974,8 +1979,7 @@ Las comunicaciones entre componentes se realizan mediante protocolos como HTTPS 
 
 Este diagrama evidencia una arquitectura distribuida en múltiples capas, combinando dispositivos de usuario, infraestructura en la nube y procesamiento en el borde (edge computing), lo que permite escalabilidad y eficiencia en el manejo de datos en tiempo real.
 
-<img src="/assets/diagrams/c4/Deployment-Diagrams.png" width="800
-">
+<img src="/assets/diagrams/c4/Deployment-Diagrams.png" width="800">
 <br>
 
 # 4.2. Tactical-Level Domain-Driven Design
@@ -2287,8 +2291,7 @@ Servicio que envía actualizaciones de estado en tiempo real vía WebSocket.
  
 En esta sección se presentan los diagramas de nivel componente que ilustran la arquitectura de software del contexto de Parking Monitoring. Se muestra la interacción entre los diferentes componentes, servicios y capas que conforman este bounded context.
  
-<img src="assets\diagrams\structurizr\Parking_Monitoring_Diagram.png" alt="Pago y salida del estacionamiento" width="800
-">
+<img src="assets/diagrams/structurizr/Parking_Monitoring_Diagram.png" alt="Pago y salida del estacionamiento" width="800">
 
 ### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
  
@@ -2304,8 +2307,7 @@ El diagrama de clases del Domain Layer del contexto de Parking Monitoring ilustr
  
 El diagrama de diseño de base de datos del contexto de Parking Monitoring muestra la estructura de las tablas y sus relaciones en la base de datos relacional.
  
-<img src="assets\diagrams\db\parking-monitoring-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
-">
+<img src="assets/diagrams/db/parking-monitoring-database-diagram.png" alt="Pago y salida del estacionamiento" width="800">
 <br>
 
 ## 4.2.2. Bounded Context: Access Control
@@ -2746,8 +2748,7 @@ Implementación concreta del servicio de reconocimiento de placas usando Plate R
  
 En esta sección se presentan los diagramas de nivel componente que ilustran la arquitectura de software del contexto de Access Control. Se muestra la interacción entre los diferentes componentes, servicios y capas que conforman este bounded context, incluyendo la integración con sistemas externos (Plate Recognizer API, ESP32-CAM).
  
-<img src="assets\diagrams\structurizr\Access_Control_Diagram.png" alt="Pago y salida del estacionamiento" width="800
-">
+<img src="assets/diagrams/structurizr/Access_Control_Diagram.png" alt="Pago y salida del estacionamiento" width="800">
 ### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
  
 En esta sección se presentan los diagramas de nivel código que detallan la estructura interna del contexto de Access Control.
@@ -2756,16 +2757,14 @@ En esta sección se presentan los diagramas de nivel código que detallan la est
  
 El diagrama de clases del Domain Layer del contexto de Access Control ilustra las entidades, objetos de valor y servicios que componen este bounded context.
  
-<img src="assets\diagrams\uml\access.png" alt="Pago y salida del estacionamiento" width="800
-">
+<img src="assets/diagrams/uml/access.png" alt="Pago y salida del estacionamiento" width="800">
 <br>
 
 #### 4.2.2.6.2. Bounded Context Database Design Diagram
  
 El diagrama de diseño de base de datos del contexto de Access Control muestra la estructura de las tablas y sus relaciones.
  
-<img src="assets\diagrams\db\access-control-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
-">
+<img src="assets/diagrams/db/access-control-database-diagram.png" alt="Pago y salida del estacionamiento" width="800">
 <br>
 
 
@@ -3118,8 +3117,7 @@ Implementación concreta de PaymentGatewayService usando la API de Culqi como pa
 
 En esta sección se presentan los diagramas de nivel componente que ilustran la arquitectura de software del contexto de Payment Processing. Se muestra la interacción entre los componentes internos y la integración con la pasarela de pagos Culqi.
 
-<img src="assets\diagrams\structurizr\Payment_Processing_Diagram.png" alt="" width="800
-">
+<img src="assets/diagrams/structurizr/Payment_Processing_Diagram.png" alt="" width="800">
 <br>
 
 ### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
@@ -3130,15 +3128,13 @@ En esta sección se presentan los diagramas de nivel código que detallan la est
 
 El diagrama de clases del Domain Layer del contexto de Payment Processing ilustra las entidades, objetos de valor y servicios que componen este bounded context.
 
-<img src="assets\diagrams\uml\payment.png" alt="" width="800
-">
+<img src="assets/diagrams/uml/payment.png" alt="" width="800">
 <br>
 #### 4.2.3.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos del contexto de Payment Processing muestra la estructura de las tablas y sus relaciones.
 
-<img src="assets\diagrams\db\payment-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
-">
+<img src="assets/diagrams/db/payment-database-diagram.png" alt="Pago y salida del estacionamiento" width="800">
 <br>
 
 
@@ -3446,8 +3442,7 @@ Maneja el evento de alerta disparada para activar el protocolo de emergencia en 
 
 En esta sección se presentan los diagramas de nivel componente que ilustran la arquitectura de software del contexto de Emergency & Safety. Se muestra la interacción entre los componentes internos y la comunicación con los bounded contexts que deben reaccionar ante una emergencia.
 
-<img src="assets\diagrams\structurizr\Emergency_Safety_Diagram.png" alt="" width="800
-">
+<img src="assets/diagrams/structurizr/Emergency_Safety_Diagram.png" alt="" width="800">
 <br>
 
 
@@ -3460,8 +3455,7 @@ En esta sección se presentan los diagramas de nivel código que detallan la est
 
 El diagrama de clases del Domain Layer del contexto de Emergency & Safety ilustra las entidades, objetos de valor y servicios que componen este bounded context.
 
-<img src="assets\diagrams\uml\emergency.png" alt="Pago y salida del estacionamiento" width="800
-">
+<img src="assets/diagrams/uml/emergency.png" alt="Pago y salida del estacionamiento" width="800">
 <br>
 
 
@@ -3469,8 +3463,7 @@ El diagrama de clases del Domain Layer del contexto de Emergency & Safety ilustr
 
 El diagrama de diseño de base de datos del contexto de Emergency & Safety muestra la estructura de las tablas y sus relaciones.
 
-<img src="assets\diagrams\db\emergency-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
-">
+<img src="assets/diagrams/db/emergency-database-diagram.png" alt="Pago y salida del estacionamiento" width="800">
 <br>
 
 
@@ -3855,8 +3848,7 @@ Repositorio para acceder a los snapshots históricos de estado de espacios (dato
 
 En esta sección se presentan los diagramas de nivel componente que ilustran la arquitectura de software del contexto de Analytics & Reporting.
 
-<img src="assets\diagrams\structurizr\Analytics_Diagram.png" alt="" width="800
-">
+<img src="assets/diagrams/structurizr/Analytics_Diagram.png" alt="" width="800">
 <br>
 
 
@@ -3864,13 +3856,11 @@ En esta sección se presentan los diagramas de nivel componente que ilustran la 
 
 #### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
 
-<img src="assets\diagrams\uml\Analytics.png" alt="" width="800
-">
+<img src="assets/diagrams/uml/Analytics.png" alt="" width="800">
 <br>
 #### 4.2.5.6.2. Bounded Context Database Design Diagram
 
-<img src="assets\diagrams\db\analytics-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
-">
+<img src="assets/diagrams/db/analytics-database-diagram.png" alt="Pago y salida del estacionamiento" width="800">
 <br>
 
 ## 4.2.6. Bounded Context: Notification Management
@@ -4268,8 +4258,7 @@ Implementación de FcmTokenService que consulta al BC IAM para obtener tokens FC
 
 En esta sección se presentan los diagramas de nivel componente que ilustran la arquitectura de software del contexto de Notification Management.
 
-<img src="assets\diagrams\structurizr\Notification_Diagram.png" alt="" width="800
-">
+<img src="assets/diagrams/structurizr/Notification_Diagram.png" alt="" width="800">
 <br>
 
 
@@ -4277,15 +4266,13 @@ En esta sección se presentan los diagramas de nivel componente que ilustran la 
 
 #### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
 
-<img src="assets\diagrams\uml\Notification.png" alt="" width="800
-">
+<img src="assets/diagrams/uml/Notification.png" alt="" width="800">
 <br>
 
 
 #### 4.2.6.6.2. Bounded Context Database Design Diagram
 
-<img src="assets\diagrams\db\notification-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
-">
+<img src="assets/diagrams/db/notification-database-diagram.png" alt="Pago y salida del estacionamiento" width="800">
 <br>
 
 ## 4.2.7. Bounded Context: Identity & Access Management
@@ -4637,8 +4624,7 @@ Configuración de la documentación OpenAPI/Swagger de la API.
 
 En esta sección se presentan los diagramas de nivel componente que ilustran la arquitectura de software del contexto de IAM. Se muestra la interacción entre los diferentes componentes, servicios y capas que conforman este bounded context.
 
-<img src="assets\diagrams\structurizr\IAM_Component_Diagram.png" alt="" width="800
-">
+<img src="assets/diagrams/structurizr/IAM_Component_Diagram.png" alt="" width="800">
 <br>
 
 
@@ -4649,17 +4635,17 @@ En esta sección se presentan los diagramas de nivel componente que ilustran la 
 
 El diagrama de clases del Domain Layer del contexto de IAM ilustra las entidades, value objects y servicios que componen este bounded context, reflejando el código ya implementado.
 
-<img src="assets\diagrams\uml\IAM.png" alt="" width="800
-">
+<img src="assets/diagrams/uml/IAM.png" alt="" width="800">
 <br>
 
 #### 4.2.7.6.2. Bounded Context Database Design Diagram
 
 El diagrama de diseño de base de datos del contexto de IAM muestra la estructura de las tablas y sus relaciones, generadas automáticamente por JPA/Hibernate a partir de las entidades del dominio.
 
-<img src="assets\diagrams\db\iam-database-diagram.png" alt="Pago y salida del estacionamiento" width="800
-">
+<img src="assets/diagrams/db/iam-database-diagram.png" alt="Pago y salida del estacionamiento" width="800">
 <br>
+
+<div style="page-break-after: always;"></div>
 
 ---
 # Capítulo V: Solution UI/UX Design
@@ -5005,6 +4991,8 @@ Asimismo, los prototipos facilitaron la validación de:
 ## 5.6. IoT Device Design.
 
 
+<div style="page-break-after: always;"></div>
+
 ---
 # Capítulo VI: Product Implementation, Validation \& Deployment
 
@@ -5118,7 +5106,7 @@ En esta sección se presenta el Sprint Backlog correspondiente al Sprint 1 del p
 A continuación, se muestra el tablero de trabajo utilizado para la gestión de tareas del Sprint:
 
 
-<img alt="Sprint Backlog 1 in Trello" src="assets\images\screenshots\sprint1_trello.png" />
+<img alt="Sprint Backlog 1 in Trello" src="assets/images/screenshots/sprint1_trello.png" />
 <br><br>
 
 Link Trello: [SpotFinder - Trello]()
@@ -5546,6 +5534,9 @@ En esta sección se presentan las conclusiones y recomendaciones derivadas del d
 * Se recomienda priorizar un piloto controlado en un centro comercial de Lima (50-100 espacios) para validar las hipótesis del Lean UX. 
 * Desarrollar las Spike Stories (Culqi, Plate Recognizer, FCM, Google Wallet, MQTT, PDF) en las primeras semanas del Sprint 2 para mitigar riesgos técnicos tempranamente.
 * Implementar el modelo de suscripción diferenciado (Free, Pro, Premium) desde el piloto para medir la disposición de pago real. Los administradores entrevistados indicaron presupuestos de USD 20,000-50,000, validando la viabilidad financiera del modelo B2B.
+
+<div style="page-break-after: always;"></div>
+
 ---
 
 # Bibliografía
@@ -5600,6 +5591,8 @@ TOUCH Consulting. (2023). *Caso de éxito: Jockey Plaza Easy Parking*. https://w
  
 Urbiotica. (2024). *Smart parking: the pollution solution*. https://urbiotica.com/us/blog/smart-parking-pollution-solution/
  
+
+<div style="page-break-after: always;"></div>
 
 # Anexos
 
